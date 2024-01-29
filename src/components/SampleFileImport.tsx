@@ -2,15 +2,15 @@ import { useCallback } from "react";
 import { useDropzone, FileWithPath } from "react-dropzone";
 import { Button, Paper, Typography } from "@mui/material";
 import { DROP_ZONE_SX } from "../consts/FileImportConsts";
-import { useChemFileAtom, useFileNameAtom } from "../atoms/fileInputAtoms";
+import { useSampleFileAtom, useFileNameAtom } from "../atoms/fileInputAtoms";
 import Papa from "papaparse";
 import { JSONObject } from "../types/fileStorage";
 import { useResultFileAtom } from "../atoms/resultAtoms";
 
 
 
-export function ChemFileImport() {
-  const [chemFile, setChemFile] = useChemFileAtom();
+export function SampleFileImport() {
+  const [sampleFile, setSampleFile] = useSampleFileAtom();
   const [fileName, setFileName] = useFileNameAtom();
   const [, setResultFile] = useResultFileAtom();
 
@@ -27,7 +27,7 @@ export function ChemFileImport() {
           complete: function (result: Papa.ParseResult<JSONObject>) {
             console.log(result.data);
             console.log("You dropped a file!");
-            setChemFile(result);
+            setSampleFile(result);
             setResultFile(result);
           },
         });
@@ -36,7 +36,7 @@ export function ChemFileImport() {
     };
 
     reader.readAsText(file);
-  }, [setChemFile, setFileName, setResultFile]);
+  }, [setSampleFile, setFileName, setResultFile]);
 
   const onDrop = useCallback(
     (acceptedFiles: FileWithPath[]) => {
@@ -57,15 +57,15 @@ export function ChemFileImport() {
       },
     });
     
-    console.log("file: ", fileName, ' is: ', chemFile);
+    console.log("file: ", fileName, ' is: ', sampleFile);
   return (
     <Paper elevation={3} sx={DROP_ZONE_SX} {...getRootProps()}>
       <input {...getInputProps()} />
       {isDragActive ? (
-        <Typography>Drop the CHEMISTRY CSV file here...</Typography>
+        <Typography>Drop the SAMPLE CSV file here...</Typography>
       ) : (
         <Typography>
-          Drag 'n' drop a CHEMISTRY CSV file here, or click to select one
+          Drag 'n' drop the SAMPLE CSV file here, or click to select one
         </Typography>
       )}
       <Button
@@ -78,4 +78,3 @@ export function ChemFileImport() {
     </Paper>
   );
 }
-

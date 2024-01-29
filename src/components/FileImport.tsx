@@ -2,31 +2,62 @@ import { useCallback } from "react";
 import { useDropzone, FileWithPath } from "react-dropzone";
 import { Button, Paper, Typography } from "@mui/material";
 import { DROP_ZONE_SX } from "../consts/FileImportConsts";
+import { useCurrentFileAtom, useCurrentFileNameAtom } from "../atoms/fileInputAtoms";
+import Papa from "papaparse";
+import { JSONObject } from "../types/fileStorage";
+import { useResultFileAtom } from "../atoms/resultAtoms";
 
-type Props = {
-  onFileUpload: (file: File) => void;
-}
 
-export function FileImport({ onFileUpload }: Props) {
+
+export function FileImport() {
+  const [currentFile, setCurrentFile] = useCurrentFileAtom();
+  const [currentFileName, setCurrentFileName] = useCurrentFileNameAtom();
+  const [, setResultFile] = useResultFileAtom();
+
+  const handleFileUpload = useCallback((file: File) => {
+    const reader = new FileReader();
+
+    reader.onload = function (e: ProgressEvent<FileReader>) {
+      const csvContent = e.target?.result as string;
+
+      if (csvContent) {
+        Papa.parse(csvContent, {
+          header: true,
+          dynamicTyping: true,
+          complete: function (result: Papa.ParseResult<JSONObject>) {
+            console.log(result.data);
+            console.log("You dropped a file!");
+            setCurrentFile(result);
+            setResultFile(result);
+          },
+        });
+        setCurrentFileName(file.name);
+      }
+    };
+
+    reader.readAsText(file);
+  }, [setCurrentFile, setCurrentFileName]);
+
   const onDrop = useCallback(
     (acceptedFiles: FileWithPath[]) => {
-      // Using array destructuring to get the first element
       const [file] = acceptedFiles;
 
       if (file) {
-        onFileUpload(file);
+        handleFileUpload(file);
       }
+      
     },
-    [onFileUpload]
-  );
-
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop,
-    accept: {
-      "text/csv" : []
-    },
-  });
-
+    [handleFileUpload]
+    );
+    
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({
+      onDrop,
+      accept: {
+        "text/csv" : []
+      },
+    });
+    
+    console.log("file: ", currentFileName, ' is: ', currentFile);
   return (
     <Paper elevation={3} sx={DROP_ZONE_SX} {...getRootProps()}>
       <input {...getInputProps()} />

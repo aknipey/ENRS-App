@@ -1,10 +1,12 @@
-import './App.css';
-import { FileImport } from './components/FileImport';
+import { FileImport } from "./components/FileImport";
+import { ResultsDownload } from "./components/ResultsDownload";
 
 function App() {
+
   return (
     <div className="App">
-      <FileImport onFileUpload={(file) => console.log('You dropped a file!')}/>
+      <FileImport/>
+      <ResultsDownload />
     </div>
   );
 }

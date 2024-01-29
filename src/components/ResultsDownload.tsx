@@ -1,16 +1,16 @@
 import { Button } from "@mui/material";
 import { useResultFileAtom } from "../atoms/resultAtoms";
-import { useFileNameAtom } from '../atoms/fileInputAtoms';
+import { useChemFileNameAtom } from '../atoms/fileInputAtoms';
 import Papa from "papaparse";
 
 export const ResultsDownload = () => {
   const [resultFile] = useResultFileAtom();
-  const [currentFileName] = useFileNameAtom();
+  const [currentChemFileName] = useChemFileNameAtom();
   const handleDownloadResults = () => {
     if (resultFile) {
       // Create a new CSV content with a different file name
       const newCsvContent = Papa.unparse(resultFile.data);
-      const newFileName = currentFileName.replace(/\.csv$/, "Results.csv");
+      const newChemFileName = currentChemFileName.replace(/\.csv$/, "Results.csv");
 
       console.log('result ', newCsvContent, '\nold: ', resultFile);
 
@@ -20,7 +20,7 @@ export const ResultsDownload = () => {
       // Create a link element and trigger a download
       const link = document.createElement("a");
       link.href = URL.createObjectURL(blob);
-      link.download = newFileName;
+      link.download = newChemFileName;
       link.click();
     }
   };

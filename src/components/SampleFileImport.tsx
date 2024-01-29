@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useDropzone, FileWithPath } from "react-dropzone";
 import { Button, Paper, Typography } from "@mui/material";
 import { DROP_ZONE_SX } from "../consts/FileImportConsts";
-import { useSampleFileAtom, useFileNameAtom } from "../atoms/fileInputAtoms";
+import { useSampleFileAtom, useSampleFileNameAtom } from "../atoms/fileInputAtoms";
 import Papa from "papaparse";
 import { JSONObject } from "../types/fileStorage";
 import { useResultFileAtom } from "../atoms/resultAtoms";
@@ -11,7 +11,7 @@ import { useResultFileAtom } from "../atoms/resultAtoms";
 
 export function SampleFileImport() {
   const [sampleFile, setSampleFile] = useSampleFileAtom();
-  const [fileName, setFileName] = useFileNameAtom();
+  const [sampleFileName, setSampleFileName] = useSampleFileNameAtom();
   const [, setResultFile] = useResultFileAtom();
 
   const handleFileUpload = useCallback((file: File) => {
@@ -31,12 +31,12 @@ export function SampleFileImport() {
             setResultFile(result);
           },
         });
-        setFileName(file.name);
+        setSampleFileName(file.name);
       }
     };
 
     reader.readAsText(file);
-  }, [setSampleFile, setFileName, setResultFile]);
+  }, [setSampleFile, setSampleFileName, setResultFile]);
 
   const onDrop = useCallback(
     (acceptedFiles: FileWithPath[]) => {
@@ -57,7 +57,7 @@ export function SampleFileImport() {
       },
     });
     
-    console.log("file: ", fileName, ' is: ', sampleFile);
+    console.log("file: ", sampleFileName, ' is: ', sampleFile);
   return (
     <Paper elevation={3} sx={DROP_ZONE_SX} {...getRootProps()}>
       <input {...getInputProps()} />
@@ -75,6 +75,7 @@ export function SampleFileImport() {
       >
         Select File
       </Button>
+      {sampleFileName && <Typography>Selected file: {sampleFileName}</Typography>}
     </Paper>
   );
 }

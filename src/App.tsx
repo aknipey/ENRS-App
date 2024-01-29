@@ -1,12 +1,10 @@
-import { ChemFileImport } from "./components/ChemFileImport";
+import { FileImports } from "./components/FileImports";
 import { ResultsDownload } from "./components/ResultsDownload";
-import { SampleFileImport } from "./components/SampleFileImport";
 
 function App() {
   return (
     <div className="App">
-      <ChemFileImport />
-      <SampleFileImport />
+      <FileImports />
       <ResultsDownload />
     </div>
   );

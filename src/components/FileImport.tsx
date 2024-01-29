@@ -36,7 +36,7 @@ export function FileImport() {
     };
 
     reader.readAsText(file);
-  }, [setCurrentFile, setCurrentFileName]);
+  }, [setCurrentFile, setCurrentFileName, setResultFile]);
 
   const onDrop = useCallback(
     (acceptedFiles: FileWithPath[]) => {
@@ -70,7 +70,6 @@ export function FileImport() {
       )}
       <Button
         variant="contained"
-        color="primary"
         component="span"
         style={{ marginTop: "10px" }}
       >

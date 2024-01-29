@@ -1,11 +1,11 @@
 import { Button } from "@mui/material";
 import { useResultFileAtom } from "../atoms/resultAtoms";
-import { useCurrentFileNameAtom } from '../atoms/fileInputAtoms';
+import { useFileNameAtom } from '../atoms/fileInputAtoms';
 import Papa from "papaparse";
 
 export const ResultsDownload = () => {
   const [resultFile] = useResultFileAtom();
-  const [currentFileName] = useCurrentFileNameAtom();
+  const [currentFileName] = useFileNameAtom();
   const handleDownloadResults = () => {
     if (resultFile) {
       // Create a new CSV content with a different file name

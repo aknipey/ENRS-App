@@ -1,14 +1,14 @@
 import { atom, useAtom } from "jotai";
 import { JSONObject } from "../types/fileStorage";
 
-export const currentFileAtom = atom<JSONObject>({});
+export const chemFileAtom = atom<JSONObject>({});
 
-export function useCurrentFileAtom() {
-  return useAtom(currentFileAtom);
+export function useChemFileAtom() {
+  return useAtom(chemFileAtom);
 }
 
-export const currentFileNameAtom = atom<string>("");
+export const fileNameAtom = atom<string>("");
 
-export function useCurrentFileNameAtom() {
-  return useAtom(currentFileNameAtom);
+export function useFileNameAtom() {
+  return useAtom(fileNameAtom);
 }

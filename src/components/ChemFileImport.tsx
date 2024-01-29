@@ -2,16 +2,16 @@ import { useCallback } from "react";
 import { useDropzone, FileWithPath } from "react-dropzone";
 import { Button, Paper, Typography } from "@mui/material";
 import { DROP_ZONE_SX } from "../consts/FileImportConsts";
-import { useCurrentFileAtom, useCurrentFileNameAtom } from "../atoms/fileInputAtoms";
+import { useChemFileAtom, useFileNameAtom } from "../atoms/fileInputAtoms";
 import Papa from "papaparse";
 import { JSONObject } from "../types/fileStorage";
 import { useResultFileAtom } from "../atoms/resultAtoms";
 
 
 
-export function FileImport() {
-  const [currentFile, setCurrentFile] = useCurrentFileAtom();
-  const [currentFileName, setCurrentFileName] = useCurrentFileNameAtom();
+export function ChemFileImport() {
+  const [chemFile, setChemFile] = useChemFileAtom();
+  const [fileName, setFileName] = useFileNameAtom();
   const [, setResultFile] = useResultFileAtom();
 
   const handleFileUpload = useCallback((file: File) => {
@@ -27,16 +27,16 @@ export function FileImport() {
           complete: function (result: Papa.ParseResult<JSONObject>) {
             console.log(result.data);
             console.log("You dropped a file!");
-            setCurrentFile(result);
+            setChemFile(result);
             setResultFile(result);
           },
         });
-        setCurrentFileName(file.name);
+        setFileName(file.name);
       }
     };
 
     reader.readAsText(file);
-  }, [setCurrentFile, setCurrentFileName, setResultFile]);
+  }, [setChemFile, setFileName, setResultFile]);
 
   const onDrop = useCallback(
     (acceptedFiles: FileWithPath[]) => {
@@ -57,7 +57,7 @@ export function FileImport() {
       },
     });
     
-    console.log("file: ", currentFileName, ' is: ', currentFile);
+    console.log("file: ", fileName, ' is: ', chemFile);
   return (
     <Paper elevation={3} sx={DROP_ZONE_SX} {...getRootProps()}>
       <input {...getInputProps()} />

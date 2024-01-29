@@ -10,7 +10,7 @@ export const ResultsDownload = () => {
     if (resultFile) {
       // Create a new CSV content with a different file name
       const newCsvContent = Papa.unparse(resultFile.data);
-      const newChemFileName = currentChemFileName.replace(/\.csv$/, "Results.csv");
+      const newChemFileName = currentChemFileName.replace(/\.csv$/, "-RESULTS.csv");
 
       console.log('result ', newCsvContent, '\nold: ', resultFile);
 

@@ -75,6 +75,7 @@ export function ChemFileImport() {
       >
         Select File
       </Button>
+      {chemFileName && <Typography>Selected file: {chemFileName}</Typography>}
     </Paper>
   );
 }

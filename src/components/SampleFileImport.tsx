@@ -10,7 +10,7 @@ import { useResultFileAtom } from "../atoms/resultAtoms";
 
 
 export function SampleFileImport() {
-  const [sampleFile, setSampleFile] = useSampleFileAtom();
+  const [, setSampleFile] = useSampleFileAtom();
   const [sampleFileName, setSampleFileName] = useSampleFileNameAtom();
   const [, setResultFile] = useResultFileAtom();
 
@@ -57,7 +57,6 @@ export function SampleFileImport() {
       },
     });
     
-    console.log("file: ", sampleFileName, ' is: ', sampleFile);
   return (
     <Paper elevation={3} sx={DROP_ZONE_SX} {...getRootProps()}>
       <input {...getInputProps()} />

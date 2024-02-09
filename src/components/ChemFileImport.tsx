@@ -10,7 +10,7 @@ import { useResultFileAtom } from "../atoms/resultAtoms";
 
 
 export function ChemFileImport() {
-  const [chemFile, setChemFile] = useChemFileAtom();
+  const [, setChemFile] = useChemFileAtom();
   const [chemFileName, setChemFileName] = useChemFileNameAtom();
   const [, setResultFile] = useResultFileAtom();
 
@@ -57,7 +57,6 @@ export function ChemFileImport() {
       },
     });
     
-    console.log("file: ", chemFileName, ' is: ', chemFile);
   return (
     <Paper elevation={3} sx={DROP_ZONE_SX} {...getRootProps()}>
       <input {...getInputProps()} />

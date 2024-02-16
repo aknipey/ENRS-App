@@ -1,8 +1,6 @@
 import { Dialog, Fab } from "@mui/material";
-import InfoIcon from "@mui/icons-material/Info";
 import { useInfoOpenAtom } from "../atoms/openCloseAtoms";
 import { InfoDialogue } from "./InfoDialogue";
-import { InfoOutlined } from "@mui/icons-material";
 
 export function InfoButton() {
   const [openInfo, setOpenInfo] = useInfoOpenAtom();

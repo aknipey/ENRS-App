@@ -1,4 +1,4 @@
-import { Standard } from "../../standardsTypes.tsx";
+import { Standard } from "../../standardsTypes.js";
 
 export const ADWG_2022_Health: Standard = {
   standardInfo: {

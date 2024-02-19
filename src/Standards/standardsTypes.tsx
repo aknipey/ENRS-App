@@ -8,11 +8,13 @@ export type ChemicalProfile = {
   chemName: string;
   value: number | RangeValue;
   units: string;
+  comments?: string;
   leached?: boolean;
 };
 
 export type StandardInfo = {
   matrix: "Soil" | "Water";
+  leached: boolean;
 };
 
 export type Standard = {

@@ -1,6 +1,6 @@
 import { Standard } from "../../standardsTypes";
 
-export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay: Standard =
+export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Silt: Standard =
   {
     standardInfo: {
       matrix: "Water",
@@ -98,7 +98,7 @@ export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay: S
       {
         chemCode: "71-43-2",
         chemName: "Benzene",
-        value: 35,
+        value: 30,
         units: "mg/L",
         comments: "",
         conditions: ">=8",

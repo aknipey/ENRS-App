@@ -9,6 +9,7 @@ export type ChemicalProfile = {
   value: number | RangeValue;
   units: string;
   comments?: string;
+  conditions?: string;
   leached?: boolean;
 };
 

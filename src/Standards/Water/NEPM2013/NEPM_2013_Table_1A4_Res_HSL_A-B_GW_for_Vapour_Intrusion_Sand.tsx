@@ -1,6 +1,6 @@
 import { Standard } from "../../standardsTypes";
 
-export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay: Standard =
+export const NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Sand: Standard =
   {
     standardInfo: {
       matrix: "Water",
@@ -82,7 +82,7 @@ export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay: S
       {
         chemCode: "71-43-2",
         chemName: "Benzene",
-        value: 30,
+        value: 0.8,
         units: "mg/L",
         comments: "",
         conditions: ">=2, <4",
@@ -90,7 +90,7 @@ export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay: S
       {
         chemCode: "71-43-2",
         chemName: "Benzene",
-        value: 30,
+        value: 0.8,
         units: "mg/L",
         comments: "",
         conditions: ">=4, <8",
@@ -98,7 +98,7 @@ export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay: S
       {
         chemCode: "71-43-2",
         chemName: "Benzene",
-        value: 35,
+        value: 0.9,
         units: "mg/L",
         comments: "",
         conditions: ">=8",
@@ -154,7 +154,7 @@ export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay: S
       {
         chemCode: "F1-BTEX",
         chemName: "F1",
-        value: -999,
+        value: 1,
         units: "mg/L",
         comments:
           "To obtain F1 subtract the sum of BTEX concentrations from the C6 - C10 fraction.",
@@ -163,7 +163,7 @@ export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay: S
       {
         chemCode: "F1-BTEX",
         chemName: "F1",
-        value: -999,
+        value: 1,
         units: "mg/L",
         comments:
           "To obtain F1 subtract the sum of BTEX concentrations from the C6 - C10 fraction.",
@@ -172,7 +172,7 @@ export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay: S
       {
         chemCode: "F1-BTEX",
         chemName: "F1",
-        value: -999,
+        value: 1,
         units: "mg/L",
         comments:
           "To obtain F1 subtract the sum of BTEX concentrations from the C6 - C10 fraction.",
@@ -181,7 +181,7 @@ export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay: S
       {
         chemCode: "F2-NAPHTHALENE",
         chemName: "F2",
-        value: -999,
+        value: 1,
         units: "mg/L",
         comments:
           "To obtain F2 subtract napthalene from the >C10 - C16 fraction.",
@@ -190,7 +190,7 @@ export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay: S
       {
         chemCode: "F2-NAPHTHALENE",
         chemName: "F2",
-        value: -999,
+        value: 1,
         units: "mg/L",
         comments:
           "To obtain F2 subtract napthalene from the >C10 - C16 fraction.",
@@ -199,7 +199,7 @@ export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay: S
       {
         chemCode: "F2-NAPHTHALENE",
         chemName: "F2",
-        value: -999,
+        value: 1,
         units: "mg/L",
         comments:
           "To obtain F2 subtract napthalene from the >C10 - C16 fraction.",

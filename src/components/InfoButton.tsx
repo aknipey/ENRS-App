@@ -1,5 +1,6 @@
 import { Dialog, Fab } from "@mui/material";
 import { useInfoOpenAtom } from "../atoms/openCloseAtoms";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { InfoDialogue } from "./InfoDialogue";
 
 export function InfoButton() {
@@ -16,10 +17,10 @@ export function InfoButton() {
   return (
     <>
       <Fab onClick={handleClickOpenInfo} size="medium">
-        {/*ADD INFO ICON without causing an error*/}
+        <InfoOutlinedIcon fontSize="large"/>
       </Fab>
       <Dialog open={openInfo} onClose={handleCloseInfo}>
-        <InfoDialogue />
+        <InfoDialogue/>
       </Dialog>
     </>
   );

@@ -22,3 +22,8 @@ export type Standard = {
   standardInfo: StandardInfo;
   values: ChemicalProfile[];
 };
+
+export type AllStandards = {
+  name: string;
+  value: AllStandards[] | Standard;
+}

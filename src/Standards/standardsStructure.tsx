@@ -95,8 +95,9 @@ import { PFAS_NEMP_2020_Interim_Marine_80 } from "./Water/PFAS/PFAS_NEMP_2020_In
 import { PFAS_NEMP_2020_Interim_Marine_90 } from "./Water/PFAS/PFAS_NEMP_2020_Interim_Marine_90";
 import { PFAS_NEMP_2020_Interim_Marine_95 } from "./Water/PFAS/PFAS_NEMP_2020_Interim_Marine_95";
 import { PFAS_NEMP_2020_Interim_Marine_99 } from "./Water/PFAS/PFAS_NEMP_2020_Interim_Marine_99";
+import { AllStandards } from "./standardsTypes";
 
-export const standardsStructure = [
+export const standardsStructure: AllStandards[] = [
   {
     name: "Soil",
     value: [

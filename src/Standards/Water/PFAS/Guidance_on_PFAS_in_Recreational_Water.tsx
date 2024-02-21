@@ -1,6 +1,6 @@
 import { Standard } from "../../standardsTypes";
 
-export const PFAS_NEMP_2020_Freshwater_80: Standard = {
+export const Guidance_on_PFAS_in_Recreational_Water: Standard = {
   standardInfo: {
     matrix: "Water",
     leached: false,

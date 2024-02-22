@@ -3,6 +3,6 @@ import { SelectedStandardsIds } from "../types/selectedStandardTypes";
 
 export const selectedStandardsIdsAtom = atom<SelectedStandardsIds>([]);
 
-export function useSelectedStandardsIdsAton() {
+export function useSelectedStandardsIdsAtom() {
   return useAtom(selectedStandardsIdsAtom);
 }

@@ -5,14 +5,12 @@ import { DROP_ZONE_SX } from "../consts/FileImportConsts";
 import { useSampleFileAtom, useSampleFileNameAtom } from "../atoms/fileInputAtoms";
 import Papa from "papaparse";
 import { JSONObject } from "../types/fileStorage";
-import { useResultFileAtom } from "../atoms/resultAtoms";
 
 
 
 export function SampleFileImport() {
   const [, setSampleFile] = useSampleFileAtom();
   const [sampleFileName, setSampleFileName] = useSampleFileNameAtom();
-  const [, setResultFile] = useResultFileAtom();
 
   const handleFileUpload = useCallback((file: File) => {
     const reader = new FileReader();
@@ -28,7 +26,6 @@ export function SampleFileImport() {
             console.log(result.data);
             console.log("You dropped a file!");
             setSampleFile(result);
-            setResultFile(result);
           },
         });
         setSampleFileName(file.name);
@@ -36,7 +33,7 @@ export function SampleFileImport() {
     };
 
     reader.readAsText(file);
-  }, [setSampleFile, setSampleFileName, setResultFile]);
+  }, [setSampleFile, setSampleFileName]);
 
   const onDrop = useCallback(
     (acceptedFiles: FileWithPath[]) => {

@@ -6,12 +6,13 @@ import {
   FormGroup,
   Typography,
   Button,
+  Divider,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { standardsStructure } from "../Standards/standardsStructure";
 import { AllStandards } from "../Standards/standardsTypes";
-import { useSelectedStandardsIdsAton } from "../atoms/standardsAtoms";
+import { useSelectedStandardsIdsAtom } from "../atoms/standardsAtoms";
 import {
   ACCORDION_SUMMARY_SX,
   ACCORDION_SX,
@@ -21,7 +22,7 @@ import { useCallback } from "react";
 
 export const StandardsSelector = () => {
   const [selectedStandardsIds, setSelectedStandardsIds] =
-    useSelectedStandardsIdsAton();
+    useSelectedStandardsIdsAtom();
 
   const handleStandardSelection = useCallback(
     (path: SelectedStandardsId, selectedIds: SelectedStandardsId[]) => {
@@ -45,7 +46,6 @@ export const StandardsSelector = () => {
     [setSelectedStandardsIds]
   );
 
-  // Recursive function to render the standards and sub-standards
   const renderStandards = useCallback(
     (standards: AllStandards[], level = 0, path: number[] = []) => {
       return standards.map((standard: AllStandards, index) => {
@@ -65,12 +65,12 @@ export const StandardsSelector = () => {
               }}
               sx={{
                 width: "100%",
-                backgroundColor: isSelected ? "primary.main" : "transparent", // Apply theme primary color if selected
-                color: isSelected ? "primary.contrastText" : "inherit", // Apply white color if selected
+                backgroundColor: isSelected ? "primary.main" : "transparent",
+                color: isSelected ? "primary.contrastText" : "inherit",
                 "&:hover": {
                   backgroundColor: isSelected
                     ? "primary.light"
-                    : "rgba(0, 0, 0, 0.3)", // Darken the button on hover if selected
+                    : "rgba(0, 0, 0, 0.3)",
                 },
               }}
             >
@@ -120,8 +120,12 @@ export const StandardsSelector = () => {
   );
 
   return (
-    <Card sx={{ height: "100%" }}>
+    <Card sx={{ height: "100%" }} elevation={2}>
       <Grid container spacing={2} padding={2}>
+        <Grid xs={12}>
+          <Typography variant="h6">Select Standards to Apply</Typography>
+          <Divider sx={{ bgcolor: "black", height: 2 }} />
+        </Grid>
         <Grid xs={12}>
           <FormGroup>{renderStandards(standardsStructure)}</FormGroup>
         </Grid>

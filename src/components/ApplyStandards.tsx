@@ -7,6 +7,8 @@ import {
   useSampleFileNameAtom,
 } from "../atoms/fileInputAtoms";
 import { useSelectedStandardsIdsAtom } from "../atoms/standardsAtoms";
+import { findExceedances } from "../utils/processing";
+import { JSONObject } from "../types/fileStorage";
 
 export const ApplyStandards = () => {
   const [chemFileAtom] = useChemFileAtom();
@@ -24,6 +26,13 @@ export const ApplyStandards = () => {
       selectedStandardsIds: selectedStandardsIdsAtom,
     });
     //!! I need to make a function that makes an appropriate result file and stores it. THis is where it goes
+    setResultFile(
+      findExceedances(
+        chemFileAtom as JSONObject,
+        sampleFileAtom as JSONObject,
+        selectedStandardsIdsAtom
+      )
+    );
   };
 
   return (

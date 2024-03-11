@@ -29,7 +29,7 @@ export const StandardsSelector = () => {
       console.log("Path: ", path.join("-"));
       console.log(
         "Selected: ",
-        selectedIds.map((id) => id.join("-"))
+        selectedIds
       );
       setSelectedStandardsIds((prevSelectedStandardsIds) => {
         const isSelected = prevSelectedStandardsIds.some((id) => {

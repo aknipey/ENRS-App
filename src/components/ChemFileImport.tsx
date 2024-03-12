@@ -22,8 +22,6 @@ export function ChemFileImport() {
             header: true,
             dynamicTyping: true,
             complete: function (result: Papa.ParseResult<JSONObject>) {
-              console.log(result.data);
-              console.log("You dropped a file!");
               setChemFile(result);
             },
           });

@@ -30,7 +30,6 @@ export type ChemData = {
 };
 
 export type FilteredChemData = ChemData & {
-  exceeded: boolean;
   exceeded_standards: string;
   exceeded_notes: string;
 };

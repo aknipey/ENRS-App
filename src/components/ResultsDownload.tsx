@@ -11,12 +11,7 @@ export const ResultsDownload = () => {
       return;
     }
     const newCsvContent = Papa.unparse(resultFile.data);
-    const newChemFileName = currentChemFileName.replace(
-      /\.CSV$/,
-      "-RESULTS.csv"
-    );
-
-    console.log("result ", newCsvContent, "\nold: ", resultFile);
+    const newFileName = currentChemFileName.replace(/\.CSV$/, "-RESULTS.csv");
 
     // Create a Blob with the new CSV content
     const blob = new Blob([newCsvContent], { type: "text/csv" });
@@ -24,7 +19,7 @@ export const ResultsDownload = () => {
     // Create a link element and trigger a download
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.download = newChemFileName;
+    link.download = newFileName;
     link.click();
   };
 

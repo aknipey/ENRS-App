@@ -1,4 +1,3 @@
-import { profile } from "console";
 import { standardsStructure } from "../Standards/standardsStructure";
 import {
   AllStandards,
@@ -42,7 +41,6 @@ export const findExceedances = (
 
   const filteredChemData: FilteredChemData[] = chemData.map(
     (chem: ChemData) => {
-      let exceeded = false;
       let exceeded_standards = "";
       let exceeded_notes = "";
       let resultUnit = chem.Result_Unit;
@@ -75,22 +73,16 @@ export const findExceedances = (
             }
           }
 
-          if (chem.ChemCode.includes("71-43-2")) {
-            console.log("Result unit: ", resultUnit);
-          }
-
           if (chem.ChemCode.includes("pH")) {
             if (
               result < (profile.value as RangeValue).min ||
               result > (profile.value as RangeValue).max
             ) {
-              exceeded = true;
               exceeded_standards += `${standard.name}, `;
               exceeded_notes += `Outside range for ${profile.chemName}. `;
             }
           } else if (chem.ChemCode.includes("DO%Sat")) {
             if (result < (profile.value as number)) {
-              exceeded = true;
               exceeded_standards += `${standard.name}, `;
               exceeded_notes += `Exceeded ${profile.chemName} ${standard.name} standard of ${profile.value} ${profile.units} with a result of ${result} ${profile.units}.\n`;
             }
@@ -118,7 +110,6 @@ export const findExceedances = (
               }
             }
             if (result > (profile.value as number)) {
-              exceeded = true;
               exceeded_standards += `${standard.name}, `;
               exceeded_notes += `Exceeded ${profile.chemName} ${standard.name} standard of ${profile.value} ${profile.units} with a result of ${chem.Result} ${resultUnit}. `;
               console.log(exceeded_notes);
@@ -131,16 +122,14 @@ export const findExceedances = (
       return {
         ...chem,
         Result_Unit: resultUnit,
-        exceeded,
         exceeded_standards,
         exceeded_notes,
       };
     }
   );
 
-  console.log(JSON.stringify(filteredChemData).replace(/[^\x00-\x7F]/g, "u"));
-
   return JSON.parse(
+    // eslint-disable-next-line no-control-regex
     JSON.stringify({ data: filteredChemData }).replace(/[^\x00-\x7F]/g, "u")
   );
 };

@@ -45,6 +45,7 @@ export const findExceedances = (
       let exceeded = false;
       let exceeded_standards = "";
       let exceeded_notes = "";
+      let resultUnit = chem.Result_Unit;
 
       standards.forEach((standard: AllStandards) => {
         const chemProfiles = (standard.value as Standard).values.filter(
@@ -62,10 +63,21 @@ export const findExceedances = (
             exceeded_notes += `No ${standard.name} standard for ${profile.chemName}. `;
             return;
           }
-
           let result = Number(chem.Result);
 
           //! Special Cases with pH and O2
+          if (resultUnit.charCodeAt(0) > 127) {
+            if (resultUnit.includes("g/L")) {
+              resultUnit = "ug/L";
+            }
+            if (resultUnit.includes("g/kg")) {
+              resultUnit = "ug/kg";
+            }
+          }
+
+          if (chem.ChemCode.includes("71-43-2")) {
+            console.log("Result unit: ", resultUnit);
+          }
 
           if (chem.ChemCode.includes("pH")) {
             if (
@@ -83,20 +95,15 @@ export const findExceedances = (
               exceeded_notes += `Exceeded ${profile.chemName} ${standard.name} standard of ${profile.value} ${profile.units} with a result of ${result} ${profile.units}.\n`;
             }
           } else if (chem.Prefix !== "<") {
-            if (profile.units !== chem.Result_Unit) {
-              if (
-                (chem.Result_Unit.includes("ug") ||
-                  chem.Result_Unit.includes("μg")) &&
-                profile.units.includes("mg")
-              ) {
+            if (profile.units !== resultUnit) {
+              if (resultUnit.includes("ug") && profile.units.includes("mg")) {
                 result = result / 1000;
               } else if (
-                (profile.units.includes("ug") ||
-                  profile.units.includes("μg")) &&
-                chem.Result_Unit.includes("mg")
+                profile.units.includes("ug") &&
+                resultUnit.includes("mg")
               ) {
                 result = result * 1000;
-              } else if (chem.Result_Unit === "%") {
+              } else if (resultUnit === "%") {
                 return;
               } else {
                 console.log(
@@ -105,7 +112,7 @@ export const findExceedances = (
                   "profile units: ",
                   profile.units,
                   "chem.Result_Unit: ",
-                  chem.Result_Unit
+                  resultUnit
                 );
                 return;
               }
@@ -113,15 +120,17 @@ export const findExceedances = (
             if (result > (profile.value as number)) {
               exceeded = true;
               exceeded_standards += `${standard.name}, `;
-              exceeded_notes += `Exceeded ${profile.chemName} ${standard.name} standard of ${profile.value} ${profile.units} with a result of ${chem.Result} ${chem.Result_Unit}. `;
+              exceeded_notes += `Exceeded ${profile.chemName} ${standard.name} standard of ${profile.value} ${profile.units} with a result of ${chem.Result} ${resultUnit}. `;
               console.log(exceeded_notes);
             }
           }
         });
       });
 
+      chem.Result_Unit = resultUnit;
       return {
         ...chem,
+        Result_Unit: resultUnit,
         exceeded,
         exceeded_standards,
         exceeded_notes,
@@ -129,8 +138,9 @@ export const findExceedances = (
     }
   );
 
-  console.log(filteredChemData);
+  console.log(JSON.stringify(filteredChemData).replace(/[^\x00-\x7F]/g, "u"));
 
-  //! FIGURE OUR RETURN TYPE
-  return filteredChemData;
+  return JSON.parse(
+    JSON.stringify({ data: filteredChemData }).replace(/[^\x00-\x7F]/g, "u")
+  );
 };

@@ -1825,7 +1825,7 @@ export const ADWG_2022_Health: Standard = {
       chemCode: "Microcystins",
       chemName: "Microcystins",
       value: 1.3,
-      units: "μg/L",
+      units: "ug/L",
       comments: "",
     },
     {

@@ -12,7 +12,7 @@ export const ResultsDownload = () => {
     }
     const newCsvContent = Papa.unparse(resultFile.data);
     const newChemFileName = currentChemFileName.replace(
-      /\.csv$/,
+      /\.CSV$/,
       "-RESULTS.csv"
     );
 

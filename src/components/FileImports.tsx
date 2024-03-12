@@ -7,13 +7,19 @@ export function FileImports() {
   return (
     <Grid container spacing={2}>
       <Grid xs={6}>
-        <SampleFileImport />
+        <StandardsSelector />
       </Grid>
       <Grid xs={6}>
-        <ChemFileImport />
-      </Grid>
-      <Grid xs={12}>
-        <StandardsSelector />
+        <div>
+          <Grid container spacing={2}>
+            <Grid xs={12}>
+              <SampleFileImport />
+            </Grid>
+            <Grid xs={12}>
+              <ChemFileImport />
+            </Grid>
+          </Grid>
+        </div>
       </Grid>
     </Grid>
   );

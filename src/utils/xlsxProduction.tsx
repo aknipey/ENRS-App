@@ -4,6 +4,7 @@ import {
   EXCEEDED_STANDARDS_COL,
   HEADER_FORMATTING,
   PREFIX_COL,
+  RESULT_COL,
 } from "../consts/xlsxFormattingConsts";
 
 export const applyHeaderFormatting = (ws: XLSXStyle.WorkSheet): void => {
@@ -11,7 +12,7 @@ export const applyHeaderFormatting = (ws: XLSXStyle.WorkSheet): void => {
     ws["!ref"] as string
   );
 
-  // Apply bold font and blue colour to header row
+  // Bold, blue header
   for (let col = headerRange.s.c; col <= headerRange.e.c; col++) {
     const headerCellIndex: string = XLSXStyle.utils.encode_cell({
       r: headerRange.s.r,
@@ -20,35 +21,33 @@ export const applyHeaderFormatting = (ws: XLSXStyle.WorkSheet): void => {
     ws[headerCellIndex].s = HEADER_FORMATTING;
   }
 
-  // Loop through each row starting from the second row (index 1)
+  // Red rows when exceeded
   for (let row = headerRange.s.r + 1; row <= headerRange.e.r; row++) {
     const cellValue =
       ws[XLSXStyle.utils.encode_cell({ r: row, c: EXCEEDED_STANDARDS_COL })]?.v;
 
     if (cellValue) {
-      // Apply red background color to all cells in the row
       for (let col = headerRange.s.c; col <= headerRange.e.c; col++) {
         const cellIndex: string = XLSXStyle.utils.encode_cell({
           r: row,
           c: col,
         });
-        ws[cellIndex].s = EXCEEDED_ROW_FORMATTING; // Red background color
+        ws[cellIndex].s = EXCEEDED_ROW_FORMATTING;
       }
     }
   }
 
-  // Loop through each row starting from the second row (index 1)
+  // Bold the result if not negligible
   for (let row = headerRange.s.r + 1; row <= headerRange.e.r; row++) {
     const negligible =
       ws[XLSXStyle.utils.encode_cell({ r: row, c: PREFIX_COL })]?.v === "<";
 
     if (!negligible) {
-      // Bold the value
       const cellIndex: string = XLSXStyle.utils.encode_cell({
         r: row,
-        c: 4,
+        c: RESULT_COL,
       });
-      ws[cellIndex].s = { font: { bold: true }, ...ws[cellIndex].s }; // Bold
+      ws[cellIndex].s = { font: { bold: true }, ...ws[cellIndex].s };
     }
   }
 };

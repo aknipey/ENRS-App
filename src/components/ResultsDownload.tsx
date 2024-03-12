@@ -1,15 +1,37 @@
 import { Button } from "@mui/material";
-import { useResultFileAtom } from "../atoms/resultAtoms";
-import { useChemFileNameAtom } from "../atoms/fileInputAtoms";
+import { useAllInputsAtom, useResultFileAtom } from "../atoms/resultAtoms";
+import {
+  useChemFileNameAtom,
+  useSampleFileNameAtom,
+} from "../atoms/fileInputAtoms";
 import Papa from "papaparse";
 import * as XLSXStyle from "xlsx-js-style";
 import { applyHeaderFormatting, s2ab } from "../utils/xlsxProduction";
+import { useSelectedStandardsIdsAtom } from "../atoms/standardsAtoms";
+import { useMemo } from "react";
 
 export const ResultsDownload = () => {
   const [resultFile] = useResultFileAtom();
   const [currentChemFileName] = useChemFileNameAtom();
+  const [allInputs] = useAllInputsAtom();
+  const [currentSampleFileName] = useSampleFileNameAtom();
+  const [selectedStandardsIdsAtom] = useSelectedStandardsIdsAtom();
+
+  const unchangedInputs = useMemo(() => {
+    return (
+      allInputs.chemFileName === currentChemFileName &&
+      allInputs.sampleFileName === currentSampleFileName &&
+      allInputs.selectedStandardsIds === selectedStandardsIdsAtom
+    );
+  }, [
+    allInputs,
+    currentChemFileName,
+    currentSampleFileName,
+    selectedStandardsIdsAtom,
+  ]);
+
   const handleDownloadResults = () => {
-    if (!resultFile) {
+    if (!resultFile || !unchangedInputs) {
       return;
     }
     const newCsvContent = Papa.unparse(resultFile.data);
@@ -50,11 +72,15 @@ export const ResultsDownload = () => {
   return (
     <Button
       variant="contained"
-      color="primary"
       component="span"
-      style={{ marginTop: "10px" }}
+      style={{
+        marginTop: "10px",
+        backgroundColor: !resultFile || !unchangedInputs
+          ? undefined
+          : "#4caf50",
+      }}
       onClick={handleDownloadResults}
-      disabled={!resultFile}
+      disabled={!resultFile || !unchangedInputs}
     >
       Download Results
     </Button>

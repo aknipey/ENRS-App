@@ -38,9 +38,14 @@ export const ApplyStandards = () => {
   return (
     <Button
       variant="contained"
-      color="primary"
       component="span"
-      style={{ marginTop: "10px" }}
+      style={{
+        marginTop: "10px",
+        backgroundColor:
+          !chemFileAtom || !sampleFileAtom || !selectedStandardsIdsAtom.length
+            ? undefined
+            : "#4caf50",
+      }}
       onClick={handleApplyStandards}
       disabled={
         !chemFileAtom || !sampleFileAtom || !selectedStandardsIdsAtom.length

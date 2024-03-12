@@ -7,7 +7,7 @@ import {
   useSampleFileNameAtom,
 } from "../atoms/fileInputAtoms";
 import { useSelectedStandardsIdsAtom } from "../atoms/standardsAtoms";
-import { findExceedances } from "../utils/processing";
+import { findExceedances } from "../utils/standardProcessing";
 import { JSONObject } from "../types/fileStorage";
 
 export const ApplyStandards = () => {

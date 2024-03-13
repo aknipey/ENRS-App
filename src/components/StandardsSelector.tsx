@@ -25,12 +25,7 @@ export const StandardsSelector = () => {
     useSelectedStandardsIdsAtom();
 
   const handleStandardSelection = useCallback(
-    (path: SelectedStandardsId, selectedIds: SelectedStandardsId[]) => {
-      console.log("Path: ", path.join("-"));
-      console.log(
-        "Selected: ",
-        selectedIds
-      );
+    (path: SelectedStandardsId) => {
       setSelectedStandardsIds((prevSelectedStandardsIds) => {
         const isSelected = prevSelectedStandardsIds.some((id) => {
           return id.join("-") === path.join("-");
@@ -60,8 +55,7 @@ export const StandardsSelector = () => {
             <Button
               key={newPath.join("-")}
               onClick={(event) => {
-                console.log("Clicked on: ", newPath.join("-"));
-                handleStandardSelection(newPath, selectedStandardsIds);
+                handleStandardSelection(newPath);
               }}
               sx={{
                 width: "100%",

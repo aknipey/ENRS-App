@@ -2,10 +2,16 @@ import { standardsStructure } from "../Standards/standardsStructure";
 import {
   AllStandards,
   ChemicalProfile,
+  Matrix,
   RangeValue,
   Standard,
 } from "../Standards/standardsTypes";
-import { ChemData, FilteredChemData, JSONObject } from "../types/fileStorage";
+import {
+  ChemData,
+  FilteredChemData,
+  JSONObject,
+  SampleData,
+} from "../types/fileStorage";
 import {
   SelectedStandardsId,
   SelectedStandardsIds,
@@ -28,6 +34,22 @@ const selectStandards = (
   return selectedStandards;
 };
 
+export const findSampleMatrix = (
+  chem: ChemData,
+  sampleData: SampleData[]
+): Matrix => {
+  const sample = sampleData.find(
+    (sample: JSONObject) => String(sample.SampleCode) === chem.SampleCode
+  );
+
+  if (!sample) {
+    console.log("Sample not found for ", chem);
+    return "Error" as Matrix;
+  }
+
+  return sample.Matrix_Type;
+};
+
 export const findExceedances = (
   chemFile: JSONObject,
   sampleFile: JSONObject,
@@ -36,16 +58,34 @@ export const findExceedances = (
   const standards = selectStandards(selectedStandardsIds);
 
   const chemData = [...chemFile.data] as ChemData[];
-  const sampleData = [...sampleFile.data];
+  const sampleData = [...sampleFile.data] as SampleData[];
   //! Need to look at special cases from the sample file
 
   const filteredChemData: FilteredChemData[] = chemData.map(
-    (chem: ChemData) => {
+    (chem: ChemData, i: number) => {
       let exceeded_standards = "";
       let exceeded_notes = "";
       let resultUnit = chem.Result_Unit;
-
+      const sampleMatrix = findSampleMatrix(chem, sampleData);
+      if (sampleMatrix === ("Error" as Matrix)) {
+        console.log("Matrix Error at chemisty file row", i + 2);
+        return {
+          ...chem,
+          Result_Unit: resultUnit,
+          exceeded_standards,
+          exceeded_notes,
+        };
+      }
       standards.forEach((standard: AllStandards) => {
+        if (
+          (
+            standard.value as Standard
+          ).standardInfo.matrix.toLocaleLowerCase() !==
+          sampleMatrix.toLocaleLowerCase()
+        ) {
+          return;
+        }
+
         const chemProfiles = (standard.value as Standard).values.filter(
           (profile: ChemicalProfile) => {
             return profile.chemCode === chem.ChemCode;
@@ -58,12 +98,11 @@ export const findExceedances = (
 
         chemProfiles.forEach((profile: ChemicalProfile) => {
           if (profile.value === -999) {
-            exceeded_notes += `No ${standard.name} standard for ${profile.chemName}. `;
+            exceeded_notes += `- No ${standard.name} standard for ${profile.chemName}. -`;
             return;
           }
           let result = Number(chem.Result);
 
-          //! Special Cases with pH and O2
           if (resultUnit.charCodeAt(0) > 127) {
             if (resultUnit.includes("g/L")) {
               resultUnit = "ug/L";
@@ -73,18 +112,24 @@ export const findExceedances = (
             }
           }
 
-          if (chem.ChemCode.includes("pH")) {
+          //! Special Cases with pH and O2
+          if (chem.ChemCode.includes("pH_")) {
             if (
-              result < (profile.value as RangeValue).min ||
-              result > (profile.value as RangeValue).max
+              (result < (profile.value as RangeValue).min ||
+                result > (profile.value as RangeValue).max) &&
+              resultUnit !== "%"
             ) {
               exceeded_standards += `${standard.name}, `;
-              exceeded_notes += `Outside range for ${profile.chemName}. `;
+              exceeded_notes += `- Outside ${profile.chemName} range of ${
+                (profile.value as RangeValue).min
+              }-${
+                (profile.value as RangeValue).max
+              } with a result of ${result}. -`;
             }
           } else if (chem.ChemCode.includes("DO%Sat")) {
-            if (result < (profile.value as number)) {
+            if (result < (profile.value as number) && resultUnit !== "%") {
               exceeded_standards += `${standard.name}, `;
-              exceeded_notes += `Exceeded ${profile.chemName} ${standard.name} standard of ${profile.value} ${profile.units} with a result of ${result} ${profile.units}.\n`;
+              exceeded_notes += `- Exceeded ${profile.chemName} ${standard.name} standard of ${profile.value} ${profile.units} with a result of ${result} ${profile.units} -`;
             }
           } else if (chem.Prefix !== "<") {
             if (profile.units !== resultUnit) {
@@ -111,8 +156,15 @@ export const findExceedances = (
             }
             if (result > (profile.value as number)) {
               exceeded_standards += `${standard.name}, `;
-              exceeded_notes += `Exceeded ${profile.chemName} ${standard.name} standard of ${profile.value} ${profile.units} with a result of ${chem.Result} ${resultUnit}. `;
-              console.log(exceeded_notes);
+              exceeded_notes += `- Exceeded ${profile.chemName} ${standard.name} standard of ${profile.value} ${profile.units} with a result of ${chem.Result} ${resultUnit}. -`;
+            }
+
+            if (profile.chemName !== chem.OriginalChemName) {
+              exceeded_notes += `- Chemical name mismatch: '${chem.OriginalChemName}' in data file, '${profile.chemName}' in standard. -`;
+            }
+
+            if (profile.comments) {
+              exceeded_notes += `- ${profile.comments} -`;
             }
           }
         });

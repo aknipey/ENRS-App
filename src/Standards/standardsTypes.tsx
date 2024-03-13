@@ -13,8 +13,10 @@ export type ChemicalProfile = {
   leached?: boolean;
 };
 
+export type Matrix = "Soil" | "Water" | "Error" | "Gas" | "SoilGas";
+
 export type StandardInfo = {
-  matrix: "Soil" | "Water";
+  matrix: Matrix;
   leached: boolean;
 };
 

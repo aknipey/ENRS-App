@@ -121,14 +121,14 @@ export const NSW_2014_Excavated_Natural_Material_Absolute_Max: Standard = {
     {
       chemCode: "pH_Field",
       chemName: "pH Field",
-      value: 4.5,
+      value: {min: 4.5, max: 10},
       units: "-",
       comments: "",
     },
     {
       chemCode: "pH_Lab",
       chemName: "pH Lab",
-      value: 4.5,
+      value: {min: 4.5, max: 10},
       units: "-",
       comments: "",
     },

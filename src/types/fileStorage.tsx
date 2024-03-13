@@ -1,3 +1,4 @@
+import { Matrix } from "../Standards/standardsTypes";
 import { SelectedStandardsIds } from "./selectedStandardTypes";
 
 export type JSONObject = Record<string, any>;
@@ -28,6 +29,21 @@ export type ChemData = {
   UCL: string;
   LCL: string;
 };
+
+export type SampleData = {
+  SampleCode: string;
+  Sampled_Date_Time?: string;
+  Field_ID?: string;
+  Depth?: string;
+  Matrix_Type: Matrix;
+  Sample_Type: string;
+  Parent_Sample?: string;
+  SDG: string;
+  Lab_Name: string;
+  Lab_SampleID: string;
+  Lab_Comments?: string;
+  Lab_Report_Number: string;
+}
 
 export type FilteredChemData = ChemData & {
   exceeded_standards: string;

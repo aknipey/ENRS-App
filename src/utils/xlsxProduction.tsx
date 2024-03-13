@@ -5,6 +5,7 @@ import {
   HEADER_FORMATTING,
   PREFIX_COL,
   RESULT_COL,
+  RESULT_UNIT_COL,
 } from "../consts/xlsxFormattingConsts";
 
 export const applyHeaderFormatting = (ws: XLSXStyle.WorkSheet): void => {
@@ -40,7 +41,9 @@ export const applyHeaderFormatting = (ws: XLSXStyle.WorkSheet): void => {
   // Bold the result if not negligible
   for (let row = headerRange.s.r + 1; row <= headerRange.e.r; row++) {
     const negligible =
-      ws[XLSXStyle.utils.encode_cell({ r: row, c: PREFIX_COL })]?.v === "<";
+      ws[XLSXStyle.utils.encode_cell({ r: row, c: PREFIX_COL })]?.v === "<" ||
+      ws[XLSXStyle.utils.encode_cell({ r: row, c: RESULT_UNIT_COL })]?.v ===
+        "%";
 
     if (!negligible) {
       const cellIndex: string = XLSXStyle.utils.encode_cell({

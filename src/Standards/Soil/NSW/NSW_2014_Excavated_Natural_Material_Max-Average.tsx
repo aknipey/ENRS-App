@@ -93,14 +93,14 @@ export const NSW_2014_Excavated_Natural_Material_Max_Average: Standard = {
     {
       chemCode: "pH_Field",
       chemName: "pH Field",
-      value: 5,
+      value: {min: 5, max: 9},
       units: "-",
       comments: "",
     },
     {
       chemCode: "pH_Lab",
       chemName: "pH Lab",
-      value: 5,
+      value: {min: 5, max: 9},
       units: "-",
       comments: "",
     },

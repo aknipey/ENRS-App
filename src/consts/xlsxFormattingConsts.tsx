@@ -8,4 +8,4 @@ export const HEADER_FORMATTING = {
   fill: { fgColor: { rgb: "ADD8E6" } },
 };
 
-export const EXCEEDED_ROW_FORMATTING = { fill: { fgColor: { rgb: "FF0000" } } };
+export const EXCEEDED_ROW_FORMATTING = { font: { color: { rgb: "FF0000" } } };

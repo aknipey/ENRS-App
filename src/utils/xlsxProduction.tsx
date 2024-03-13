@@ -22,7 +22,7 @@ export const applyHeaderFormatting = (ws: XLSXStyle.WorkSheet): void => {
     ws[headerCellIndex].s = HEADER_FORMATTING;
   }
 
-  // Red rows when exceeded
+  // Red text when exceeded
   for (let row = headerRange.s.r + 1; row <= headerRange.e.r; row++) {
     const cellValue =
       ws[XLSXStyle.utils.encode_cell({ r: row, c: EXCEEDED_STANDARDS_COL })]?.v;
@@ -50,7 +50,10 @@ export const applyHeaderFormatting = (ws: XLSXStyle.WorkSheet): void => {
         r: row,
         c: RESULT_COL,
       });
-      ws[cellIndex].s = { font: { bold: true }, ...ws[cellIndex].s };
+      ws[cellIndex].s = {
+        ...ws[cellIndex].s,
+        font: { ...ws[cellIndex].s?.font, bold: true },
+      };
     }
   }
 };

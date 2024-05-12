@@ -14,5 +14,5 @@ export const THEME = createTheme({
   },
   typography: {
     fontFamily: "Arial",
-  }
-})
+  },
+});

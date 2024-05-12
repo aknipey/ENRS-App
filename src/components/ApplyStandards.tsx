@@ -25,7 +25,7 @@ export const ApplyStandards = () => {
       sampleFileName: currentSampleFileName,
       selectedStandardsIds: selectedStandardsIdsAtom,
     });
-    //!! I need to make a function that makes an appropriate result file and stores it. THis is where it goes
+
     setResultFile(
       findExceedances(
         chemFileAtom as JSONObject,

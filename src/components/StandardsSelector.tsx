@@ -118,10 +118,10 @@ export const StandardsSelector = () => {
     <Card sx={{ height: "100%" }} elevation={2}>
       <Grid container spacing={2} padding={2}>
         <Grid xs={12}>
+          <Typography variant="h6" fontWeight={"bold"}>Select Standards to Apply</Typography>
           <QuickSelect/>
         </Grid>
         <Grid xs={12}>
-          <Typography variant="h6">Select Standards to Apply</Typography>
           <Divider sx={{ bgcolor: "black", height: 2 }} />
         </Grid>
         <Grid xs={12}>

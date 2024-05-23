@@ -4,11 +4,13 @@ import {
   useChemFileNameAtom,
   useSampleFileNameAtom,
 } from "../atoms/fileInputAtoms";
-import Papa from "papaparse";
-import * as XLSXStyle from "xlsx-js-style";
-import { applyHeaderFormatting, s2ab } from "../utils/xlsxProduction";
+// import Papa from "papaparse";
+// import * as XLSXStyle from "xlsx-js-style";
+// import { applyHeaderFormatting, s2ab } from "../utils/xlsxProduction";
 import { useSelectedStandardsIdsAtom } from "../atoms/standardsAtoms";
 import { useMemo } from "react";
+import ExcelJS from "exceljs";
+import { editTemplateXLSX } from "../utils/xlsxProduction";
 
 export const ResultsDownload = () => {
   const [resultFile] = useResultFileAtom();
@@ -30,43 +32,80 @@ export const ResultsDownload = () => {
     selectedStandardsIdsAtom,
   ]);
 
-  const handleDownloadResults = () => {
+  // const handleDownloadResults = () => {
+  //   if (!resultFile || !unchangedInputs) {
+  //     return;
+  //   }
+  //   const newCsvContent = Papa.unparse(resultFile.data);
+  //   const newFileName = currentChemFileName.replace(/\.CSV$/, "-RESULTS.xlsx");
+
+  //   // Convert CSV data to XLSX format
+  //   const parsedCsv = Papa.parse(newCsvContent, { header: true });
+  //   const ws: XLSXStyle.WorkSheet = XLSXStyle.utils.json_to_sheet(
+  //     parsedCsv.data
+  //   );
+  //   const wb: XLSXStyle.WorkBook = XLSXStyle.utils.book_new();
+
+  //   // Apply Formatting
+  //   applyHeaderFormatting(ws);
+
+  //   XLSXStyle.utils.book_append_sheet(wb, ws, "Sheet1");
+
+  //   // Create XLSX file with formatting
+  //   const wopts: XLSXStyle.WritingOptions = {
+  //     bookType: "xlsx",
+  //     bookSST: false,
+  //     type: "binary",
+  //   };
+  //   const wbout: string = XLSXStyle.write(wb, wopts);
+
+  //   // Convert binary string to Blob
+  //   const blob: Blob = new Blob([s2ab(wbout)], {
+  //     type: "application/octet-stream",
+  //   });
+
+  //   // Create a link element and trigger a download
+  //   const link = document.createElement("a");
+  //   link.href = URL.createObjectURL(blob);
+  //   link.download = newFileName;
+  //   link.click();
+  // };
+
+  const handleDownloadResults2 = async () => {
     if (!resultFile || !unchangedInputs) {
       return;
     }
-    const newCsvContent = Papa.unparse(resultFile.data);
-    const newFileName = currentChemFileName.replace(/\.CSV$/, "-RESULTS.xlsx");
 
-    // Convert CSV data to XLSX format
-    const parsedCsv = Papa.parse(newCsvContent, { header: true });
-    const ws: XLSXStyle.WorkSheet = XLSXStyle.utils.json_to_sheet(
-      parsedCsv.data
-    );
-    const wb: XLSXStyle.WorkBook = XLSXStyle.utils.book_new();
+    try {
+      const response = await fetch("/ENRSxxxx_Soil-Tables.xlsx"); // Path to your file in the public folder
+      const data = await response.arrayBuffer();
 
-    // Apply Formatting
-    applyHeaderFormatting(ws);
+      const workbook = new ExcelJS.Workbook();
+      await workbook.xlsx.load(data);
 
-    XLSXStyle.utils.book_append_sheet(wb, ws, "Sheet1");
+      const worksheet = workbook.getWorksheet("General");
+      const cell = worksheet!.getCell("B5");
+      cell.value = "AAAAAAAAAA";
+      editTemplateXLSX(worksheet as ExcelJS.Worksheet);
 
-    // Create XLSX file with formatting
-    const wopts: XLSXStyle.WritingOptions = {
-      bookType: "xlsx",
-      bookSST: false,
-      type: "binary",
-    };
-    const wbout: string = XLSXStyle.write(wb, wopts);
+      const buffer = await workbook.xlsx.writeBuffer();
+      const blob = new Blob([buffer], {
+        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      });
+      const fileName = "modified_file.xlsx";
 
-    // Convert binary string to Blob
-    const blob: Blob = new Blob([s2ab(wbout)], {
-      type: "application/octet-stream",
-    });
-
-    // Create a link element and trigger a download
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = newFileName;
-    link.click();
+      // Create a download link
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+    } catch (error) {
+      console.error("Error fetching or processing file:", error);
+    }
   };
 
   return (
@@ -75,11 +114,10 @@ export const ResultsDownload = () => {
       component="span"
       style={{
         marginTop: "10px",
-        backgroundColor: !resultFile || !unchangedInputs
-          ? undefined
-          : "#4caf50",
+        backgroundColor:
+          !resultFile || !unchangedInputs ? undefined : "#4caf50",
       }}
-      onClick={handleDownloadResults}
+      onClick={handleDownloadResults2}
       disabled={!resultFile || !unchangedInputs}
     >
       Download Results

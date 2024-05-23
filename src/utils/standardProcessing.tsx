@@ -67,8 +67,18 @@ export const findExceedances = (
       let exceeded_notes = "";
       let resultUnit = chem.Result_Unit;
       const sampleMatrix = findSampleMatrix(chem, sampleData);
+
+      // Returning if not a regular result
+      if (chem.Result_Type !== "REG") {
+        return {
+          ...chem,
+          exceeded_standards,
+          exceeded_notes,
+        };
+      }
+
       if (sampleMatrix === ("Error" as Matrix)) {
-        console.log("Matrix Error at chemisty file row", i + 2);
+        console.log("Matrix Error at chemistry file row", i + 2);
         return {
           ...chem,
           Result_Unit: resultUnit,
@@ -76,7 +86,9 @@ export const findExceedances = (
           exceeded_notes,
         };
       }
+
       standards.forEach((standard: AllStandards) => {
+        // Check matrices match
         if (
           (
             standard.value as Standard
@@ -103,6 +115,8 @@ export const findExceedances = (
           }
           let result = Number(chem.Result);
 
+          // Filtering out mu.
+          //! Note: This will replace all non-ascii starting characters with 'u'
           if (resultUnit.charCodeAt(0) > 127) {
             if (resultUnit.includes("g/L")) {
               resultUnit = "ug/L";
@@ -112,7 +126,7 @@ export const findExceedances = (
             }
           }
 
-          //! Special Cases with pH and O2
+          // Special Cases with pH and O2
           if (chem.ChemCode.includes("pH_")) {
             if (
               (result < (profile.value as RangeValue).min ||
@@ -140,8 +154,6 @@ export const findExceedances = (
                 resultUnit.includes("mg")
               ) {
                 result = result * 1000;
-              } else if (resultUnit === "%") {
-                return;
               } else {
                 console.log(
                   "Mismatched units",

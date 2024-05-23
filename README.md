@@ -1,5 +1,7 @@
 Edit the standards as needed in src/Standards.
-
+If you add new standards as opposed to editing old ones, you must also update the src/Standards/standardsStructure.tsx to include
+the new standards. Do not change the order of the old standards, as the excel generation (as of the template use) relies on the
+order to stay the same. Additionally, add the order to the Map in src/consts/xlsxFormattingConsts. Path to standard is an array of indices.
 
 # Getting Started with Create React App
 

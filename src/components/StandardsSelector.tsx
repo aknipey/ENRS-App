@@ -19,6 +19,7 @@ import {
 } from "./../consts/StandardSelectorConsts";
 import { SelectedStandardsId } from "../types/selectedStandardTypes";
 import { useCallback } from "react";
+import { QuickSelect } from "./QuickSelect";
 
 export const StandardsSelector = () => {
   const [selectedStandardsIds, setSelectedStandardsIds] =
@@ -116,6 +117,9 @@ export const StandardsSelector = () => {
   return (
     <Card sx={{ height: "100%" }} elevation={2}>
       <Grid container spacing={2} padding={2}>
+        <Grid xs={12}>
+          <QuickSelect/>
+        </Grid>
         <Grid xs={12}>
           <Typography variant="h6">Select Standards to Apply</Typography>
           <Divider sx={{ bgcolor: "black", height: 2 }} />

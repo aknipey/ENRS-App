@@ -96,6 +96,11 @@ import { PFAS_NEMP_2020_Interim_Marine_90 } from "./Water/PFAS/PFAS_NEMP_2020_In
 import { PFAS_NEMP_2020_Interim_Marine_95 } from "./Water/PFAS/PFAS_NEMP_2020_Interim_Marine_95";
 import { PFAS_NEMP_2020_Interim_Marine_99 } from "./Water/PFAS/PFAS_NEMP_2020_Interim_Marine_99";
 import { AllStandards } from "./standardsTypes";
+import { Defence_1 } from "./Soil/Defence/Defence_1";
+import { Defence_2 } from "./Soil/Defence/Defence_2";
+import { Defence_3 } from "./Soil/Defence/Defence_3";
+import { Defence_4 } from "./Soil/Defence/Defence_4";
+import { Defence_non_detect } from "./Soil/Defence/Defence_Non_detect_at_LOR";
 
 export const standardsStructure: AllStandards[] = [
   {
@@ -132,6 +137,31 @@ export const standardsStructure: AllStandards[] = [
           {
             name: "CRC Care HSL-D Commercial / Industrial",
             value: CRC_Care_HSL_D_Commercial_Industrial,
+          },
+        ],
+      },
+      {
+        name: "Defence",
+        value: [
+          {
+            name: "Defence Category 1",
+            value: Defence_1,
+          },
+          {
+            name: "Defence Category 2",
+            value: Defence_2,
+          },
+          {
+            name: "Defence Category 3",
+            value: Defence_3,
+          },
+          {
+            name: "Defence Category 4",
+            value: Defence_4,
+          },
+          {
+            name: "Non Detect at Standard LOR",
+            value: Defence_non_detect,
           },
         ],
       },

@@ -60,19 +60,21 @@ export const StandardsSelector = () => {
               }}
               sx={{
                 width: "100%",
-                backgroundColor: isSelected ? "primary.main" : "transparent",
+                backgroundColor: isSelected ? standard.colour : "transparent",
                 color: isSelected ? "primary.contrastText" : "inherit",
                 "&:hover": {
-                  backgroundColor: isSelected
-                    ? "primary.light"
-                    : "rgba(0, 0, 0, 0.3)",
+                  backgroundColor: standard.colour,
+                  "& .hover-text": {
+                    fontWeight: "bold",
+                  },
                 },
               }}
             >
               <Typography
+                className="hover-text"
                 fontSize={"small"}
                 width={"100 %"}
-                color={isSelected ? "white" : "primary"}
+                color={isSelected ? "black" : "primary"}
               >
                 {standard.name}
               </Typography>
@@ -118,8 +120,10 @@ export const StandardsSelector = () => {
     <Card sx={{ height: "100%" }} elevation={2}>
       <Grid container spacing={2} padding={2}>
         <Grid xs={12}>
-          <Typography variant="h6" fontWeight={"bold"}>Select Standards to Apply</Typography>
-          <QuickSelect/>
+          <Typography variant="h6" fontWeight={"bold"}>
+            Select Standards to Apply
+          </Typography>
+          <QuickSelect />
         </Grid>
         <Grid xs={12}>
           <Divider sx={{ bgcolor: "black", height: 2 }} />

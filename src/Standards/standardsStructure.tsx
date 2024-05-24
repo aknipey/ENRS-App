@@ -112,10 +112,12 @@ export const standardsStructure: AllStandards[] = [
           {
             name: "ANZECC 2000 Sediment ISGC-High",
             value: ANZECC_2000_Sediment_ISGC_High,
+            colour: "#D6DBDF",
           },
           {
             name: "ANZECC 2000 Sediment ISGC-Low",
             value: ANZECC_2000_Sediment_ISGC_Low,
+            colour: "#D6DBDF",
           },
         ],
       },
@@ -605,64 +607,64 @@ export const standardsStructure: AllStandards[] = [
             name: "NEPM 2013 Table 1A(4) Comm/Ind HSL D GW for Vapour Intrusion, Clay",
             value:
               NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay,
-            colour: "#DCE6F1"
+            colour: "#DCE6F1",
           },
           {
             name: "NEPM 2013 Table 1A(4) Comm/Ind HSL D GW for Vapour Intrusion, Sand",
             value:
               NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Sand,
-              colour: "#DCE6F1"
+            colour: "#DCE6F1",
           },
           {
             name: "NEPM 2013 Table 1A(4) Comm/Ind HSL D GW for Vapour Intrusion, Silt",
             value:
               NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Silt,
-              colour: "#DCE6F1"
+            colour: "#DCE6F1",
           },
           {
             name: "NEPM 2013 Table 1A(4) Rec HSL C GW for Vapour Intrusion, Clay",
             value: NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Clay,
-            colour: "#F2DCDB"
+            colour: "#F2DCDB",
           },
           {
             name: "NEPM 2013 Table 1A(4) Rec HSL C GW for Vapour Intrusion, Sand",
             value: NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Sand,
-            colour: "#F2DCDB"
+            colour: "#F2DCDB",
           },
           {
             name: "NEPM 2013 Table 1A(4) Rec HSL C GW for Vapour Intrusion, Silt",
             value: NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Silt,
-            colour: "#F2DCDB"
+            colour: "#F2DCDB",
           },
           {
             name: "NEPM 2013 Table 1C GILs, Drinking Water",
             value: NEPM_2013_Table_1C_GILs_Drinking_Water,
-            colour: "#D6DBDF"
+            colour: "#D6DBDF",
           },
           {
             name: "NEPM 2013 Table 1C GILs, Fresh Waters",
             value: NEPM_2013_Table_1C_GILs_Fresh_Waters,
-            colour: "#D6DBDF"
+            colour: "#D6DBDF",
           },
           {
             name: "NEPM 2013 Table 1C GILs, Marine Waters",
             value: NEPM_2013_Table_1C_GILs_Marine_Waters,
-            colour: "#D6DBDF"
+            colour: "#D6DBDF",
           },
           {
             name: "NEPM 2013 Table 1A(4) Res HSL A & B GW for Vapour Intrusion, Clay",
             value: NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Clay,
-            colour: "#EBF1DE"
+            colour: "#EBF1DE",
           },
           {
             name: "NEPM 2013 Table 1A(4) Res HSL A & B GW for Vapour Intrusion, Sand",
             value: NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Sand,
-            colour: "#EBF1DE"
+            colour: "#EBF1DE",
           },
           {
             name: "NEPM 2013 Table 1A(4) Res HSL A & B GW for Vapour Intrusion, Silt",
             value: NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Silt,
-            colour: "#EBF1DE"
+            colour: "#EBF1DE",
           },
         ],
       },
@@ -672,7 +674,7 @@ export const standardsStructure: AllStandards[] = [
           {
             name: "PFAS NEMP 2020 Drinking Water",
             value: PFAS_NEMP_2020_Drinking_Water,
-            colour: "#D6DBDF"
+            colour: "#D6DBDF",
           },
           {
             name: "PFAS NEMP 2020 Freshwater 80%",
@@ -717,12 +719,12 @@ export const standardsStructure: AllStandards[] = [
           {
             name: "PFAS NEMP 2020 Recreational Water",
             value: PFAS_NEMP_2020_Recreational_Water,
-            colour: "#D6DBDF"
+            colour: "#D6DBDF",
           },
           {
             name: "Guidance on Per and Polyfluoroalkyl (PFAS) in Recreational Water",
             value: Guidance_on_PFAS_in_Recreational_Water,
-            colour: "#D6DBDF"
+            colour: "#D6DBDF",
           },
         ],
       },

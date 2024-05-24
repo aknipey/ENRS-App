@@ -18,6 +18,7 @@ export const NEPM_A_IDS = [
   [0, 3, 4, 8],
   [0, 3, 5, 2],
   [0, 3, 5, 3],
+  [0, 5, 4],
 ];
 
 export const NEPM_B_IDS = [
@@ -32,6 +33,7 @@ export const NEPM_B_IDS = [
   [0, 3, 4, 8],
   [0, 3, 5, 2],
   [0, 3, 5, 3],
+  [0, 5, 5],
 ];
 
 export const NEPM_C_IDS = [
@@ -46,6 +48,7 @@ export const NEPM_C_IDS = [
   [0, 3, 4, 5],
   [0, 3, 5, 2],
   [0, 3, 5, 3],
+  [0, 5, 3],
 ];
 
 export const NEPM_D_IDS = [
@@ -60,6 +63,7 @@ export const NEPM_D_IDS = [
   [0, 3, 4, 2],
   [0, 3, 5, 0],
   [0, 3, 5, 1],
+  [0, 5, 2],
 ];
 
 export const ACCORDION_SX = {

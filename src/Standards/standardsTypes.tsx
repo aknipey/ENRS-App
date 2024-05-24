@@ -28,4 +28,5 @@ export type Standard = {
 export type AllStandards = {
   name: string;
   value: AllStandards[] | Standard;
+  colour?: string;
 }

@@ -111,11 +111,21 @@ export const QuickSelect = () => {
 
   return (
     <>
-      <Grid container>
+      <Grid container rowSpacing={0.6}>
         <Grid xs={3}>
           <FormGroup>
             <FormControlLabel
-              control={<Checkbox onChange={changeNEPMA} />}
+              sx={{ backgroundColor: "#EBF1DE" }}
+              control={
+                <Checkbox
+                  onChange={changeNEPMA}
+                  sx={{
+                    "&.Mui-checked": {
+                      color: "black",
+                    },
+                  }}
+                />
+              }
               label="NEPM A"
             />
           </FormGroup>
@@ -123,7 +133,17 @@ export const QuickSelect = () => {
         <Grid xs={3}>
           <FormGroup>
             <FormControlLabel
-              control={<Checkbox onChange={changeNEPMB} />}
+              sx={{ backgroundColor: "#FFFFCC" }}
+              control={
+                <Checkbox
+                  onChange={changeNEPMB}
+                  sx={{
+                    "&.Mui-checked": {
+                      color: "black",
+                    },
+                  }}
+                />
+              }
               label="NEPM B"
             />
           </FormGroup>
@@ -131,7 +151,17 @@ export const QuickSelect = () => {
         <Grid xs={3}>
           <FormGroup>
             <FormControlLabel
-              control={<Checkbox onChange={changeNEPMC} />}
+              sx={{ backgroundColor: "#F2DCDB" }}
+              control={
+                <Checkbox
+                  onChange={changeNEPMC}
+                  sx={{
+                    "&.Mui-checked": {
+                      color: "black",
+                    },
+                  }}
+                />
+              }
               label="NEPM C"
             />
           </FormGroup>
@@ -139,7 +169,17 @@ export const QuickSelect = () => {
         <Grid xs={3}>
           <FormGroup>
             <FormControlLabel
-              control={<Checkbox onChange={changeNEPMD} />}
+              sx={{ backgroundColor: "#DCE6F1" }}
+              control={
+                <Checkbox
+                  onChange={changeNEPMD}
+                  sx={{
+                    "&.Mui-checked": {
+                      color: "black",
+                    },
+                  }}
+                />
+              }
               label="NEPM D"
             />
           </FormGroup>
@@ -147,7 +187,17 @@ export const QuickSelect = () => {
         <Grid xs={3}>
           <FormGroup>
             <FormControlLabel
-              control={<Checkbox onChange={changeDefence} />}
+              sx={{ backgroundColor: "#FABF8F" }}
+              control={
+                <Checkbox
+                  onChange={changeDefence}
+                  sx={{
+                    "&.Mui-checked": {
+                      color: "black",
+                    },
+                  }}
+                />
+              }
               label="Defence"
             />
           </FormGroup>

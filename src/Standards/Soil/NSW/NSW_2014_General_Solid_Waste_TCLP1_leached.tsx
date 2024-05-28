@@ -2,7 +2,7 @@ import { Standard } from "../../standardsTypes";
 
 export const NSW_2014_General_Solid_Waste_TCLP1_leached: Standard = {
   standardInfo: {
-    matrix: "Soil",
+    matrix: "Water",
     leached: true,
   },
   values: [

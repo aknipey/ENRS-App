@@ -5,6 +5,7 @@ export const NEPM_2013_Table_1B_7_Management_Limits_in_Res_Parkland_Fine_Soil: S
     standardInfo: {
       matrix: "Soil",
       leached: false,
+      fine: true,
     },
     values: [
       {

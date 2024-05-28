@@ -4,6 +4,7 @@ export const ANZG_Freshwater_Toxicant_DGVs_LOSP_90: Standard = {
   standardInfo: {
     matrix: "Water",
     leached: false,
+    freshwater: true,
   },
   values: [
     {

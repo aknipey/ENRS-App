@@ -18,6 +18,14 @@ export type Matrix = "Soil" | "Water" | "Error" | "Gas" | "SoilGas";
 export type StandardInfo = {
   matrix: Matrix;
   leached: boolean;
+  silt?: boolean;
+  sand?: boolean;
+  clay?: boolean;
+  coarse?: boolean;
+  fine?: boolean;
+  max_average?: boolean;
+  marine?: boolean;
+  freshwater?: boolean;
 };
 
 export type Standard = {

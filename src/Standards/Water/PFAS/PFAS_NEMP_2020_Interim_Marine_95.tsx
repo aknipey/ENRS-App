@@ -4,6 +4,7 @@ export const PFAS_NEMP_2020_Interim_Marine_95: Standard = {
   standardInfo: {
     matrix: "Water",
     leached: false,
+    marine: true,
   },
   values: [
     {

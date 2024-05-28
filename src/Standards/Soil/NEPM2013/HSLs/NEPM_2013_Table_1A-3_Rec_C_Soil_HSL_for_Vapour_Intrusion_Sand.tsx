@@ -5,6 +5,7 @@ export const NEPM_2013_Table_1A_3_Rec_C_Soil_HSL_for_Vapour_Intrusion_Sand: Stan
     standardInfo: {
       matrix: "Soil",
       leached: false,
+      sand: true,
     },
     values: [
       {

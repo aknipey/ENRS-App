@@ -5,6 +5,7 @@ export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Sand: S
     standardInfo: {
       matrix: "Water",
       leached: false,
+      sand: true,
     },
     values: [
       {

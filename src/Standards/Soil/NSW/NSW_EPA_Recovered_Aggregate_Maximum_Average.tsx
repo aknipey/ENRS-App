@@ -4,6 +4,7 @@ export const NSW_EPA_Recovered_Aggregate_Maximum_Average: Standard = {
   standardInfo: {
     matrix: "Soil",
     leached: false,
+    max_average: true,
   },
   values: [
     {

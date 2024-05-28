@@ -4,6 +4,7 @@ export const PFAS_NEMP_2020_Freshwater_80: Standard = {
   standardInfo: {
     matrix: "Water",
     leached: false,
+    freshwater: true,
   },
   values: [
     {

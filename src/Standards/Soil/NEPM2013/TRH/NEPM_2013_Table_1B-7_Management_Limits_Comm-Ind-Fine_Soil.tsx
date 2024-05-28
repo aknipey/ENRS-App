@@ -5,6 +5,7 @@ export const NEPM_2013_Table_1B_7_Management_Limits_Comm_Ind_Fine_Soil: Standard
     standardInfo: {
       matrix: "Soil",
       leached: false,
+      fine: true,
     },
     values: [
       {

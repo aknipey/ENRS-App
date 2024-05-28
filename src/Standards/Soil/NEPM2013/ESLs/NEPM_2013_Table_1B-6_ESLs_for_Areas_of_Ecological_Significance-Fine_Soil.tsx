@@ -5,6 +5,7 @@ export const NEPM_2013_Table_1B_6_ESLs_for_Areas_of_Ecological_Significance_Fine
     standardInfo: {
       matrix: "Soil",
       leached: false,
+      fine: true,
     },
     values: [
       {

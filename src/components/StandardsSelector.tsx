@@ -155,7 +155,7 @@ export const StandardsSelector: React.FC = () => {
       <Grid container spacing={1} padding={2}>
         <Grid xs={12}>
           <Typography variant="h6" fontWeight={"bold"}>
-            Select Standards to Apply
+            Quick-Select Tables
           </Typography>
           <QuickSelect />
         </Grid>
@@ -163,7 +163,7 @@ export const StandardsSelector: React.FC = () => {
           <Divider sx={{ bgcolor: "black", height: 2 }} />
         </Grid>
         <Grid xs={10}>
-          <Typography variant="h6">
+          <Typography variant="h6" fontWeight={"bold"}>
             Select Standards Below for a Custom Table
           </Typography>
         </Grid>

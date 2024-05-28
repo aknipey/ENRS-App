@@ -4,6 +4,7 @@ export const ANZECC_2000_MW_90: Standard = {
   standardInfo: {
     matrix: "Water",
     leached: false,
+    marine: true,
   },
   values: [
     {

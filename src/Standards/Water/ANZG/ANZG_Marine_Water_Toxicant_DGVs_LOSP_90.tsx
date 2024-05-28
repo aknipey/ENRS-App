@@ -4,6 +4,7 @@ export const ANZG_Marine_Water_Toxicant_DGVs_LOSP_90: Standard = {
   standardInfo: {
     matrix: "Water",
     leached: false,
+    marine: true,
   },
   values: [
     {

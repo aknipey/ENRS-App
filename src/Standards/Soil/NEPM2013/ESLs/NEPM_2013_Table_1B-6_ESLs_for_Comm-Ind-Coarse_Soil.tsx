@@ -4,6 +4,7 @@ export const NEPM_2013_Table_1B_6_ESLs_for_Comm_Ind_Coarse_Soil: Standard = {
   standardInfo: {
     matrix: "Soil",
     leached: false,
+    coarse: true,
   },
   values: [
     {

@@ -4,6 +4,7 @@ export const NSW_2014_Excavated_Natural_Material_Max_Average: Standard = {
   standardInfo: {
     matrix: "Soil",
     leached: false,
+    max_average: true,
   },
   values: [
     {

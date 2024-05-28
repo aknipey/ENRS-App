@@ -1,102 +1,51 @@
 import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
+import { QUICK_SELECTS } from "../consts/QuickSelectConsts";
+import { useQuickSelectedTablesAtom } from "../atoms/standardsAtoms";
 import { useCallback } from "react";
-import { useSelectedStandardsIdsAtom } from "../atoms/standardsAtoms";
+import { QuickSelectTable } from "../types/selectedStandardTypes";
 
 export const QuickSelect = () => {
-  const [selectedStandardsIds, setSelectedStandardIds] =
-    useSelectedStandardsIdsAtom();
+  const [, setQuickSelectedTables] = useQuickSelectedTablesAtom();
 
-  
+  const handleQuickSelect = useCallback(
+    (index: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
+      setQuickSelectedTables((prevSelected: QuickSelectTable[]) => {
+        if (event.target.checked) {
+          return [...prevSelected, QUICK_SELECTS[index]];
+        } else {
+          return prevSelected.filter((qS) => qS !== QUICK_SELECTS[index]);
+        }
+      });
+    },
+    [setQuickSelectedTables]
+  );
 
   return (
     <>
       <Grid container rowSpacing={0.6}>
-        <Grid xs={3}>
-          <FormGroup>
-            <FormControlLabel
-              sx={{ backgroundColor: "#EBF1DE" }}
-              control={
-                <Checkbox
-                  sx={{
-                    "&.Mui-checked": {
-                      color: "black",
-                    },
-                  }}
+        {QUICK_SELECTS.map((quickSelect, i) => {
+          return (
+            <Grid xs={3} key={i}>
+              <FormGroup>
+                <FormControlLabel
+                  sx={{ backgroundColor: quickSelect.colour }}
+                  control={
+                    <Checkbox
+                      sx={{
+                        "&.Mui-checked": {
+                          color: "black",
+                        },
+                      }}
+                      onChange={handleQuickSelect(i)}
+                    />
+                  }
+                  label={quickSelect.name}
                 />
-              }
-              label="NEPM A"
-            />
-          </FormGroup>
-        </Grid>
-        <Grid xs={3}>
-          <FormGroup>
-            <FormControlLabel
-              sx={{ backgroundColor: "#FFFFCC" }}
-              control={
-                <Checkbox
-                  sx={{
-                    "&.Mui-checked": {
-                      color: "black",
-                    },
-                  }}
-                />
-              }
-              label="NEPM B"
-            />
-          </FormGroup>
-        </Grid>
-        <Grid xs={3}>
-          <FormGroup>
-            <FormControlLabel
-              sx={{ backgroundColor: "#F2DCDB" }}
-              control={
-                <Checkbox
-                  sx={{
-                    "&.Mui-checked": {
-                      color: "black",
-                    },
-                  }}
-                />
-              }
-              label="NEPM C"
-            />
-          </FormGroup>
-        </Grid>
-        <Grid xs={3}>
-          <FormGroup>
-            <FormControlLabel
-              sx={{ backgroundColor: "#DCE6F1" }}
-              control={
-                <Checkbox
-                  sx={{
-                    "&.Mui-checked": {
-                      color: "black",
-                    },
-                  }}
-                />
-              }
-              label="NEPM D"
-            />
-          </FormGroup>
-        </Grid>
-        <Grid xs={3}>
-          <FormGroup>
-            <FormControlLabel
-              sx={{ backgroundColor: "#FABF8F" }}
-              control={
-                <Checkbox
-                  sx={{
-                    "&.Mui-checked": {
-                      color: "black",
-                    },
-                  }}
-                />
-              }
-              label="Defence"
-            />
-          </FormGroup>
-        </Grid>
+              </FormGroup>
+            </Grid>
+          );
+        })}
       </Grid>
     </>
   );

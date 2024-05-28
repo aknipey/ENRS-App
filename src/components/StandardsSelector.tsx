@@ -8,12 +8,17 @@ import {
   Typography,
   Button,
   Divider,
+  Checkbox,
+  Box,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { standardsStructure } from "../Standards/standardsStructure";
 import { AllStandards } from "../Standards/standardsTypes";
-import { useSelectedStandardsIdsAtom } from "../atoms/standardsAtoms";
+import {
+  useQuickSelectedTablesAtom,
+  useSelectedStandardsIdsAtom,
+} from "../atoms/standardsAtoms";
 import {
   ACCORDION_SUMMARY_SX,
   ACCORDION_SX,
@@ -24,9 +29,12 @@ import { QuickSelect } from "./QuickSelect";
 export const StandardsSelector: React.FC = () => {
   const [selectedStandardsIds, setSelectedStandardsIds] =
     useSelectedStandardsIdsAtom();
+  const [quickSelectedTables] = useQuickSelectedTablesAtom();
+
   const [expandedAccordions, setExpandedAccordions] = useState<
     Map<string, boolean>
   >(new Map());
+
   const [expandAll, setExpandAll] = useState<boolean>(false);
 
   const handleStandardSelection = useCallback(
@@ -105,6 +113,41 @@ export const StandardsSelector: React.FC = () => {
                 width={"100%"}
                 color={isSelected ? "black" : "primary"}
               >
+                {quickSelectedTables.map((table) => {
+                  return table.standards.some((s) => s === standard.value) ? (
+                    <Box
+                      sx={{
+                        position: "relative",
+                        display: "inline-block",
+                        padding: "4px",
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: "25%",
+                          left: "25%",
+                          width: "50%",
+                          height: "50%",
+                          backgroundColor: "black",
+                          zIndex: 0,
+                        }}
+                      />
+                      <Checkbox
+                        sx={{
+                          "&.Mui-checked": {
+                            color: table.colour,
+                          },
+                          padding: 0,
+                          position: "relative",
+                          zIndex: 1,
+                        }}
+                        checked
+                        disabled
+                      />
+                    </Box>
+                  ) : null;
+                })}
                 {standard.name}
               </Typography>
             </Button>
@@ -147,7 +190,12 @@ export const StandardsSelector: React.FC = () => {
         );
       });
     },
-    [handleStandardSelection, selectedStandardsIds, expandedAccordions]
+    [
+      handleStandardSelection,
+      selectedStandardsIds,
+      expandedAccordions,
+      quickSelectedTables,
+    ]
   );
 
   return (

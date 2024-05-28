@@ -101,6 +101,11 @@ import { Defence_2 } from "./Soil/Defence/Defence_2";
 import { Defence_3 } from "./Soil/Defence/Defence_3";
 import { Defence_4 } from "./Soil/Defence/Defence_4";
 import { Defence_non_detect } from "./Soil/Defence/Defence_Non_detect_at_LOR";
+import { NSW_EPA_Recovered_Aggregate_Absolute_Maximum } from "./Soil/NSW/NSW_EPA_Recovered_Aggregate_Absolute_Maximum";
+import { NSW_EPA_Recovered_Aggregate_Maximum_Average } from "./Soil/NSW/NSW_EPA_Recovered_Aggregate_Maximum_Average";
+import { PFAS_NEMP_2020_Clay_Single_Composite_Lined_Landfill_ASLP } from "./Soil/PFAS/PFAS_NEMP_2020_Clay-Single_Composite_Lined_Landfill_ASLP";
+import { PFAS_NEMP_2020_Double_Composite_Landfill_ASLP } from "./Soil/PFAS/PFAS NEMP_2020_Double_Composite_Landfill_ASLP";
+import { PFAS_NEMP_2020_Unlined_Landfill_ASLP } from "./Soil/PFAS/PFAS_NEMP_2020_Unlined_Landfill_ASLP";
 
 export const standardsStructure: AllStandards[] = [
   {
@@ -392,6 +397,16 @@ export const standardsStructure: AllStandards[] = [
             colour: "#CCFFCC",
           },
           {
+            name: "NSW 2014 Recovered Aggregate (Absolute Max)",
+            value: NSW_EPA_Recovered_Aggregate_Absolute_Maximum,
+            colour: "#FCD5B4",
+          },
+          {
+            name: "NSW 2014 Recovered Aggregate (Max Average)",
+            value: NSW_EPA_Recovered_Aggregate_Maximum_Average,
+            colour: "#FDE9D9",
+          },
+          {
             name: "NSW 2014 General Solid Waste CT1 (No Leaching)",
             value: NSW_2014_General_Solid_Waste_CT1_No_Leaching,
             colour: "#DAEEF3",
@@ -471,6 +486,21 @@ export const standardsStructure: AllStandards[] = [
           {
             name: "PFAS NEMP 2020 Unlined Landfill Acceptance Criteria",
             value: PFAS_NEMP_2020_Unlined_Landfill_Acceptance_Criteria,
+            colour: "#DAEEF3",
+          },
+          {
+            name: "PFAS NEMP 2020 Clay/Single Composite Lined Landfill ASLP (Leached)",
+            value: PFAS_NEMP_2020_Clay_Single_Composite_Lined_Landfill_ASLP,
+            colour: "#B7DEE8",
+          },
+          {
+            name: "PFAS NEMP 2020 Double Composite Landfill ASLP (Leached)",
+            value: PFAS_NEMP_2020_Double_Composite_Landfill_ASLP,
+            colour: "#92CDDC",
+          },
+          {
+            name: "PFAS NEMP 2020 Unlined Landfill ASLP (Leached)",
+            value: PFAS_NEMP_2020_Unlined_Landfill_ASLP,
             colour: "#DAEEF3",
           },
         ],

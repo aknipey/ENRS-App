@@ -1,6 +1,6 @@
 import { Standard } from "../../standardsTypes";
 
-export const PFAS_NEMP_2020_Unlined_Landfill_Acceptance_Criteria: Standard = {
+export const PFAS_NEMP_2020_Unlined_Landfill_ASLP: Standard = {
   standardInfo: {
     matrix: "Water",
     leached: true,

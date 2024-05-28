@@ -29,4 +29,9 @@ export type AllStandards = {
   name: string;
   value: AllStandards[] | Standard;
   colour?: string;
+};
+
+export type DepthConds = {
+  upper: number;
+  lower?: number;
 }

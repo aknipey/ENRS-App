@@ -1,38 +1,40 @@
 import { Standard } from "../../standardsTypes";
 
-export const PFAS_NEMP_2020_Clay_Single_Composite_Lined_Landfill_Acceptance_Criteria: Standard =
+export const PFAS_NEMP_2020_Clay_Single_Composite_Lined_Landfill_ASLP: Standard =
   {
     standardInfo: {
-      matrix: "Soil",
-      leached: false,
+      matrix: "Water",
+      leached: true,
     },
     values: [
       {
         chemCode: "1763-23-1",
         chemName: "PFOS only",
-        value: 50,
-        units: "mg/kg",
+        value: 0.7,
+        units: "ug/L",
         comments: "",
       },
+
       {
         chemCode: "335-67-1",
         chemName: "PFOA",
-        value: 50,
-        units: "mg/kg",
+        value: 5.6,
+        units: "ug/L",
         comments: "",
       },
       {
         chemCode: "355-46-4",
         chemName: "PFHxS only",
-        value: 50,
-        units: "mg/kg",
+        value: 0.7,
+        units: "ug/L",
         comments: "",
       },
+
       {
         chemCode: "355-46-4/1763-23-1",
         chemName: "PFOS and PFHxS",
-        value: 50,
-        units: "mg/kg",
+        value: 0.7,
+        units: "ug/L",
         comments: "",
       },
     ],

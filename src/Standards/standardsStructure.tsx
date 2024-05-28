@@ -48,7 +48,7 @@ import { PFAS_NEMP_2020_Public_open_space_HIL_C } from "./Soil/PFAS/PFAS_NEMP_20
 import { PFAS_NEMP_2020_Residential_with_garden_accessible_soil_HIL_A } from "./Soil/PFAS/PFAS NEMP_2020_Residential_with_garden-accessible_soil_HIL-A";
 import { PFAS_NEMP_2020_Residential_with_minimal_opportunities_for_soil_access_HIL_B } from "./Soil/PFAS/PFAS_NEMP_2020_Residential_with_minimal_opportunities_for_soil_access_HIL-B";
 import { PFAS_NEMP_2020_Clay_Single_Composite_Lined_Landfill_Acceptance_Criteria } from "./Soil/PFAS/PFAS_NEMP_2020_Clay-Single_Composite_Lined_Landfill_Acceptance_Criteria";
-import { PFAS_NEMP_2020_Double_Composite_Landfill_Acceptance_Criteria } from "./Soil/PFAS/PFAS NEMP_2020_Double_Composite_Landfill _Acceptance_Criteria";
+import { PFAS_NEMP_2020_Double_Composite_Landfill_Acceptance_Criteria } from "./Soil/PFAS/PFAS NEMP_2020_Double_Composite_Landfill_Acceptance_Criteria";
 import { PFAS_NEMP_2020_Unlined_Landfill_Acceptance_Criteria } from "./Soil/PFAS/PFAS_NEMP_2020_Unlined_Landfill_Acceptance_Criteria";
 import { ADWG_2022_Aesthetic } from "./Water/ADWG/ADWG_2022_Aesthetic";
 import { ADWG_2022_Health } from "./Water/ADWG/ADWG_2022_Health";

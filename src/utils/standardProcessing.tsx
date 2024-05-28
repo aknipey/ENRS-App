@@ -2,6 +2,7 @@ import { standardsStructure } from "../Standards/standardsStructure";
 import {
   AllStandards,
   ChemicalProfile,
+  DepthConds,
   Matrix,
   RangeValue,
   Standard,
@@ -31,7 +32,7 @@ const selectStandards = (
     return standard;
   });
 
-  return selectedStandards;
+  return Array.from(new Set(selectedStandards));
 };
 
 export const findSampleMatrix = (
@@ -50,6 +51,35 @@ export const findSampleMatrix = (
   return sample.Matrix_Type;
 };
 
+export const processConditions = (
+  conditions: string
+): DepthConds | undefined => {
+  // Regular expression to match the specific format
+  const regex = />=(\d+)(?:, <(\d+))?/;
+  const match = conditions.match(regex);
+
+  if (match) {
+    const n1 = parseInt(match[1]);
+    const n2 = match[2] ? parseInt(match[2]) : undefined;
+
+    return { upper: n1, lower: n2 };
+  }
+
+  return undefined;
+};
+
+// Returns -1 if no depth
+export const findSampleDepth = (
+  chem: ChemData,
+  sampleData: SampleData[]
+): number => {
+  const depth = sampleData.find(
+    (s: SampleData) => s.SampleCode === chem.SampleCode
+  )?.Depth;
+  return depth ? Number(depth) : -1;
+};
+
+// Returns the filtered exceedance data wrapped in a json object
 export const findExceedances = (
   chemFile: JSONObject,
   sampleFile: JSONObject,
@@ -61,6 +91,7 @@ export const findExceedances = (
   const sampleData = [...sampleFile.data] as SampleData[];
   //! Need to look at special cases from the sample file
 
+  // For each test result
   const filteredChemData: FilteredChemData[] = chemData.map(
     (chem: ChemData, i: number) => {
       let exceeded_standards = "";
@@ -77,6 +108,7 @@ export const findExceedances = (
         };
       }
 
+      // Returning if there is a Matrix error
       if (sampleMatrix === ("Error" as Matrix)) {
         console.log("Matrix Error at chemistry file row", i + 2);
         return {
@@ -87,6 +119,7 @@ export const findExceedances = (
         };
       }
 
+      // For each standard
       standards.forEach((standard: AllStandards) => {
         // Check matrices match
         if (
@@ -98,8 +131,21 @@ export const findExceedances = (
           return;
         }
 
+        // Get all the relevant chem profiles from the standard. Look at chem and depth
         const chemProfiles = (standard.value as Standard).values.filter(
           (profile: ChemicalProfile) => {
+            const chemDepth = findSampleDepth(chem, sampleData);
+            if (profile?.conditions) {
+              const depthConds = processConditions(profile.conditions);
+              if (!depthConds) {
+                console.log("Profile conditions but not matched numbers");
+                return profile.chemCode === chem.ChemCode;
+              }
+              if (chemDepth < depthConds.upper) return false;
+              if (depthConds.lower && chemDepth >= depthConds.upper)
+                return false;
+              return true;
+            }
             return profile.chemCode === chem.ChemCode;
           }
         );
@@ -115,8 +161,7 @@ export const findExceedances = (
           }
           let result = Number(chem.Result);
 
-          // Filtering out mu.
-          //! Note: This will replace all non-ascii starting characters with 'u'
+          // Note: This will replace all non-ascii starting characters with 'u'
           if (resultUnit.charCodeAt(0) > 127) {
             if (resultUnit.includes("g/L")) {
               resultUnit = "ug/L";

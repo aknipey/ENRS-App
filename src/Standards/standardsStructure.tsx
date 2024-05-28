@@ -115,13 +115,13 @@ export const standardsStructure: AllStandards[] = [
         name: "ANZECC",
         value: [
           {
-            name: "ANZECC 2000 Sediment ISGC-High",
-            value: ANZECC_2000_Sediment_ISGC_High,
+            name: "ANZECC 2000 Sediment ISGC-Low",
+            value: ANZECC_2000_Sediment_ISGC_Low,
             colour: "#D6DBDF",
           },
           {
-            name: "ANZECC 2000 Sediment ISGC-Low",
-            value: ANZECC_2000_Sediment_ISGC_Low,
+            name: "ANZECC 2000 Sediment ISGC-High",
+            value: ANZECC_2000_Sediment_ISGC_High,
             colour: "#D6DBDF",
           },
         ],
@@ -155,19 +155,9 @@ export const standardsStructure: AllStandards[] = [
         name: "Defence",
         value: [
           {
-            name: "Defence Category 1",
-            value: Defence_1,
-            colour: "#E26B0A",
-          },
-          {
-            name: "Defence Category 2",
-            value: Defence_2,
-            colour: "#F79646",
-          },
-          {
-            name: "Defence Category 3",
-            value: Defence_3,
-            colour: "#FABF8F",
+            name: "Non Detect at Standard LOR",
+            value: Defence_non_detect,
+            colour: "#FDE9D9",
           },
           {
             name: "Defence Category 4",
@@ -175,9 +165,19 @@ export const standardsStructure: AllStandards[] = [
             colour: "#FCD5B4",
           },
           {
-            name: "Non Detect at Standard LOR",
-            value: Defence_non_detect,
-            colour: "#FDE9D9",
+            name: "Defence Category 3",
+            value: Defence_3,
+            colour: "#FABF8F",
+          },
+          {
+            name: "Defence Category 2",
+            value: Defence_2,
+            colour: "#F79646",
+          },
+          {
+            name: "Defence Category 1",
+            value: Defence_1,
+            colour: "#E26B0A",
           },
         ],
       },
@@ -219,15 +219,15 @@ export const standardsStructure: AllStandards[] = [
                 colour: "#DDD9C4",
               },
               {
-                name: "NEPM 2013 Table 1B(5) Generic EIL - Comm/Ind",
-                value: NEPM_2013_Table_1B_5_Generic_EIL_Comm_Ind,
-                colour: "#DCE6F1",
-              },
-              {
                 name: "NEPM 2013 Table 1B(5) Generic EIL - Urban Res & Public Open Space",
                 value:
                   NEPM_2013_Table_1B_5_Generic_EIL_Urban_Res_Public_Open_Space,
                 colour: "#EBF1DE",
+              },
+              {
+                name: "NEPM 2013 Table 1B(5) Generic EIL - Comm/Ind",
+                value: NEPM_2013_Table_1B_5_Generic_EIL_Comm_Ind,
+                colour: "#DCE6F1",
               },
             ],
           },
@@ -247,16 +247,6 @@ export const standardsStructure: AllStandards[] = [
                 colour: "#DDD9C4",
               },
               {
-                name: "NEPM 2013 Table 1B(6) ESLs for Comm/Ind, Coarse Soil",
-                value: NEPM_2013_Table_1B_6_ESLs_for_Comm_Ind_Coarse_Soil,
-                colour: "#DCE6F1",
-              },
-              {
-                name: "NEPM 2013 Table 1B(6) ESLs for Comm/Ind, Fine Soil",
-                value: NEPM_2013_Table_1B_6_ESLs_for_Comm_Ind_Fine_Soil,
-                colour: "#DCE6F1",
-              },
-              {
                 name: "NEPM 2013 Table 1B(6) ESLs for Urban Res, Coarse Soil",
                 value: NEPM_2013_Table_1B_6_ESLs_for_Urban_Res_Coarse_Soil,
                 colour: "#EBF1DE",
@@ -265,6 +255,16 @@ export const standardsStructure: AllStandards[] = [
                 name: "NEPM 2013 Table 1B(6) ESLs for Urban Res, Fine Soil",
                 value: NEPM_2013_Table_1B_6_ESLs_for_Urban_Res_Fine_Soil,
                 colour: "#EBF1DE",
+              },
+              {
+                name: "NEPM 2013 Table 1B(6) ESLs for Comm/Ind, Coarse Soil",
+                value: NEPM_2013_Table_1B_6_ESLs_for_Comm_Ind_Coarse_Soil,
+                colour: "#DCE6F1",
+              },
+              {
+                name: "NEPM 2013 Table 1B(6) ESLs for Comm/Ind, Fine Soil",
+                value: NEPM_2013_Table_1B_6_ESLs_for_Comm_Ind_Fine_Soil,
+                colour: "#DCE6F1",
               },
             ],
           },
@@ -297,28 +297,22 @@ export const standardsStructure: AllStandards[] = [
             name: "Table 1A(3) HSLs",
             value: [
               {
-                name: "NEPM 2013 Table 1A(3) Comm/Ind D Soil HSL for Vapour Intrusion, Clay",
+                name: "NEPM 2013 Table 1A(3) Res A/B Soil HSL for Vapour Intrusion, Sand",
                 value:
-                  NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Clay,
-                colour: "#DCE6F1",
+                  NEPM_2013_Table_1A_3_Res_A_B_Soil_HSL_for_Vapour_Intrusion_Sand,
+                colour: "#EBF1DE",
               },
               {
-                name: "NEPM 2013 Table 1A(3) Comm/Ind D Soil HSL for Vapour Intrusion, Sand",
+                name: "NEPM 2013 Table 1A(3) Res A/B Soil HSL for Vapour Intrusion, Silt",
                 value:
-                  NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Sand,
-                colour: "#DCE6F1",
+                  NEPM_2013_Table_1A_3_Res_A_B_Soil_HSL_for_Vapour_Intrusion_Silt,
+                colour: "#EBF1DE",
               },
               {
-                name: "NEPM 2013 Table 1A(3) Comm/Ind D Soil HSL for Vapour Intrusion, Silt",
+                name: "NEPM 2013 Table 1A(3) Res A/B Soil HSL for Vapour Intrusion, Clay",
                 value:
-                  NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Silt,
-                colour: "#DCE6F1",
-              },
-              {
-                name: "NEPM 2013 Table 1A(3) Rec C Soil HSL for Vapour Intrusion, Clay",
-                value:
-                  NEPM_2013_Table_1A_3_Rec_C_Soil_HSL_for_Vapour_Intrusion_Clay,
-                colour: "#F2DCDB",
+                  NEPM_2013_Table_1A_3_Res_A_B_Soil_HSL_for_Vapour_Intrusion_Clay,
+                colour: "#EBF1DE",
               },
               {
                 name: "NEPM 2013 Table 1A(3) Rec C Soil HSL for Vapour Intrusion, Sand",
@@ -333,40 +327,34 @@ export const standardsStructure: AllStandards[] = [
                 colour: "#F2DCDB",
               },
               {
-                name: "NEPM 2013 Table 1A(3) Res A/B Soil HSL for Vapour Intrusion, Clay",
+                name: "NEPM 2013 Table 1A(3) Rec C Soil HSL for Vapour Intrusion, Clay",
                 value:
-                  NEPM_2013_Table_1A_3_Res_A_B_Soil_HSL_for_Vapour_Intrusion_Clay,
-                colour: "#EBF1DE",
+                  NEPM_2013_Table_1A_3_Rec_C_Soil_HSL_for_Vapour_Intrusion_Clay,
+                colour: "#F2DCDB",
               },
               {
-                name: "NEPM 2013 Table 1A(3) Res A/B Soil HSL for Vapour Intrusion, Sand",
+                name: "NEPM 2013 Table 1A(3) Comm/Ind D Soil HSL for Vapour Intrusion, Sand",
                 value:
-                  NEPM_2013_Table_1A_3_Res_A_B_Soil_HSL_for_Vapour_Intrusion_Sand,
-                colour: "#EBF1DE",
+                  NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Sand,
+                colour: "#DCE6F1",
               },
               {
-                name: "NEPM 2013 Table 1A(3) Res A/B Soil HSL for Vapour Intrusion, Silt",
+                name: "NEPM 2013 Table 1A(3) Comm/Ind D Soil HSL for Vapour Intrusion, Silt",
                 value:
-                  NEPM_2013_Table_1A_3_Res_A_B_Soil_HSL_for_Vapour_Intrusion_Silt,
-                colour: "#EBF1DE",
+                  NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Silt,
+                colour: "#DCE6F1",
+              },
+              {
+                name: "NEPM 2013 Table 1A(3) Comm/Ind D Soil HSL for Vapour Intrusion, Clay",
+                value:
+                  NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Clay,
+                colour: "#DCE6F1",
               },
             ],
           },
           {
             name: "Table 1B(7) Management Limits for TRH",
             value: [
-              {
-                name: "NEPM 2013 Table 1B(7) Management Limits Comm / Ind, Coarse Soil",
-                value:
-                  NEPM_2013_Table_1B_7_Management_Limits_Comm_Ind_Coarse_Soil,
-                colour: "#DCE6F1",
-              },
-              {
-                name: "NEPM 2013 Table 1B(7) Management Limits Comm / Ind, Fine Soil",
-                value:
-                  NEPM_2013_Table_1B_7_Management_Limits_Comm_Ind_Fine_Soil,
-                colour: "#DCE6F1",
-              },
               {
                 name: "NEPM 2013 Table 1B(7) Management Limits in Res / Parkland, Coarse Soil",
                 value:
@@ -378,6 +366,18 @@ export const standardsStructure: AllStandards[] = [
                 value:
                   NEPM_2013_Table_1B_7_Management_Limits_in_Res_Parkland_Fine_Soil,
                 colour: "#EBF1DE",
+              },
+              {
+                name: "NEPM 2013 Table 1B(7) Management Limits Comm / Ind, Coarse Soil",
+                value:
+                  NEPM_2013_Table_1B_7_Management_Limits_Comm_Ind_Coarse_Soil,
+                colour: "#DCE6F1",
+              },
+              {
+                name: "NEPM 2013 Table 1B(7) Management Limits Comm / Ind, Fine Soil",
+                value:
+                  NEPM_2013_Table_1B_7_Management_Limits_Comm_Ind_Fine_Soil,
+                colour: "#DCE6F1",
               },
             ],
           },
@@ -452,16 +452,6 @@ export const standardsStructure: AllStandards[] = [
             colour: "#DDD9C4",
           },
           {
-            name: "PFAS NEMP 2020 Industrial/ commercial (HIL D)",
-            value: PFAS_NEMP_2020_Industrial_commercial_HIL_D,
-            colour: "#DCE6F1",
-          },
-          {
-            name: "PFAS NEMP 2020 Public open space (HIL C)",
-            value: PFAS_NEMP_2020_Public_open_space_HIL_C,
-            colour: "#F2DCDB",
-          },
-          {
             name: "PFAS NEMP 2020 Residential with garden/accessible soil (HIL A)",
             value: PFAS_NEMP_2020_Residential_with_garden_accessible_soil_HIL_A,
             colour: "#EBF1DE",
@@ -473,10 +463,14 @@ export const standardsStructure: AllStandards[] = [
             colour: "#FFFFCC",
           },
           {
-            name: "PFAS NEMP 2020 Clay/Single Composite Lined Landfill Acceptance Criteria",
-            value:
-              PFAS_NEMP_2020_Clay_Single_Composite_Lined_Landfill_Acceptance_Criteria,
-            colour: "#B7DEE8",
+            name: "PFAS NEMP 2020 Public open space (HIL C)",
+            value: PFAS_NEMP_2020_Public_open_space_HIL_C,
+            colour: "#F2DCDB",
+          },
+          {
+            name: "PFAS NEMP 2020 Industrial/ commercial (HIL D)",
+            value: PFAS_NEMP_2020_Industrial_commercial_HIL_D,
+            colour: "#DCE6F1",
           },
           {
             name: "PFAS NEMP 2020 Double Composite Landfill Acceptance Criteria",
@@ -484,9 +478,15 @@ export const standardsStructure: AllStandards[] = [
             colour: "#92CDDC",
           },
           {
-            name: "PFAS NEMP 2020 Unlined Landfill Acceptance Criteria",
-            value: PFAS_NEMP_2020_Unlined_Landfill_Acceptance_Criteria,
-            colour: "#DAEEF3",
+            name: "PFAS NEMP 2020 Double Composite Landfill ASLP (Leached)",
+            value: PFAS_NEMP_2020_Double_Composite_Landfill_ASLP,
+            colour: "#92CDDC",
+          },
+          {
+            name: "PFAS NEMP 2020 Clay/Single Composite Lined Landfill Acceptance Criteria",
+            value:
+              PFAS_NEMP_2020_Clay_Single_Composite_Lined_Landfill_Acceptance_Criteria,
+            colour: "#B7DEE8",
           },
           {
             name: "PFAS NEMP 2020 Clay/Single Composite Lined Landfill ASLP (Leached)",
@@ -494,9 +494,9 @@ export const standardsStructure: AllStandards[] = [
             colour: "#B7DEE8",
           },
           {
-            name: "PFAS NEMP 2020 Double Composite Landfill ASLP (Leached)",
-            value: PFAS_NEMP_2020_Double_Composite_Landfill_ASLP,
-            colour: "#92CDDC",
+            name: "PFAS NEMP 2020 Unlined Landfill Acceptance Criteria",
+            value: PFAS_NEMP_2020_Unlined_Landfill_Acceptance_Criteria,
+            colour: "#DAEEF3",
           },
           {
             name: "PFAS NEMP 2020 Unlined Landfill ASLP (Leached)",
@@ -529,9 +529,9 @@ export const standardsStructure: AllStandards[] = [
         name: "ANZECC",
         value: [
           {
-            name: "ANZECC 2000 FW 90%",
-            value: ANZECC_2000_FW_90,
-            colour: "#AED6F1",
+            name: "ANZECC 2000 FW 99%",
+            value: ANZECC_2000_FW_99,
+            colour: "#5DADE2",
           },
           {
             name: "ANZECC 2000 FW 95%",
@@ -539,9 +539,9 @@ export const standardsStructure: AllStandards[] = [
             colour: "#85C1E9",
           },
           {
-            name: "ANZECC 2000 FW 99%",
-            value: ANZECC_2000_FW_99,
-            colour: "#5DADE2",
+            name: "ANZECC 2000 FW 90%",
+            value: ANZECC_2000_FW_90,
+            colour: "#AED6F1",
           },
           {
             name: "ANZECC 2000 Irrigation Long Term Trigger Values",
@@ -559,14 +559,14 @@ export const standardsStructure: AllStandards[] = [
             colour: "#D6DBDF",
           },
           {
-            name: "ANZECC 2000 MW 90%",
-            value: ANZECC_2000_MW_90,
-            colour: "#AED6F1",
-          },
-          {
             name: "ANZECC 2000 MW 95%",
             value: ANZECC_2000_MW_95,
             colour: "#85C1E9",
+          },
+          {
+            name: "ANZECC 2000 MW 90%",
+            value: ANZECC_2000_MW_90,
+            colour: "#AED6F1",
           },
           {
             name: "ANZECC 2000 Rec Water Quality and Aesthetics: Primary contact",
@@ -589,14 +589,9 @@ export const standardsStructure: AllStandards[] = [
         name: "ANZG",
         value: [
           {
-            name: "ANZG Freshwater Toxicant DGVs LOSP 80% (July 2023)",
-            value: ANZG_Freshwater_Toxicant_DGVs_LOSP_80,
-            colour: "#D6EAF8",
-          },
-          {
-            name: "ANZG Freshwater Toxicant DGVs LOSP 90% (July 2023)",
-            value: ANZG_Freshwater_Toxicant_DGVs_LOSP_90,
-            colour: "#AED6F1",
+            name: "ANZG Freshwater Toxicant DGVs LOSP 99% (July 2023)",
+            value: ANZG_Freshwater_Toxicant_DGVs_LOSP_99,
+            colour: "#5DADE2",
           },
           {
             name: "ANZG Freshwater Toxicant DGVs LOSP 95% (July 2023)",
@@ -604,19 +599,19 @@ export const standardsStructure: AllStandards[] = [
             colour: "#85C1E9",
           },
           {
-            name: "ANZG Freshwater Toxicant DGVs LOSP 99% (July 2023)",
-            value: ANZG_Freshwater_Toxicant_DGVs_LOSP_99,
-            colour: "#5DADE2",
+            name: "ANZG Freshwater Toxicant DGVs LOSP 90% (July 2023)",
+            value: ANZG_Freshwater_Toxicant_DGVs_LOSP_90,
+            colour: "#AED6F1",
           },
           {
-            name: "ANZG Marine Water Toxicant DGVs LOSP 80% (July 2023)",
-            value: ANZG_Marine_Water_Toxicant_DGVs_LOSP_80,
+            name: "ANZG Freshwater Toxicant DGVs LOSP 80% (July 2023)",
+            value: ANZG_Freshwater_Toxicant_DGVs_LOSP_80,
             colour: "#D6EAF8",
           },
           {
-            name: "ANZG Marine Water Toxicant DGVs LOSP 90% (July 2023)",
-            value: ANZG_Marine_Water_Toxicant_DGVs_LOSP_90,
-            colour: "#AED6F1",
+            name: "ANZG Marine Water Toxicant DGVs LOSP 99% (July 2023)",
+            value: ANZG_Marine_Water_Toxicant_DGVs_LOSP_99,
+            colour: "#5DADE2",
           },
           {
             name: "ANZG Marine Water Toxicant DGVs LOSP 95% (July 2023)",
@@ -624,48 +619,20 @@ export const standardsStructure: AllStandards[] = [
             colour: "#85C1E9",
           },
           {
-            name: "ANZG Marine Water Toxicant DGVs LOSP 99% (July 2023)",
-            value: ANZG_Marine_Water_Toxicant_DGVs_LOSP_99,
-            colour: "#5DADE2",
+            name: "ANZG Marine Water Toxicant DGVs LOSP 90% (July 2023)",
+            value: ANZG_Marine_Water_Toxicant_DGVs_LOSP_90,
+            colour: "#AED6F1",
+          },
+          {
+            name: "ANZG Marine Water Toxicant DGVs LOSP 80% (July 2023)",
+            value: ANZG_Marine_Water_Toxicant_DGVs_LOSP_80,
+            colour: "#D6EAF8",
           },
         ],
       },
       {
         name: "NEPM 2013",
         value: [
-          {
-            name: "NEPM 2013 Table 1A(4) Comm/Ind HSL D GW for Vapour Intrusion, Clay",
-            value:
-              NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay,
-            colour: "#DCE6F1",
-          },
-          {
-            name: "NEPM 2013 Table 1A(4) Comm/Ind HSL D GW for Vapour Intrusion, Sand",
-            value:
-              NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Sand,
-            colour: "#DCE6F1",
-          },
-          {
-            name: "NEPM 2013 Table 1A(4) Comm/Ind HSL D GW for Vapour Intrusion, Silt",
-            value:
-              NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Silt,
-            colour: "#DCE6F1",
-          },
-          {
-            name: "NEPM 2013 Table 1A(4) Rec HSL C GW for Vapour Intrusion, Clay",
-            value: NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Clay,
-            colour: "#F2DCDB",
-          },
-          {
-            name: "NEPM 2013 Table 1A(4) Rec HSL C GW for Vapour Intrusion, Sand",
-            value: NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Sand,
-            colour: "#F2DCDB",
-          },
-          {
-            name: "NEPM 2013 Table 1A(4) Rec HSL C GW for Vapour Intrusion, Silt",
-            value: NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Silt,
-            colour: "#F2DCDB",
-          },
           {
             name: "NEPM 2013 Table 1C GILs, Drinking Water",
             value: NEPM_2013_Table_1C_GILs_Drinking_Water,
@@ -682,11 +649,6 @@ export const standardsStructure: AllStandards[] = [
             colour: "#D6DBDF",
           },
           {
-            name: "NEPM 2013 Table 1A(4) Res HSL A & B GW for Vapour Intrusion, Clay",
-            value: NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Clay,
-            colour: "#EBF1DE",
-          },
-          {
             name: "NEPM 2013 Table 1A(4) Res HSL A & B GW for Vapour Intrusion, Sand",
             value: NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Sand,
             colour: "#EBF1DE",
@@ -695,6 +657,44 @@ export const standardsStructure: AllStandards[] = [
             name: "NEPM 2013 Table 1A(4) Res HSL A & B GW for Vapour Intrusion, Silt",
             value: NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Silt,
             colour: "#EBF1DE",
+          },
+          {
+            name: "NEPM 2013 Table 1A(4) Res HSL A & B GW for Vapour Intrusion, Clay",
+            value: NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Clay,
+            colour: "#EBF1DE",
+          },
+          {
+            name: "NEPM 2013 Table 1A(4) Rec HSL C GW for Vapour Intrusion, Sand",
+            value: NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Sand,
+            colour: "#F2DCDB",
+          },
+          {
+            name: "NEPM 2013 Table 1A(4) Rec HSL C GW for Vapour Intrusion, Silt",
+            value: NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Silt,
+            colour: "#F2DCDB",
+          },
+          {
+            name: "NEPM 2013 Table 1A(4) Rec HSL C GW for Vapour Intrusion, Clay",
+            value: NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Clay,
+            colour: "#F2DCDB",
+          },
+          {
+            name: "NEPM 2013 Table 1A(4) Comm/Ind HSL D GW for Vapour Intrusion, Sand",
+            value:
+              NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Sand,
+            colour: "#DCE6F1",
+          },
+          {
+            name: "NEPM 2013 Table 1A(4) Comm/Ind HSL D GW for Vapour Intrusion, Silt",
+            value:
+              NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Silt,
+            colour: "#DCE6F1",
+          },
+          {
+            name: "NEPM 2013 Table 1A(4) Comm/Ind HSL D GW for Vapour Intrusion, Clay",
+            value:
+              NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay,
+            colour: "#DCE6F1",
           },
         ],
       },
@@ -707,46 +707,6 @@ export const standardsStructure: AllStandards[] = [
             colour: "#D6DBDF",
           },
           {
-            name: "PFAS NEMP 2020 Freshwater 80%",
-            value: PFAS_NEMP_2020_Freshwater_80,
-            colour: "#D6EAF8",
-          },
-          {
-            name: "PFAS NEMP 2020 Freshwater 90%",
-            value: PFAS_NEMP_2020_Freshwater_90,
-            colour: "#AED6F1",
-          },
-          {
-            name: "PFAS NEMP 2020 Freshwater 95%",
-            value: PFAS_NEMP_2020_Freshwater_95,
-            colour: "#85C1E9",
-          },
-          {
-            name: "PFAS NEMP 2020 Freshwater 99%",
-            value: PFAS_NEMP_2020_Freshwater_99,
-            colour: "#5DADE2",
-          },
-          {
-            name: "PFAS NEMP 2020 Interim Marine 80%",
-            value: PFAS_NEMP_2020_Interim_Marine_80,
-            colour: "#D6EAF8",
-          },
-          {
-            name: "PFAS NEMP 2020 Interim Marine 90%",
-            value: PFAS_NEMP_2020_Interim_Marine_90,
-            colour: "#AED6F1",
-          },
-          {
-            name: "PFAS NEMP 2020 Interim Marine 95%",
-            value: PFAS_NEMP_2020_Interim_Marine_95,
-            colour: "#85C1E9",
-          },
-          {
-            name: "PFAS NEMP 2020 Interim Marine 99%",
-            value: PFAS_NEMP_2020_Interim_Marine_99,
-            colour: "#5DADE2",
-          },
-          {
             name: "PFAS NEMP 2020 Recreational Water",
             value: PFAS_NEMP_2020_Recreational_Water,
             colour: "#D6DBDF",
@@ -755,6 +715,46 @@ export const standardsStructure: AllStandards[] = [
             name: "Guidance on Per and Polyfluoroalkyl (PFAS) in Recreational Water",
             value: Guidance_on_PFAS_in_Recreational_Water,
             colour: "#D6DBDF",
+          },
+          {
+            name: "PFAS NEMP 2020 Freshwater 99%",
+            value: PFAS_NEMP_2020_Freshwater_99,
+            colour: "#5DADE2",
+          },
+          {
+            name: "PFAS NEMP 2020 Freshwater 95%",
+            value: PFAS_NEMP_2020_Freshwater_95,
+            colour: "#85C1E9",
+          },
+          {
+            name: "PFAS NEMP 2020 Freshwater 90%",
+            value: PFAS_NEMP_2020_Freshwater_90,
+            colour: "#AED6F1",
+          },
+          {
+            name: "PFAS NEMP 2020 Freshwater 80%",
+            value: PFAS_NEMP_2020_Freshwater_80,
+            colour: "#D6EAF8",
+          },
+          {
+            name: "PFAS NEMP 2020 Interim Marine 99%",
+            value: PFAS_NEMP_2020_Interim_Marine_99,
+            colour: "#5DADE2",
+          },
+          {
+            name: "PFAS NEMP 2020 Interim Marine 95%",
+            value: PFAS_NEMP_2020_Interim_Marine_95,
+            colour: "#85C1E9",
+          },
+          {
+            name: "PFAS NEMP 2020 Interim Marine 90%",
+            value: PFAS_NEMP_2020_Interim_Marine_90,
+            colour: "#AED6F1",
+          },
+          {
+            name: "PFAS NEMP 2020 Interim Marine 80%",
+            value: PFAS_NEMP_2020_Interim_Marine_80,
+            colour: "#D6EAF8",
           },
         ],
       },

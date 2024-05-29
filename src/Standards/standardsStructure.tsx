@@ -546,17 +546,17 @@ export const standardsStructure: AllStandards[] = [
           {
             name: "ANZECC 2000 Irrigation Long Term Trigger Values",
             value: ANZECC_2000_Irrigation_Long_Term_Trigger_Values,
-            colour: "#D6DBDF",
+            colour: "#FF9B9B",
           },
           {
             name: "ANZECC 2000 Irrigation Short Term Trigger Values",
             value: ANZECC_2000_Irrigation_Short_Term_Trigger_Values,
-            colour: "#D6DBDF",
+            colour: "#FF9B9B",
           },
           {
             name: "ANZECC 2000 Livestock DW Low Risk Trigger Values",
             value: ANZECC_2000_Livestock_DW_Low_Risk_Trigger_Values,
-            colour: "#D6DBDF",
+            colour: "#FF9393",
           },
           {
             name: "ANZECC 2000 MW 95%",
@@ -636,7 +636,7 @@ export const standardsStructure: AllStandards[] = [
           {
             name: "NEPM 2013 Table 1C GILs, Drinking Water",
             value: NEPM_2013_Table_1C_GILs_Drinking_Water,
-            colour: "#D6DBDF",
+            colour: "#46a5a1",
           },
           {
             name: "NEPM 2013 Table 1C GILs, Fresh Waters",
@@ -704,17 +704,17 @@ export const standardsStructure: AllStandards[] = [
           {
             name: "PFAS NEMP 2020 Drinking Water",
             value: PFAS_NEMP_2020_Drinking_Water,
-            colour: "#D6DBDF",
+            colour: "#46a5a1",
           },
           {
             name: "PFAS NEMP 2020 Recreational Water",
             value: PFAS_NEMP_2020_Recreational_Water,
-            colour: "#D6DBDF",
+            colour: "#AEB6BF",
           },
           {
             name: "Guidance on Per and Polyfluoroalkyl (PFAS) in Recreational Water",
             value: Guidance_on_PFAS_in_Recreational_Water,
-            colour: "#D6DBDF",
+            colour: "#AEB6BF",
           },
           {
             name: "PFAS NEMP 2020 Freshwater 99%",

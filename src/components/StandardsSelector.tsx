@@ -25,6 +25,7 @@ import {
 } from "./../consts/StandardSelectorConsts";
 import { SelectedStandardsId } from "../types/selectedStandardTypes";
 import { QuickSelect } from "./QuickSelect";
+import { ScreeningCriteriaQS } from "./ScreeningCriteriaQS";
 
 export const StandardsSelector: React.FC = () => {
   const [selectedStandardsIds, setSelectedStandardsIds] =
@@ -200,11 +201,16 @@ export const StandardsSelector: React.FC = () => {
 
   return (
     <Card sx={{ height: "100%" }} elevation={2}>
-      <Grid container spacing={1} padding={2}>
-        <Grid xs={12}>
+      <Grid container spacing={1} padding={2} >
+        <Grid xs={3}>
           <Typography variant="h6" fontWeight={"bold"}>
             Quick-Select Tables
           </Typography>
+        </Grid>
+        <Grid xs={9}>
+          <ScreeningCriteriaQS />
+        </Grid>
+        <Grid xs={12}>
           <QuickSelect />
         </Grid>
         <Grid xs={12}>

@@ -14,9 +14,10 @@ import {
 import Grid from "@mui/material/Unstable_Grid2";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { standardsStructure } from "../Standards/standardsStructure";
-import { AllStandards } from "../Standards/standardsTypes";
+import { AllStandards, Standard } from "../Standards/standardsTypes";
 import {
   useQuickSelectedTablesAtom,
+  useScreeningCriteriaQSAtom,
   useSelectedStandardsIdsAtom,
 } from "../atoms/standardsAtoms";
 import {
@@ -26,11 +27,13 @@ import {
 import { SelectedStandardsId } from "../types/selectedStandardTypes";
 import { QuickSelect } from "./QuickSelect";
 import { ScreeningCriteriaQS } from "./ScreeningCriteriaQS";
+import { screenedOut } from "../utils/selections";
 
 export const StandardsSelector: React.FC = () => {
   const [selectedStandardsIds, setSelectedStandardsIds] =
     useSelectedStandardsIdsAtom();
   const [quickSelectedTables] = useQuickSelectedTablesAtom();
+  const [screeningCriteriaQS] = useScreeningCriteriaQSAtom();
 
   const [expandedAccordions, setExpandedAccordions] = useState<
     Map<string, boolean>
@@ -115,7 +118,11 @@ export const StandardsSelector: React.FC = () => {
                 color={isSelected ? "black" : "primary"}
               >
                 {quickSelectedTables.map((table) => {
-                  return table.standards.some((s) => s === standard.value) ? (
+                  return table.standards.some((s) => s === standard.value) &&
+                    !screenedOut(
+                      standard.value as Standard,
+                      screeningCriteriaQS
+                    ) ? (
                     <Box
                       sx={{
                         position: "relative",
@@ -196,12 +203,13 @@ export const StandardsSelector: React.FC = () => {
       selectedStandardsIds,
       expandedAccordions,
       quickSelectedTables,
+      screeningCriteriaQS,
     ]
   );
 
   return (
     <Card sx={{ height: "100%" }} elevation={2}>
-      <Grid container spacing={1} padding={2} >
+      <Grid container spacing={1} padding={2}>
         <Grid xs={3}>
           <Typography variant="h6" fontWeight={"bold"}>
             Quick-Select Tables

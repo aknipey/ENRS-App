@@ -84,5 +84,12 @@ export const NSW_EPA_Recovered_Aggregate_Maximum_Average: Standard = {
       units: "%",
       comments: "",
     },
+    {
+      chemCode: "8007-45-2",
+      chemName: "Coal Tar",
+      value: 0,
+      units: "%",
+      comments: "",
+    }
   ],
 };

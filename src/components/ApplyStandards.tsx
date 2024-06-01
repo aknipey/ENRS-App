@@ -6,8 +6,12 @@ import {
   useSampleFileAtom,
   useSampleFileNameAtom,
 } from "../atoms/fileInputAtoms";
-import { useSelectedStandardsIdsAtom } from "../atoms/standardsAtoms";
-import { findExceedances } from "../utils/standardProcessing";
+import {
+  useQuickSelectedTablesAtom,
+  useScreeningCriteriaQSAtom,
+  useSelectedStandardsIdsAtom,
+} from "../atoms/standardsAtoms";
+import { findTableExceedances } from "../utils/standardProcessing";
 import { JSONObject } from "../types/fileStorage";
 
 export const ApplyStandards = () => {
@@ -17,6 +21,8 @@ export const ApplyStandards = () => {
   const [currentChemFileName] = useChemFileNameAtom();
   const [currentSampleFileName] = useSampleFileNameAtom();
   const [selectedStandardsIdsAtom] = useSelectedStandardsIdsAtom();
+  const [screeningCriteriaQS] = useScreeningCriteriaQSAtom();
+  const [quickSelectedTables] = useQuickSelectedTablesAtom();
   const [, setAllInputsAtom] = useAllInputsAtom();
 
   const handleApplyStandards = () => {
@@ -24,10 +30,12 @@ export const ApplyStandards = () => {
       chemFileName: currentChemFileName,
       sampleFileName: currentSampleFileName,
       selectedStandardsIds: selectedStandardsIdsAtom,
+      screeningCriteriaQS,
+      quickSelectedTables,
     });
 
     setResultFile(
-      findExceedances(
+      findTableExceedances(
         chemFileAtom as JSONObject,
         sampleFileAtom as JSONObject,
         selectedStandardsIdsAtom

@@ -1,5 +1,5 @@
 import { Matrix } from "../Standards/standardsTypes";
-import { SelectedStandardsIds } from "./selectedStandardTypes";
+import { QuickSelectTable, ScreenedQSRules, SelectedStandardsIds } from "./selectedStandardTypes";
 
 export type JSONObject = Record<string, any>;
 
@@ -7,6 +7,8 @@ export type AllInputs = {
   chemFileName: string;
   sampleFileName: string;
   selectedStandardsIds: SelectedStandardsIds;
+  screeningCriteriaQS: ScreenedQSRules;
+  quickSelectedTables: QuickSelectTable[];
 };
 
 export type ChemData = {

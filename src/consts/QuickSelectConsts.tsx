@@ -258,7 +258,7 @@ export const WATER_99_QS: QuickSelectTable = {
 
 export const ENM_QS: QuickSelectTable = {
   name: "ENM",
-  colour: "#99FF99",
+  colour: "#CCFFCC",
   standards: [
     NSW_2014_Excavated_Natural_Material_Absolute_Max,
     NSW_2014_Excavated_Natural_Material_Max_Average,

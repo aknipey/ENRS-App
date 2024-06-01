@@ -7,10 +7,15 @@ import {
 // import Papa from "papaparse";
 // import * as XLSXStyle from "xlsx-js-style";
 // import { applyHeaderFormatting, s2ab } from "../utils/xlsxProduction";
-import { useSelectedStandardsIdsAtom } from "../atoms/standardsAtoms";
+import {
+  useQuickSelectedTablesAtom,
+  useScreeningCriteriaQSAtom,
+  useSelectedStandardsIdsAtom,
+} from "../atoms/standardsAtoms";
 import { useMemo } from "react";
 import ExcelJS from "exceljs";
 import { editTemplateXLSX } from "../utils/xlsxProduction";
+import { findAllExceedances } from "../utils/standardProcessing";
 
 export const ResultsDownload = () => {
   const [resultFile] = useResultFileAtom();
@@ -18,6 +23,8 @@ export const ResultsDownload = () => {
   const [allInputs] = useAllInputsAtom();
   const [currentSampleFileName] = useSampleFileNameAtom();
   const [selectedStandardsIdsAtom] = useSelectedStandardsIdsAtom();
+  const [quickSelectedTables] = useQuickSelectedTablesAtom();
+  const [screeningCriteriaQS] = useScreeningCriteriaQSAtom();
 
   const unchangedInputs = useMemo(() => {
     return (
@@ -75,6 +82,14 @@ export const ResultsDownload = () => {
     if (!resultFile || !unchangedInputs) {
       return;
     }
+
+    const tableExceedances = findAllExceedances(
+      resultFile.data,
+      resultFile.sampleData,
+      selectedStandardsIdsAtom,
+      quickSelectedTables,
+      screeningCriteriaQS
+    );
 
     try {
       const response = await fetch("/ENRSxxxx_Soil-Tables.xlsx"); // Path to your file in the public folder

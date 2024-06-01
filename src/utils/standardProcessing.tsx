@@ -14,9 +14,12 @@ import {
   SampleData,
 } from "../types/fileStorage";
 import {
+  QuickSelectTable,
+  ScreenedQSRules,
   SelectedStandardsId,
   SelectedStandardsIds,
 } from "../types/selectedStandardTypes";
+import { screenedOut } from "./selections";
 
 // Returns an array of standards and their names that have been selected.
 const selectStandards = (
@@ -80,13 +83,11 @@ export const findSampleDepth = (
 };
 
 // Returns the filtered exceedance data wrapped in a json object
-export const findExceedances = (
+export const findTableExceedances = (
   chemFile: JSONObject,
   sampleFile: JSONObject,
-  selectedStandardsIds: SelectedStandardsIds
+  standards: AllStandards[]
 ): JSONObject => {
-  const standards = selectStandards(selectedStandardsIds);
-
   const chemData = [...chemFile.data] as ChemData[];
   const sampleData = [...sampleFile.data] as SampleData[];
   //! Need to look at special cases from the sample file
@@ -240,5 +241,61 @@ export const findExceedances = (
   return JSON.parse(
     // eslint-disable-next-line no-control-regex
     JSON.stringify({ data: filteredChemData }).replace(/[^\x00-\x7F]/g, "u")
+  );
+};
+
+export const findAllStandards = (
+  standard: Standard,
+  standardTree: AllStandards
+): AllStandards | undefined => {
+  if (standardTree.value === standard) {
+    return standardTree;
+  }
+
+  if (standardTree.value instanceof Array) {
+    let foundStandard: AllStandards | undefined = undefined;
+    standardTree.value.forEach((subStandard: AllStandards) => {
+      foundStandard = findAllStandards(standard, subStandard);
+      if (foundStandard) {
+        return foundStandard;
+      }
+    });
+  }
+  return undefined;
+};
+
+export const findAllExceedances = (
+  chemFile: JSONObject,
+  sampleFile: JSONObject,
+  selectedStandardsIds: SelectedStandardsIds,
+  quickSelectTables: QuickSelectTable[],
+  screeningCriteriaQS: ScreenedQSRules
+): JSONObject[] => {
+  const customStandards = selectStandards(selectedStandardsIds);
+
+  let tablesStandards: AllStandards[][] = [customStandards];
+
+  quickSelectTables.forEach((table: QuickSelectTable) => {
+    const qsTableStandards: AllStandards[] = [];
+
+    table.standards.forEach((standard: Standard) => {
+      if (!screenedOut(standard, screeningCriteriaQS)) {
+        const allStandard = findAllStandards(standard, {
+          name: "All",
+          value: standardsStructure,
+        });
+
+        if (allStandard) {
+          qsTableStandards.push(allStandard as AllStandards);
+        } else {
+          console.log("Why havent you found the standard??");
+        }
+      }
+    });
+    tablesStandards.push(qsTableStandards);
+  });
+
+  return tablesStandards.map((standards: AllStandards[]) =>
+    findTableExceedances(chemFile, sampleFile, standards)
   );
 };

@@ -14,7 +14,7 @@ import {
 import Grid from "@mui/material/Unstable_Grid2";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { standardsStructure } from "../Standards/standardsStructure";
-import { AllStandards, Standard } from "../Standards/standardsTypes";
+import { AllStandards } from "../Standards/standardsTypes";
 import {
   useQuickSelectedTablesAtom,
   useScreeningCriteriaQSAtom,
@@ -111,51 +111,50 @@ export const StandardsSelector: React.FC = () => {
                 },
               }}
             >
+              {quickSelectedTables.map((table) => {
+                return table.standards.some(
+                  (s) => s.value === standard.value
+                ) && !screenedOut(standard, screeningCriteriaQS) ? (
+                  <Box
+                    sx={{
+                      position: "relative",
+                      display: "inline-block",
+                      padding: "4px",
+                    }}
+                    key={table.name}
+                  >
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: "25%",
+                        left: "25%",
+                        width: "50%",
+                        height: "50%",
+                        backgroundColor: "black",
+                        zIndex: 0,
+                      }}
+                    />
+                    <Checkbox
+                      sx={{
+                        "&.Mui-checked": {
+                          color: table.colour,
+                        },
+                        padding: 0,
+                        position: "relative",
+                        zIndex: 1,
+                      }}
+                      checked
+                      disabled
+                    />
+                  </Box>
+                ) : null;
+              })}
               <Typography
                 className="hover-text"
                 fontSize={"small"}
                 width={"100%"}
                 color={isSelected ? "black" : "primary"}
               >
-                {quickSelectedTables.map((table) => {
-                  return table.standards.some((s) => s === standard.value) &&
-                    !screenedOut(
-                      standard.value as Standard,
-                      screeningCriteriaQS
-                    ) ? (
-                    <Box
-                      sx={{
-                        position: "relative",
-                        display: "inline-block",
-                        padding: "4px",
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          position: "absolute",
-                          top: "25%",
-                          left: "25%",
-                          width: "50%",
-                          height: "50%",
-                          backgroundColor: "black",
-                          zIndex: 0,
-                        }}
-                      />
-                      <Checkbox
-                        sx={{
-                          "&.Mui-checked": {
-                            color: table.colour,
-                          },
-                          padding: 0,
-                          position: "relative",
-                          zIndex: 1,
-                        }}
-                        checked
-                        disabled
-                      />
-                    </Box>
-                  ) : null;
-                })}
                 {standard.name}
               </Typography>
             </Button>

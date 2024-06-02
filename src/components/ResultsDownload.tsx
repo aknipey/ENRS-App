@@ -1,8 +1,8 @@
 import { Button } from "@mui/material";
-import { useAllInputsAtom, useResultFileAtom } from "../atoms/resultAtoms";
 import {
+  useChemFileAtom,
   useChemFileNameAtom,
-  useSampleFileNameAtom,
+  useSampleFileAtom,
 } from "../atoms/fileInputAtoms";
 // import Papa from "papaparse";
 // import * as XLSXStyle from "xlsx-js-style";
@@ -12,32 +12,17 @@ import {
   useScreeningCriteriaQSAtom,
   useSelectedStandardsIdsAtom,
 } from "../atoms/standardsAtoms";
-import { useMemo } from "react";
 import ExcelJS from "exceljs";
-import { editTemplateXLSX } from "../utils/xlsxProduction";
 import { findAllExceedances } from "../utils/standardProcessing";
+import { createTable } from "../utils/tableCreation";
 
 export const ResultsDownload = () => {
-  const [resultFile] = useResultFileAtom();
   const [currentChemFileName] = useChemFileNameAtom();
-  const [allInputs] = useAllInputsAtom();
-  const [currentSampleFileName] = useSampleFileNameAtom();
   const [selectedStandardsIdsAtom] = useSelectedStandardsIdsAtom();
   const [quickSelectedTables] = useQuickSelectedTablesAtom();
   const [screeningCriteriaQS] = useScreeningCriteriaQSAtom();
-
-  const unchangedInputs = useMemo(() => {
-    return (
-      allInputs.chemFileName === currentChemFileName &&
-      allInputs.sampleFileName === currentSampleFileName &&
-      allInputs.selectedStandardsIds === selectedStandardsIdsAtom
-    );
-  }, [
-    allInputs,
-    currentChemFileName,
-    currentSampleFileName,
-    selectedStandardsIdsAtom,
-  ]);
+  const [chemFileAtom] = useChemFileAtom();
+  const [sampleFileAtom] = useSampleFileAtom();
 
   // const handleDownloadResults = () => {
   //   if (!resultFile || !unchangedInputs) {
@@ -79,35 +64,43 @@ export const ResultsDownload = () => {
   // };
 
   const handleDownloadResults2 = async () => {
-    if (!resultFile || !unchangedInputs) {
+    if (!chemFileAtom || !sampleFileAtom) {
       return;
     }
 
     const tableExceedances = findAllExceedances(
-      resultFile.data,
-      resultFile.sampleData,
+      chemFileAtom,
+      sampleFileAtom,
       selectedStandardsIdsAtom,
       quickSelectedTables,
       screeningCriteriaQS
     );
 
     try {
-      const response = await fetch("/ENRSxxxx_Soil-Tables.xlsx"); // Path to your file in the public folder
-      const data = await response.arrayBuffer();
-
       const workbook = new ExcelJS.Workbook();
-      await workbook.xlsx.load(data);
+      workbook.creator = "ENRS App";
+      workbook.created = new Date();
+      workbook.modified = new Date();
 
-      const worksheet = workbook.getWorksheet("General");
-      const cell = worksheet!.getCell("B5");
-      cell.value = "AAAAAAAAAA";
-      editTemplateXLSX(worksheet as ExcelJS.Worksheet);
+      tableExceedances.forEach((table, i) => {
+        const name = i
+          ? quickSelectedTables[i - 1].name.replace(/[*/?:\\[\]]/g, "_")
+          : "Custom";
+        const colour = i
+          ? quickSelectedTables[i - 1].colour.replace("#", "FF")
+          : "FF00FFFF";
+        const worksheet = workbook.addWorksheet(name, {
+          properties: { tabColor: { argb: colour } },
+        });
+
+        createTable(worksheet, table);
+      });
 
       const buffer = await workbook.xlsx.writeBuffer();
       const blob = new Blob([buffer], {
         type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
       });
-      const fileName = "modified_file.xlsx";
+      const fileName = currentChemFileName.replace(/\.CSV$/, "-RESULTS.xlsx");
 
       // Create a download link
       const url = window.URL.createObjectURL(blob);
@@ -130,10 +123,10 @@ export const ResultsDownload = () => {
       style={{
         marginTop: "10px",
         backgroundColor:
-          !resultFile || !unchangedInputs ? undefined : "#4caf50",
+          !chemFileAtom || !sampleFileAtom ? undefined : "#4caf50",
       }}
       onClick={handleDownloadResults2}
-      disabled={!resultFile || !unchangedInputs}
+      disabled={!chemFileAtom || !sampleFileAtom}
     >
       Download Results
     </Button>

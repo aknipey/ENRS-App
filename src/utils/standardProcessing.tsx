@@ -88,6 +88,7 @@ export const findTableExceedances = (
   sampleFile: JSONObject,
   standards: AllStandards[]
 ): JSONObject => {
+  console.log(chemFile);
   const chemData = [...chemFile.data] as ChemData[];
   const sampleData = [...sampleFile.data] as SampleData[];
   //! Need to look at special cases from the sample file
@@ -278,18 +279,9 @@ export const findAllExceedances = (
   quickSelectTables.forEach((table: QuickSelectTable) => {
     const qsTableStandards: AllStandards[] = [];
 
-    table.standards.forEach((standard: Standard) => {
-      if (!screenedOut(standard, screeningCriteriaQS)) {
-        const allStandard = findAllStandards(standard, {
-          name: "All",
-          value: standardsStructure,
-        });
-
-        if (allStandard) {
-          qsTableStandards.push(allStandard as AllStandards);
-        } else {
-          console.log("Why havent you found the standard??");
-        }
+    table.standards.forEach((allStandards: AllStandards) => {
+      if (!screenedOut(allStandards, screeningCriteriaQS)) {
+        qsTableStandards.push(allStandards);
       }
     });
     tablesStandards.push(qsTableStandards);

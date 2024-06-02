@@ -1,4 +1,4 @@
-import { Standard } from "../Standards/standardsTypes";
+import { AllStandards } from "../Standards/standardsTypes";
 
 export type SelectedStandardsId = number[];
 
@@ -7,7 +7,7 @@ export type SelectedStandardsIds = SelectedStandardsId[];
 export type QuickSelectTable = {
   name: string;
   colour: string;
-  standards: Standard[];
+  standards: AllStandards[];
 };
 
 export type SedimentSets_T = {

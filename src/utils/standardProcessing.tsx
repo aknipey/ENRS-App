@@ -281,7 +281,7 @@ export const findAllExceedances = (
 ): JSONObject[] => {
   const customStandards = selectStandards(selectedStandardsIds);
 
-  let tablesStandards: AllStandards[][] = [customStandards];
+  let tablesStandards: AllStandards[][] = [];
 
   quickSelectTables.forEach((table: QuickSelectTable) => {
     const qsTableStandards: AllStandards[] = [];
@@ -293,6 +293,8 @@ export const findAllExceedances = (
     });
     tablesStandards.push(qsTableStandards);
   });
+
+  tablesStandards.push(customStandards);
 
   return tablesStandards.map((standards: AllStandards[]) =>
     findTableExceedances(chemFile, sampleFile, standards)

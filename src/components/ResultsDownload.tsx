@@ -42,12 +42,14 @@ export const ResultsDownload = memo(function ResultsDownloadComp() {
       workbook.modified = new Date();
 
       tableExceedances.forEach((table, i) => {
-        const name = i
-          ? quickSelectedTables[i - 1].name.replace(/[*/?:\\[\]]/g, "_")
-          : "Custom";
-        const colour = i
-          ? quickSelectedTables[i - 1].colour.replace("#", "FF")
-          : "FF00FFFF";
+        const name =
+          i < tableExceedances.length - 1
+            ? quickSelectedTables[i].name.replace(/[*/?:\\[\]]/g, "_")
+            : "Custom";
+        const colour =
+          i < tableExceedances.length - 1
+            ? quickSelectedTables[i].colour.replace("#", "FF")
+            : "FF00FFFF";
 
         const worksheet = workbook.addWorksheet(name, {
           properties: { tabColor: { argb: colour } },

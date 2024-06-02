@@ -47,13 +47,11 @@ const beginHeaders = (worksheet: ExcelJS.Worksheet, width: number) => {
 
 const makeAnalyteSet = (table: JSONObject): Set<string> => {
   const sampleAnalytesCC = new Set<string>();
-  console.log("\n\nRUnning \n\n");
 
   // Does not deal with when there are no standards for a result.
   table.data.forEach((result: JSONObject) => {
     if (result.hasStandard) {
       sampleAnalytesCC.add(result.ChemCode);
-      console.log("Added: ", result.ChemCode);
     }
   });
 
@@ -130,7 +128,38 @@ const writeDefaultAnalytes = (
     worksheet.mergeCells(4, startColumn, 4, column - 1);
   });
 
-  return column - 1;
+  return column;
+};
+
+const writeSpecialAnalytes = (
+  worksheet: ExcelJS.Worksheet,
+  table: JSONObject,
+  analytesCC: Set<string>,
+  width: number
+): number => {
+  if (analytesCC.size === 0) return width;
+
+  while (analytesCC.size > 0) {
+    const chemCode = analytesCC.values().next().value;
+    const nameCell = worksheet.getCell(4, width);
+    nameCell.value = chemistryMap[chemCode].ChemName;
+    nameCell.font = { name: "Arial", size: 10, bold: true };
+    nameCell.alignment = {
+      textRotation: 90,
+      horizontal: "center",
+      wrapText: true,
+    };
+    nameCell.border = ANALYTE_BORDER;
+
+    worksheet.mergeCells(4, width, 5, width);
+
+    const r6 = worksheet.getCell(6, width);
+    r6.border = R6_BORDER;
+    width++;
+    analytesCC.delete(chemCode);
+  }
+
+  return width;
 };
 
 const writeAnalytes = (
@@ -146,6 +175,7 @@ const writeAnalytes = (
   console.log("B: ", analytesCC.size);
   let width = writeDefaultAnalytes(worksheet, table, analytesCC);
   console.log("A ", analytesCC.size);
+  width = writeSpecialAnalytes(worksheet, table, analytesCC, width);
 
   return width;
 };
@@ -155,5 +185,5 @@ export const writeHeaders = (
   table: JSONObject
 ) => {
   const width = writeAnalytes(worksheet, table);
-  beginHeaders(worksheet, width);
+  beginHeaders(worksheet, width - 1);
 };

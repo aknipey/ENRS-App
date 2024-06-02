@@ -30,3 +30,9 @@ export const ANALYTE_BORDER: Partial<Borders> = {
   left: { style: "thin" },
   right: { style: "thin" },
 };
+
+export const R6_BORDER: Partial<Borders> = {
+  left: { style: "thin" },
+  right: { style: "thin" },
+  bottom: { style: "thin" },
+};

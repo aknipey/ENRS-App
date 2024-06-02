@@ -88,7 +88,6 @@ export const findTableExceedances = (
   sampleFile: JSONObject,
   standards: AllStandards[]
 ): JSONObject => {
-  console.log(chemFile);
   const chemData = [...chemFile.data] as ChemData[];
   const sampleData = [...sampleFile.data] as SampleData[];
   //! Need to look at special cases from the sample file
@@ -99,6 +98,7 @@ export const findTableExceedances = (
       let exceeded_standards = "";
       let exceeded_notes = "";
       let resultUnit = chem.Result_Unit;
+      let hasStandard = false;
       const sampleMatrix = findSampleMatrix(chem, sampleData);
 
       // Returning if not a regular result
@@ -107,6 +107,7 @@ export const findTableExceedances = (
           ...chem,
           exceeded_standards,
           exceeded_notes,
+          hasStandard,
         };
       }
 
@@ -118,6 +119,7 @@ export const findTableExceedances = (
           Result_Unit: resultUnit,
           exceeded_standards,
           exceeded_notes,
+          hasStandard,
         };
       }
 
@@ -155,6 +157,8 @@ export const findTableExceedances = (
         if (chemProfiles.length === 0) {
           return;
         }
+
+        hasStandard = true;
 
         chemProfiles.forEach((profile: ChemicalProfile) => {
           if (profile.value === -999) {
@@ -202,14 +206,16 @@ export const findTableExceedances = (
               ) {
                 result = result * 1000;
               } else {
-                console.log(
-                  "Mismatched units",
-                  profile.chemName,
-                  "profile units: ",
-                  profile.units,
-                  "chem.Result_Unit: ",
-                  resultUnit
-                );
+                if (resultUnit !== "%") {
+                  console.log(
+                    "Mismatched units",
+                    profile.chemName,
+                    "profile units: ",
+                    profile.units,
+                    "chem.Result_Unit: ",
+                    resultUnit
+                  );
+                }
                 return;
               }
             }
@@ -235,6 +241,7 @@ export const findTableExceedances = (
         Result_Unit: resultUnit,
         exceeded_standards,
         exceeded_notes,
+        hasStandard,
       };
     }
   );

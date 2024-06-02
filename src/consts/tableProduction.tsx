@@ -1,5 +1,19 @@
 import { AnalyteGroup } from "../types/tableProductionTypes";
 
+export const SPECIAL_ANALYTES_2 = [
+  "1336-36-3",
+  "TotalOPP",
+  "108-95-2",
+  "64743-03-9"
+];
+
+export const SPECIAL_ANALYTES_6 = [
+  "pH_Field",
+  "pH_Lab",
+  "EC_Field",
+  "EC_Lab",
+]
+
 export const ANALYTE_GROUPS: AnalyteGroup[] = [
   {
     name: "PFAS",

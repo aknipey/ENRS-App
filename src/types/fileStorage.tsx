@@ -50,4 +50,5 @@ export type SampleData = {
 export type FilteredChemData = ChemData & {
   exceeded_standards: string;
   exceeded_notes: string;
+  hasStandard: boolean;
 };

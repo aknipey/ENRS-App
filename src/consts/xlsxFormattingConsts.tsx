@@ -1,5 +1,7 @@
 // import { RowObj } from "../types/excelFormatting";
 
+import { Borders } from "exceljs";
+
 export const EXCEEDED_STANDARDS_COL = 18;
 export const PREFIX_COL = 3;
 export const RESULT_COL = 4;
@@ -12,7 +14,19 @@ export const HEADER_FORMATTING = {
 
 export const EXCEEDED_ROW_FORMATTING = { font: { color: { rgb: "FF0000" } } };
 
-
 // export const StandardToRows : Map<number[], RowObj> = new Map([
 //   {[]}
 // ]);
+
+export const FULL_BORDER: Partial<Borders> = {
+  top: { style: "thin" },
+  left: { style: "thin" },
+  bottom: { style: "thin" },
+  right: { style: "thin" },
+};
+
+export const ANALYTE_BORDER: Partial<Borders> = {
+  top: { style: "thin" },
+  left: { style: "thin" },
+  right: { style: "thin" },
+};

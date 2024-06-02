@@ -89,8 +89,11 @@ export const ResultsDownload = () => {
         const colour = i
           ? quickSelectedTables[i - 1].colour.replace("#", "FF")
           : "FF00FFFF";
+
         const worksheet = workbook.addWorksheet(name, {
           properties: { tabColor: { argb: colour } },
+          pageSetup: { paperSize: 9, orientation: "landscape" },
+          views: [{ zoomScale: 85 }],
         });
 
         createTable(worksheet, table);

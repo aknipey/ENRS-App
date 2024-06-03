@@ -12,7 +12,7 @@ import {
 import Grid from "@mui/material/Unstable_Grid2";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { standardsStructure } from "../Standards/standardsStructure";
-import { AllStandards } from "../Standards/standardsTypes";
+import { AllStandards, Standard } from "../Standards/standardsTypes";
 import {
   useQuickSelectedTablesAtom,
   useScreeningCriteriaQSAtom,
@@ -26,7 +26,7 @@ import { BlackBackedCheckbox } from "./BlackBackedCheckbox";
 import {
   ACCORDION_SUMMARY_SX,
   ACCORDION_SX,
-} from "../consts/standardSelectorConsts";
+} from "../consts/standardsSelectorConsts";
 
 export const StandardsSelector: React.FC = () => {
   const [selectedStandardsIds, setSelectedStandardsIds] =
@@ -65,10 +65,10 @@ export const StandardsSelector: React.FC = () => {
     const setAllExpanded = (standards: AllStandards[], path: number[] = []) => {
       standards.forEach((standard, index) => {
         const newPath = path.concat(index);
-        if (!Array.isArray(standard.value) || standard.value.length === 0)
+        if (standard.value.length === 0 || !("value" in standard.value[0]))
           return;
         newExpandedAccordions.set(newPath.join("-"), newExpandAll);
-        setAllExpanded(standard.value, newPath);
+        setAllExpanded(standard.value as AllStandards[], newPath);
       });
     };
     setAllExpanded(standardsStructure);
@@ -86,84 +86,86 @@ export const StandardsSelector: React.FC = () => {
 
   const renderStandards = useCallback(
     (standards: AllStandards[], level = 0, path: number[] = []) => {
-      return standards.map((standard: AllStandards, index: number) => {
-        const isLeafNode =
-          !Array.isArray(standard.value) || standard.value.length === 0;
-        const newPath = path.concat(index);
-        if (isLeafNode) {
-          const isSelected = selectedStandardsIds.some((id) => {
-            return id.join("-") === newPath.join("-");
-          });
-          return (
-            <Button
-              key={newPath.join("-")}
-              onClick={() => handleStandardSelection(newPath)}
-              sx={{
-                width: "100%",
-                backgroundColor: isSelected ? standard.colour : "transparent",
-                color: isSelected ? "primary.contrastText" : "inherit",
-                "&:hover": {
-                  backgroundColor: standard.colour,
-                  "& .hover-text": {
-                    fontWeight: "bold",
+      return standards.map(
+        (standard: AllStandards | Standard, index: number) => {
+          const isLeafNode = !("value" in standard);
+          const newPath = path.concat(index);
+          if (isLeafNode) {
+            const isSelected = selectedStandardsIds.some((id) => {
+              return id.join("-") === newPath.join("-");
+            });
+            return (
+              <Button
+                key={newPath.join("-")}
+                onClick={() => handleStandardSelection(newPath)}
+                sx={{
+                  width: "100%",
+                  backgroundColor: isSelected
+                    ? standard.visual.colour
+                    : "transparent",
+                  color: isSelected ? "primary.contrastText" : "inherit",
+                  "&:hover": {
+                    backgroundColor: standard.visual.colour,
+                    "& .hover-text": {
+                      fontWeight: "bold",
+                    },
                   },
-                },
-              }}
-            >
-              {quickSelectedTables.map((table) => {
-                return table.standards.some(
-                  (s) => s.value === standard.value
-                ) && !screenedOut(standard, screeningCriteriaQS) ? (
-                  <BlackBackedCheckbox table={table} />
-                ) : null;
-              })}
-              <Typography
-                className="hover-text"
-                fontSize={"small"}
-                width={"100%"}
-                color={isSelected ? "black" : "primary"}
+                }}
               >
-                {standard.name}
-              </Typography>
-            </Button>
+                {quickSelectedTables.map((table) => {
+                  return table.standards.some((s) => s === standard) &&
+                    !screenedOut(standard, screeningCriteriaQS) ? (
+                    <BlackBackedCheckbox table={table} />
+                  ) : null;
+                })}
+                <Typography
+                  className="hover-text"
+                  fontSize={"small"}
+                  width={"100%"}
+                  color={isSelected ? "black" : "primary"}
+                >
+                  {standard.visual.name}
+                </Typography>
+              </Button>
+            );
+          }
+
+          const pathKey = newPath.join("-");
+          const isExpanded = expandedAccordions.get(pathKey) ?? false;
+
+          return (
+            <Accordion
+              key={pathKey}
+              sx={{ marginLeft: `${level * 8}px`, ...ACCORDION_SX }}
+              expanded={isExpanded}
+              onChange={handleAccordionChange(newPath)}
+              square
+            >
+              <AccordionSummary
+                expandIcon={isLeafNode ? null : <ExpandMoreIcon />}
+                aria-controls={`panel-content-${pathKey}`}
+                id={`panel-header-${pathKey}`}
+                sx={ACCORDION_SUMMARY_SX}
+                disableTouchRipple
+                disableRipple
+                aria-disabled
+              >
+                <Typography
+                  fontSize={20 - level * 3}
+                  fontWeight={!level ? "bold" : "normal"}
+                >
+                  {standard.name}
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                {renderStandards(standard.value as AllStandards[], level + 1, [
+                  ...newPath,
+                ])}
+              </AccordionDetails>
+            </Accordion>
           );
         }
-
-        const pathKey = newPath.join("-");
-        const isExpanded = expandedAccordions.get(pathKey) ?? false;
-
-        return (
-          <Accordion
-            key={pathKey}
-            sx={{ marginLeft: `${level * 8}px`, ...ACCORDION_SX }}
-            expanded={isExpanded}
-            onChange={handleAccordionChange(newPath)}
-            square
-          >
-            <AccordionSummary
-              expandIcon={isLeafNode ? null : <ExpandMoreIcon />}
-              aria-controls={`panel-content-${pathKey}`}
-              id={`panel-header-${pathKey}`}
-              sx={ACCORDION_SUMMARY_SX}
-              disableTouchRipple
-              disableRipple
-              aria-disabled
-            >
-              <Typography
-                fontSize={20 - level * 3}
-                fontWeight={!level ? "bold" : "normal"}
-              >
-                {standard.name}
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              {renderStandards(standard.value as AllStandards[], level + 1, [
-                ...newPath,
-              ])}
-            </AccordionDetails>
-          </Accordion>
-        );
-      });
+      );
     },
     [
       handleStandardSelection,

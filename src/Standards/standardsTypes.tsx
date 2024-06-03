@@ -34,7 +34,7 @@ export type Standard = {
   visual: {
     colour: string;
     name: string;
-  }
+  };
 };
 
 export type AllStandards = {
@@ -46,4 +46,4 @@ export type AllStandards = {
 export type DepthConds = {
   upper: number;
   lower?: number;
-}
+};

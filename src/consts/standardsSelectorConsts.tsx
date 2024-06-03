@@ -1,4 +1,3 @@
-
 export const ACCORDION_SX = {
   "&:before": { display: "none" },
   boxShadow: "none",

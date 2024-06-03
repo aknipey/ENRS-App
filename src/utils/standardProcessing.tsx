@@ -24,15 +24,17 @@ import { screenedOut } from "./selections";
 // Returns an array of standards and their names that have been selected.
 const selectStandards = (
   standardsIds: SelectedStandardsIds
-): AllStandards[] => {
+): Standard[] => {
   const selectedStandards = standardsIds.map((path: SelectedStandardsId) => {
     let standard: AllStandards = standardsStructure[path[0]];
 
-    for (let i = 1; i < path.length; i++) {
-      standard = (standard.value as AllStandards[])[path[i]] as AllStandards;
+    let i = 1;
+    while (i < path.length) {
+      standard = (standard.value as AllStandards[])[path[i]];
+      i++;
     }
 
-    return standard;
+    return standard.value[path[i]] as Standard;
   });
 
   return Array.from(new Set(selectedStandards));
@@ -86,7 +88,7 @@ export const findSampleDepth = (
 export const findTableExceedances = (
   chemFile: JSONObject,
   sampleFile: JSONObject,
-  standards: AllStandards[]
+  standards: Standard[]
 ): JSONObject => {
   const chemData = [...chemFile.data] as ChemData[];
   const sampleData = [...sampleFile.data] as SampleData[];
@@ -124,19 +126,19 @@ export const findTableExceedances = (
       }
 
       // For each standard
-      standards.forEach((standard: AllStandards) => {
+      standards.forEach((standard: Standard) => {
         // Check matrices match
         if (
-          (
-            standard.value as Standard
-          ).standardInfo.matrix.toLocaleLowerCase() !==
+          
+            standard
+          .standardInfo.matrix.toLocaleLowerCase() !==
           sampleMatrix.toLocaleLowerCase()
         ) {
           return;
         }
 
         // Get all the relevant chem profiles from the standard. Look at chem and depth
-        const chemProfiles = (standard.value as Standard).values.filter(
+        const chemProfiles = standard.values.filter(
           (profile: ChemicalProfile) => {
             const chemDepth = findSampleDepth(chem, sampleData);
             if (profile?.conditions) {
@@ -162,7 +164,7 @@ export const findTableExceedances = (
 
         chemProfiles.forEach((profile: ChemicalProfile) => {
           if (profile.value === -999) {
-            exceeded_notes += `- No ${standard.name} standard for ${profile.chemName}. -`;
+            exceeded_notes += `- No ${standard.visual.name} standard for ${profile.chemName}. -`;
             return;
           }
           let result = Number(chem.Result);
@@ -184,7 +186,7 @@ export const findTableExceedances = (
                 result > (profile.value as RangeValue).max) &&
               resultUnit !== "%"
             ) {
-              exceeded_standards += `${standard.name}, `;
+              exceeded_standards += `${standard.visual.name}, `;
               exceeded_notes += `- Outside ${profile.chemName} range of ${
                 (profile.value as RangeValue).min
               }-${
@@ -193,8 +195,8 @@ export const findTableExceedances = (
             }
           } else if (chem.ChemCode.includes("DO%Sat")) {
             if (result < (profile.value as number) && resultUnit !== "%") {
-              exceeded_standards += `${standard.name}, `;
-              exceeded_notes += `- Exceeded ${profile.chemName} ${standard.name} standard of ${profile.value} ${profile.units} with a result of ${result} ${profile.units} -`;
+              exceeded_standards += `${standard.visual.name}, `;
+              exceeded_notes += `- Exceeded ${profile.chemName} ${standard.visual.name} standard of ${profile.value} ${profile.units} with a result of ${result} ${profile.units} -`;
             }
           } else if (chem.Prefix !== "<") {
             if (profile.units !== resultUnit) {
@@ -220,8 +222,8 @@ export const findTableExceedances = (
               }
             }
             if (result > (profile.value as number)) {
-              exceeded_standards += `${standard.name}, `;
-              exceeded_notes += `- Exceeded ${profile.chemName} ${standard.name} standard of ${profile.value} ${profile.units} with a result of ${chem.Result} ${resultUnit}. -`;
+              exceeded_standards += `${standard.visual.name}, `;
+              exceeded_notes += `- Exceeded ${profile.chemName} ${standard.visual.name} standard of ${profile.value} ${profile.units} with a result of ${chem.Result} ${resultUnit}. -`;
             }
 
             if (profile.chemName !== chem.OriginalChemName) {
@@ -252,26 +254,6 @@ export const findTableExceedances = (
   );
 };
 
-export const findAllStandards = (
-  standard: Standard,
-  standardTree: AllStandards
-): AllStandards | undefined => {
-  if (standardTree.value === standard) {
-    return standardTree;
-  }
-
-  if (standardTree.value instanceof Array) {
-    let foundStandard: AllStandards | undefined = undefined;
-    standardTree.value.forEach((subStandard: AllStandards) => {
-      foundStandard = findAllStandards(standard, subStandard);
-      if (foundStandard) {
-        return foundStandard;
-      }
-    });
-  }
-  return undefined;
-};
-
 export const findAllExceedances = (
   chemFile: JSONObject,
   sampleFile: JSONObject,
@@ -281,14 +263,14 @@ export const findAllExceedances = (
 ): JSONObject[] => {
   const customStandards = selectStandards(selectedStandardsIds);
 
-  let tablesStandards: AllStandards[][] = [];
+  let tablesStandards: Standard[][] = [];
 
   quickSelectTables.forEach((table: QuickSelectTable) => {
-    const qsTableStandards: AllStandards[] = [];
+    const qsTableStandards: Standard[] = [];
 
-    table.standards.forEach((allStandards: AllStandards) => {
-      if (!screenedOut(allStandards, screeningCriteriaQS)) {
-        qsTableStandards.push(allStandards);
+    table.standards.forEach((standard: Standard) => {
+      if (!screenedOut(standard, screeningCriteriaQS)) {
+        qsTableStandards.push(standard);
       }
     });
     tablesStandards.push(qsTableStandards);
@@ -296,7 +278,7 @@ export const findAllExceedances = (
 
   tablesStandards.push(customStandards);
 
-  return tablesStandards.map((standards: AllStandards[]) =>
+  return tablesStandards.map((standards: Standard[]) =>
     findTableExceedances(chemFile, sampleFile, standards)
   );
 };

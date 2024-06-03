@@ -65,8 +65,7 @@ export const StandardsSelector: React.FC = () => {
     const setAllExpanded = (standards: AllStandards[], path: number[] = []) => {
       standards.forEach((standard, index) => {
         const newPath = path.concat(index);
-        if (standard.value.length === 0 || !("value" in standard.value[0]))
-          return;
+        if (!("value" in standard)) return;
         newExpandedAccordions.set(newPath.join("-"), newExpandAll);
         setAllExpanded(standard.value as AllStandards[], newPath);
       });

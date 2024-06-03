@@ -8,8 +8,6 @@ import {
   Typography,
   Button,
   Divider,
-  Checkbox,
-  Box,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -28,6 +26,7 @@ import { SelectedStandardsId } from "../types/selectedStandardTypes";
 import { QuickSelect } from "./QuickSelect";
 import { ScreeningCriteriaQS } from "./ScreeningCriteriaQS";
 import { screenedOut } from "../utils/selections";
+import { BlackBackedCheckbox } from "./BlackBackedCheckbox";
 
 export const StandardsSelector: React.FC = () => {
   const [selectedStandardsIds, setSelectedStandardsIds] =
@@ -115,38 +114,7 @@ export const StandardsSelector: React.FC = () => {
                 return table.standards.some(
                   (s) => s.value === standard.value
                 ) && !screenedOut(standard, screeningCriteriaQS) ? (
-                  <Box
-                    sx={{
-                      position: "relative",
-                      display: "inline-block",
-                      padding: "4px",
-                    }}
-                    key={table.name}
-                  >
-                    <Box
-                      sx={{
-                        position: "absolute",
-                        top: "27%",
-                        left: "25%",
-                        width: "45%",
-                        height: "45%",
-                        backgroundColor: "black",
-                        zIndex: 0,
-                      }}
-                    />
-                    <Checkbox
-                      sx={{
-                        "&.Mui-checked": {
-                          color: table.colour,
-                        },
-                        padding: 0,
-                        position: "relative",
-                        zIndex: 1,
-                      }}
-                      checked
-                      disabled
-                    />
-                  </Box>
+                  <BlackBackedCheckbox table={table} />
                 ) : null;
               })}
               <Typography

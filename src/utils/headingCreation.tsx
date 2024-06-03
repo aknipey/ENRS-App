@@ -10,7 +10,7 @@ import {
   FULL_BORDER,
   R6_BORDER,
 } from "../consts/xlsxFormattingConsts";
-import { chemistryMap } from "../consts/ChemistryMap";
+import { chemistryMap } from "../consts/chemistryMap";
 
 const beginHeaders = (worksheet: ExcelJS.Worksheet, width: number) => {
   worksheet.getColumn(2).width = 16;

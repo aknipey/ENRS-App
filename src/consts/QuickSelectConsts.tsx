@@ -79,9 +79,9 @@ import { PFAS_NEMP_2020_Interim_Marine_90 } from "../Standards/Water/PFAS/PFAS_N
 import { PFAS_NEMP_2020_Interim_Marine_95 } from "../Standards/Water/PFAS/PFAS_NEMP_2020_Interim_Marine_95";
 import { PFAS_NEMP_2020_Interim_Marine_99 } from "../Standards/Water/PFAS/PFAS_NEMP_2020_Interim_Marine_99";
 import { QuickSelectTable } from "../types/selectedStandardTypes";
-import { NEPM_2013_Table_1B_5_Generic_EIL_Comm_Ind } from "./../Standards/Soil/NEPM2013/EILs/NEPM_2013_Table_1B-5_Generic EIL-Comm-Ind";
-import { PFAS_NEMP_2020_Residential_with_garden_accessible_soil_HIL_A } from "./../Standards/Soil/PFAS/PFAS NEMP_2020_Residential_with_garden-accessible_soil_HIL-A";
-import { PFAS_NEMP_2020_Recreational_Water } from "./../Standards/Water/PFAS/PFAS_NEMP_2020_Recreational_Water";
+import { NEPM_2013_Table_1B_5_Generic_EIL_Comm_Ind } from "../Standards/Soil/NEPM2013/EILs/NEPM_2013_Table_1B-5_Generic EIL-Comm-Ind";
+import { PFAS_NEMP_2020_Residential_with_garden_accessible_soil_HIL_A } from "../Standards/Soil/PFAS/PFAS NEMP_2020_Residential_with_garden-accessible_soil_HIL-A";
+import { PFAS_NEMP_2020_Recreational_Water } from "../Standards/Water/PFAS/PFAS_NEMP_2020_Recreational_Water";
 
 export const DEFENCE_QS: QuickSelectTable = {
   name: "Defence",

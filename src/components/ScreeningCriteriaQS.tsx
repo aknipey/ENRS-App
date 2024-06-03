@@ -10,7 +10,7 @@ import {
   SEDIMENT_SETS,
   TEXTURE_SETS,
   WATER_SETS,
-} from "./../consts/ScreeningCriteriaQSConsts";
+} from "../consts/screeningCriteriaQSConsts";
 import { useCallback } from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 

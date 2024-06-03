@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useDropzone, FileWithPath } from "react-dropzone";
 import { Button, Paper, Typography } from "@mui/material";
-import { DROP_ZONE_SX } from "../consts/FileImportConsts";
+import { DROP_ZONE_SX } from "../consts/fileImportConsts";
 import {
   useSampleFileAtom,
   useSampleFileNameAtom,

@@ -18,15 +18,15 @@ import {
   useScreeningCriteriaQSAtom,
   useSelectedStandardsIdsAtom,
 } from "../atoms/standardsAtoms";
-import {
-  ACCORDION_SUMMARY_SX,
-  ACCORDION_SX,
-} from "./../consts/StandardSelectorConsts";
 import { SelectedStandardsId } from "../types/selectedStandardTypes";
 import { QuickSelect } from "./QuickSelect";
 import { ScreeningCriteriaQS } from "./ScreeningCriteriaQS";
 import { screenedOut } from "../utils/selections";
 import { BlackBackedCheckbox } from "./BlackBackedCheckbox";
+import {
+  ACCORDION_SUMMARY_SX,
+  ACCORDION_SX,
+} from "../consts/standardSelectorConsts";
 
 export const StandardsSelector: React.FC = () => {
   const [selectedStandardsIds, setSelectedStandardsIds] =

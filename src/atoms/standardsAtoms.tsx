@@ -4,7 +4,7 @@ import {
   ScreenedQSRules,
   SelectedStandardsIds,
 } from "../types/selectedStandardTypes";
-import { INITIAL_QS_RULES } from "../consts/ScreeningCriteriaQSConsts";
+import { INITIAL_QS_RULES } from "../consts/screeningCriteriaQSConsts";
 
 export const selectedStandardsIdsAtom = atom<SelectedStandardsIds>([]);
 

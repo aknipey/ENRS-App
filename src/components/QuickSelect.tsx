@@ -1,6 +1,6 @@
 import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-import { QUICK_SELECTS } from "../consts/QuickSelectConsts";
+import { QUICK_SELECTS } from "../consts/quickSelectConsts";
 import { useQuickSelectedTablesAtom } from "../atoms/standardsAtoms";
 import { useCallback } from "react";
 import { QuickSelectTable } from "../types/selectedStandardTypes";

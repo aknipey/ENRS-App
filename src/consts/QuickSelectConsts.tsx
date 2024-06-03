@@ -38,6 +38,8 @@ import { NSW_2014_Excavated_Natural_Material_Absolute_Max } from "../Standards/S
 import { NSW_2014_Excavated_Natural_Material_Max_Average } from "../Standards/Soil/NSW/NSW_2014_Excavated_Natural_Material_Max-Average";
 import { NSW_2014_General_Solid_Waste_CT1_No_Leaching } from "../Standards/Soil/NSW/NSW_2014_General_Solid_Waste_CT1_No_Leaching";
 import { NSW_2014_General_Solid_Waste_SCC1_with_leached } from "../Standards/Soil/NSW/NSW_2014_General_Solid_Waste_SCC1_with-leached";
+import { NSW_2014_Restricted_Solid_Waste_CT2_No_Leaching } from "../Standards/Soil/NSW/NSW_2014_Restricted_Solid_Waste_CT2_No_Leaching";
+import { NSW_2014_Restricted_Solid_Waste_SCC2_with_leached } from "../Standards/Soil/NSW/NSW_2014_Restricted_Solid_Waste_SCC2_with-leached";
 import { NSW_EPA_Recovered_Aggregate_Absolute_Maximum } from "../Standards/Soil/NSW/NSW_EPA_Recovered_Aggregate_Absolute_Maximum";
 import { NSW_EPA_Recovered_Aggregate_Maximum_Average } from "../Standards/Soil/NSW/NSW_EPA_Recovered_Aggregate_Maximum_Average";
 import { PFAS_NEMP_2020_Ecological_direct_exposure } from "../Standards/Soil/PFAS/PFAS_NEMP_2020_Ecological_direct_exposure";
@@ -641,7 +643,6 @@ export const ENM_QS: QuickSelectTable = {
   ],
 };
 
-
 export const RA_QS: QuickSelectTable = {
   name: "RA",
   colour: "#FDE9D9",
@@ -659,20 +660,30 @@ export const RA_QS: QuickSelectTable = {
   ],
 };
 
-export const GSW_QS: QuickSelectTable = {
-  name: "GSW (No Leach)",
-  colour: "#DAEEF3",
+export const GSW_RSW_QS: QuickSelectTable = {
+  name: "GSW + RSW",
+  colour: "#E4DFEC",
   standards: [
     {
       name: "NSW 2014 General Solid Waste CT1 (No Leaching)",
       colour: "#DAEEF3",
-      value: NSW_2014_General_Solid_Waste_CT1_No_Leaching
+      value: NSW_2014_General_Solid_Waste_CT1_No_Leaching,
     },
     {
       name: "NSW 2014 General Solid Waste SCC1 (with leached)",
       colour: "#DAEEF3",
-      value: NSW_2014_General_Solid_Waste_SCC1_with_leached
-    }
+      value: NSW_2014_General_Solid_Waste_SCC1_with_leached,
+    },
+    {
+      name: "NSW 2014 Restricted Solid Waste CT2 (No Leaching)",
+      value: NSW_2014_Restricted_Solid_Waste_CT2_No_Leaching,
+      colour: "#E4DFEC",
+    },
+    {
+      name: "NSW 2014 Restricted Solid Waste SCC2 (with leached)",
+      value: NSW_2014_Restricted_Solid_Waste_SCC2_with_leached,
+      colour: "#E4DFEC",
+    },
   ],
 };
 
@@ -692,5 +703,5 @@ export const QUICK_SELECTS: QuickSelectTable[] = [
   DRINKING_QS,
   AGGRICULTURAL_QS,
   RECREATIONAL_QS,
-  GSW_QS,
+  GSW_RSW_QS,
 ];

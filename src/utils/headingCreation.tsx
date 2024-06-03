@@ -172,9 +172,7 @@ const writeAnalytes = (
   // Go through the rest and add them to the left (with exceptions)
 
   const analytesCC = makeAnalyteSet(table);
-  console.log("B: ", analytesCC.size);
   let width = writeDefaultAnalytes(worksheet, table, analytesCC);
-  console.log("A ", analytesCC.size);
   width = writeSpecialAnalytes(worksheet, table, analytesCC, width);
 
   return width;

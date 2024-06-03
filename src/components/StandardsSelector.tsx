@@ -126,10 +126,10 @@ export const StandardsSelector: React.FC = () => {
                     <Box
                       sx={{
                         position: "absolute",
-                        top: "25%",
+                        top: "27%",
                         left: "25%",
-                        width: "50%",
-                        height: "50%",
+                        width: "45%",
+                        height: "45%",
                         backgroundColor: "black",
                         zIndex: 0,
                       }}

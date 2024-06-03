@@ -5,6 +5,10 @@ export const NEPM_2013_Table_1C_GILs_Fresh_Waters: Standard = {
     matrix: "Water",
     leached: false,
   },
+  visual: {
+    colour: "#D6DBDF",
+    name: "NEPM 2013 Table 1C GILs Fresh Waters",
+  },
   values: [
     {
       chemCode: "106-42-3",

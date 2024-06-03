@@ -5,6 +5,10 @@ export const PFAS_NEMP_2020_Unlined_Landfill_ASLP: Standard = {
     matrix: "Water",
     leached: true,
   },
+  visual: {
+    colour: "#DAEEF3",
+    name: "PFAS NEMP 2020 Unlined Landfill ASLP (Leached)",
+  },
   values: [
     {
       chemCode: "1763-23-1",

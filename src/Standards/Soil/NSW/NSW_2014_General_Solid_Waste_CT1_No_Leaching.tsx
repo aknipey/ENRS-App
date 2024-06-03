@@ -5,6 +5,10 @@ export const NSW_2014_General_Solid_Waste_CT1_No_Leaching: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#DAEEF3",
+    name: "NSW 2014 General Solid Waste CT1 No Leaching",
+  },
   values: [
     {
       chemCode: "100-41-4",

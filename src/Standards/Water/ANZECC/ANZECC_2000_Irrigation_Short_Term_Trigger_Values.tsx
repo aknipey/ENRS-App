@@ -5,6 +5,10 @@ export const ANZECC_2000_Irrigation_Short_Term_Trigger_Values: Standard = {
     matrix: "Water",
     leached: false,
   },
+  visual: {
+    colour: "#FF9B9B",
+    name: "ANZECC 2000 Irrigation Short Term Trigger Values",
+  },
   values: [
     {
       chemCode: "16984-48-8",

@@ -31,11 +31,15 @@ export type StandardInfo = {
 export type Standard = {
   standardInfo: StandardInfo;
   values: ChemicalProfile[];
+  visual: {
+    colour: string;
+    name: string;
+  }
 };
 
 export type AllStandards = {
   name: string;
-  value: AllStandards[] | Standard;
+  value: AllStandards[] | Standard[];
   colour?: string;
 };
 

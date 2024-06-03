@@ -6,6 +6,10 @@ export const ANZECC_2000_Rec_Water_Quality_and_Aesthetics_Primary_contact: Stand
       matrix: "Water",
       leached: false,
     },
+    visual: {
+      colour: "#AEB6BF",
+      name: "ANZECC 2000 Rec Water Quality and Aesthetics - Primary contact",
+    },
     values: [
       {
         chemCode: "Enterococci",

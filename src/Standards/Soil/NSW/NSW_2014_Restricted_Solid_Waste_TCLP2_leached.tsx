@@ -5,6 +5,10 @@ export const NSW_2014_Restricted_Solid_Waste_TCLP2_leached: Standard = {
     matrix: "Water",
     leached: true,
   },
+  visual: {
+    colour: "#E4DFEC",
+    name: "NSW 2014 Restricted Solid Waste TCLP2 leached",
+  },
   values: [
     {
       chemCode: "100-41-4",

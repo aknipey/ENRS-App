@@ -5,6 +5,10 @@ export const CRC_Care_HSL_B_Residential_High_Density: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#FFFFCC",
+    name: "CRC Care HSL-B Residential High Density",
+  },
   values: [
     {
       chemCode: "100-41-4",

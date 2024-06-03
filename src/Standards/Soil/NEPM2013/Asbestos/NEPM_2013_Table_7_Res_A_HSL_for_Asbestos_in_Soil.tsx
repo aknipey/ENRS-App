@@ -5,6 +5,10 @@ export const NEPM_2013_Table_7_Res_A_HSL_for_Asbestos_in_Soil: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#EBF1DE",
+    name: "NEPM 2013 Table 7 Res A HSL for Asbestos in Soil",
+  },
   values: [
     {
       chemCode: "132207-33-1(ACM)",

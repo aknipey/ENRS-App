@@ -7,6 +7,10 @@ export const NEPM_2013_Table_1B_6_ESLs_for_Areas_of_Ecological_Significance_Fine
       leached: false,
       fine: true,
     },
+    visual: {
+      colour: "#DDD9C4",
+      name: "NEPM 2013 Table 1B-6 ESLs for Areas of Ecological Significance - Fine Soil",
+    },
     values: [
       {
         chemCode: "100-41-4",

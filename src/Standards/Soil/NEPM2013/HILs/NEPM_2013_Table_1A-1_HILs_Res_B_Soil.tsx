@@ -5,6 +5,10 @@ export const NEPM_2013_Table_1A_1_HILs_Res_B_Soil: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#FFFFCC",
+    name: "NEPM 2013 Table 1A-1 HILs Res B Soil",
+  },
   values: [
     {
       chemCode: "108-95-2",

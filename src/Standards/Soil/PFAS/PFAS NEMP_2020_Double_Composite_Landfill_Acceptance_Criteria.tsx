@@ -6,6 +6,10 @@ export const PFAS_NEMP_2020_Double_Composite_Landfill_Acceptance_Criteria: Stand
       matrix: "Soil",
       leached: false,
     },
+    visual: {
+      colour: "#92CDDC",
+      name: "PFAS NEMP 2020 Double Composite Landfill Acceptance Criteria",
+    },
     values: [
       {
         chemCode: "1763-23-1",

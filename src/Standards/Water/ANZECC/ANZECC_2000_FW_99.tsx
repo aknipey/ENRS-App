@@ -6,6 +6,10 @@ export const ANZECC_2000_FW_99: Standard = {
     leached: false,
     freshwater: true,
   },
+  visual: {
+    colour: "#5DADE2",
+    name: "ANZECC 2000 Freshwater 99%",
+  },
   values: [
     {
       chemCode: "106-42-3",

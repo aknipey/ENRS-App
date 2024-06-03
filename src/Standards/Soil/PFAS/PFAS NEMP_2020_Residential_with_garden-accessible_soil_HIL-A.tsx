@@ -6,6 +6,10 @@ export const PFAS_NEMP_2020_Residential_with_garden_accessible_soil_HIL_A: Stand
       matrix: "Soil",
       leached: false,
     },
+    visual: {
+      colour: "#EBF1DE",
+      name: "PFAS NEMP 2020 Residential with garden accessible soil HIL-A",
+    },
     values: [
       {
         chemCode: "1763-23-1",

@@ -5,6 +5,10 @@ export const CRC_Care_HSL_A_Residential_Low_Density: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#EBF1DE",
+    name: "CRC Care HSL-A Residential Low Density",
+  },
   values: [
     {
       chemCode: "100-41-4",

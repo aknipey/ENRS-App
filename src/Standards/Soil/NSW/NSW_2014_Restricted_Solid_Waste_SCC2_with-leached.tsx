@@ -5,6 +5,10 @@ export const NSW_2014_Restricted_Solid_Waste_SCC2_with_leached: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#E4DFEC",
+    name: "NSW 2014 Restricted Solid Waste SCC2 with leached",
+  },
   values: [
     {
       chemCode: "100-41-4",

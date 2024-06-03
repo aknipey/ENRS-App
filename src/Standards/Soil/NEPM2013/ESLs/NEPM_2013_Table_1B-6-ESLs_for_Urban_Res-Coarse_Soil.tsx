@@ -6,6 +6,10 @@ export const NEPM_2013_Table_1B_6_ESLs_for_Urban_Res_Coarse_Soil: Standard = {
     leached: false,
     coarse: true,
   },
+  visual: {
+    colour: "#EBF1DE",
+    name: "NEPM 2013 Table 1B-6 ESLs for Urban Residential - Coarse Soil",
+  },
   values: [
     {
       chemCode: "100-41-4",

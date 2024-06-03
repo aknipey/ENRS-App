@@ -5,6 +5,10 @@ export const PFAS_NEMP_2020_Industrial_commercial_HIL_D: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#DCE6F1",
+    name: "PFAS NEMP 2020 Industrial-commercial HIL-D",
+  },
   values: [
     {
       chemCode: "1763-23-1",

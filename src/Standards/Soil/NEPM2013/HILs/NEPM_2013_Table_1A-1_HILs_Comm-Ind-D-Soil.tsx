@@ -5,6 +5,10 @@ export const NEPM_2013_Table_1A_1_HILs_Comm_Ind_D_Soil: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#DCE6F1",
+    name: "NEPM 2013 Table 1A-1 HILs Comm-Ind D Soil",
+  },
   values: [
     {
       chemCode: "108-95-2",

@@ -5,6 +5,10 @@ export const PFAS_NEMP_2020_Drinking_Water: Standard = {
     matrix: "Water",
     leached: false,
   },
+  visual: {
+    colour: "#46a5a1",
+    name: "PFAS NEMP 2020 Drinking Water",
+  },
   values: [
     {
       chemCode: "1763-23-1",

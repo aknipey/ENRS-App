@@ -5,6 +5,10 @@ export const CRC_Care_HSL_C_Recreational_Open_Space: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#F2DCDB",
+    name: "CRC Care HSL-C Recreational Open Space",
+  },
   values: [
     {
       chemCode: "100-41-4",

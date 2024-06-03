@@ -6,6 +6,10 @@ export const NEPM_2013_Table_1B_5_Generic_EIL_Areas_of_Ecological_Significance: 
       matrix: "Soil",
       leached: false,
     },
+    visual: {
+      colour: "#DDD9C4",
+      name: "NEPM 2013 Table 1B-5 Generic EIL - Areas of Ecological Significance",
+    },
     values: [
       {
         chemCode: "50-29-3",

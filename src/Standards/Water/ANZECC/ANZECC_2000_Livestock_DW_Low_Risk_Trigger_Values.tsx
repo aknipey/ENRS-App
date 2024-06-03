@@ -5,6 +5,10 @@ export const ANZECC_2000_Livestock_DW_Low_Risk_Trigger_Values: Standard = {
     matrix: "Water",
     leached: false,
   },
+  visual: {
+    colour: "#FF9393",
+    name: "ANZECC 2000 Livestock Drinking Water Low Risk Trigger Values",
+  },
   values: [
     {
       chemCode: "101043-37-2",

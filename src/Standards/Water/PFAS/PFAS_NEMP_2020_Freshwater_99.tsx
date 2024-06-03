@@ -6,6 +6,10 @@ export const PFAS_NEMP_2020_Freshwater_99: Standard = {
     leached: false,
     freshwater: true,
   },
+  visual: {
+    colour: "#5DADE2",
+    name: "PFAS NEMP 2020 Freshwater 99%",
+  },
   values: [
     {
       chemCode: "1763-23-1",

@@ -5,6 +5,10 @@ export const NSW_2014_Excavated_Natural_Material_Absolute_Max: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#99FF99",
+    name: "NSW 2014 Excavated Natural Material Absolute Max",
+  },
   values: [
     {
       chemCode: "100-41-4",
@@ -121,14 +125,14 @@ export const NSW_2014_Excavated_Natural_Material_Absolute_Max: Standard = {
     {
       chemCode: "pH_Field",
       chemName: "pH Field",
-      value: {min: 4.5, max: 10},
+      value: { min: 4.5, max: 10 },
       units: "-",
       comments: "",
     },
     {
       chemCode: "pH_Lab",
       chemName: "pH Lab",
-      value: {min: 4.5, max: 10},
+      value: { min: 4.5, max: 10 },
       units: "-",
       comments: "",
     },

@@ -5,6 +5,10 @@ export const Defence_non_detect: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#FDE9D9",
+    name: "Defence Non Detect at LOR",
+  },
   values: [
     {
       chemCode: "355-46-4/1763-23-1",

@@ -7,6 +7,10 @@ export const NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Silt:
       leached: false,
       silt: true,
     },
+    visual: {
+      colour: "#DCE6F1",
+      name: "NEPM 2013 Table 1A-3 Comm-Ind D Soil HSL for Vapour Intrusion - Silt",
+    },
     values: [
       {
         chemCode: "100-41-4",

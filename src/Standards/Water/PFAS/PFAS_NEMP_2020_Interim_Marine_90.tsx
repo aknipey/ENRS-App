@@ -6,6 +6,10 @@ export const PFAS_NEMP_2020_Interim_Marine_90: Standard = {
     leached: false,
     marine: true,
   },
+  visual: {
+    colour: "#AED6F1",
+    name: "PFAS NEMP 2020 Interim Marine 90%",
+  },
   values: [
     {
       chemCode: "1763-23-1",

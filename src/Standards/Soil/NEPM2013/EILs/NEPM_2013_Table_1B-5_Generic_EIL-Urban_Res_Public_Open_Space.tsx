@@ -6,6 +6,10 @@ export const NEPM_2013_Table_1B_5_Generic_EIL_Urban_Res_Public_Open_Space: Stand
       matrix: "Soil",
       leached: false,
     },
+    visual: {
+      colour: "#EBF1DE",
+      name: "NEPM 2013 Table 1B-5 Generic EIL - Urban Residential and Public Open Space",
+    },
     values: [
       {
         chemCode: "50-29-3",

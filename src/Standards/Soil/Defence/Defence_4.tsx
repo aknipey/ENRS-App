@@ -5,6 +5,10 @@ export const Defence_4: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#FCD5B4",
+    name: "Defence Category 4",
+  },
   values: [
     {
       chemCode: "355-46-4/1763-23-1",
@@ -13,5 +17,5 @@ export const Defence_4: Standard = {
       units: "mg/kg",
       comments: "Assumes Equal portions of PFOS/PFHxS",
     },
-  ]
-}
+  ],
+};

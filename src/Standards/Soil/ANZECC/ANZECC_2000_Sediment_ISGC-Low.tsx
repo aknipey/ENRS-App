@@ -5,6 +5,10 @@ export const ANZECC_2000_Sediment_ISGC_Low: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#D6DBDF",
+    name: "ANZECC 2000 Sediment ISGC-Low",
+  },
   values: [
     {
       chemCode: "120-12-7",

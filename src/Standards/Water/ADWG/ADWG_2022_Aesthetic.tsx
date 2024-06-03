@@ -5,6 +5,10 @@ export const ADWG_2022_Aesthetic: Standard = {
     matrix: "Water",
     leached: false,
   },
+  visual: {
+    colour: "#188E89",
+    name: "Australian Drinking Water Guidelines 2022 Aesthetic",
+  },
   values: [
     {
       chemCode: "100-41-4",

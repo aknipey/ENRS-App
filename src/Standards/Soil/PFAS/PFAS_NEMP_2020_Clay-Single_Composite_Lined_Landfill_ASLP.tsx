@@ -6,6 +6,10 @@ export const PFAS_NEMP_2020_Clay_Single_Composite_Lined_Landfill_ASLP: Standard 
       matrix: "Water",
       leached: true,
     },
+    visual: {
+      colour: "#B7DEE8",
+      name: "PFAS NEMP 2020 Clay Single Composite Lined Landfill ASLP (Leached)",
+    },
     values: [
       {
         chemCode: "1763-23-1",

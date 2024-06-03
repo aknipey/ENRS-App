@@ -5,6 +5,10 @@ export const PFAS_NEMP_2020_Public_open_space_HIL_C: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#F2DCDB",
+    name: "PFAS NEMP 2020 Public open space HIL-C",
+  },
   values: [
     {
       chemCode: "1763-23-1",

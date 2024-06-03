@@ -113,73 +113,20 @@ export const standardsStructure: AllStandards[] = [
     value: [
       {
         name: "ANZECC",
-        value: [
-          {
-            name: "ANZECC 2000 Sediment ISGC-Low",
-            value: ANZECC_2000_Sediment_ISGC_Low,
-            colour: "#D6DBDF",
-          },
-          {
-            name: "ANZECC 2000 Sediment ISGC-High",
-            value: ANZECC_2000_Sediment_ISGC_High,
-            colour: "#D6DBDF",
-          },
-        ],
+        value: [ANZECC_2000_Sediment_ISGC_Low, ANZECC_2000_Sediment_ISGC_High],
       },
       {
         name: "CRC Care",
         value: [
-          {
-            name: "CRC Care HSL-A Residential (Low Density)",
-            value: CRC_Care_HSL_A_Residential_Low_Density,
-            colour: "#EBF1DE",
-          },
-          {
-            name: "CRC Care HSL-B Residential (High Density)",
-            value: CRC_Care_HSL_B_Residential_High_Density,
-            colour: "#FFFFCC",
-          },
-          {
-            name: "CRC Care HSL-C Recreational / Open Space",
-            value: CRC_Care_HSL_C_Recreational_Open_Space,
-            colour: "#F2DCDB",
-          },
-          {
-            name: "CRC Care HSL-D Commercial / Industrial",
-            value: CRC_Care_HSL_D_Commercial_Industrial,
-            colour: "#DCE6F1",
-          },
+          CRC_Care_HSL_A_Residential_Low_Density,
+          CRC_Care_HSL_B_Residential_High_Density,
+          CRC_Care_HSL_C_Recreational_Open_Space,
+          CRC_Care_HSL_D_Commercial_Industrial,
         ],
       },
       {
         name: "Defence",
-        value: [
-          {
-            name: "Non Detect at Standard LOR",
-            value: Defence_non_detect,
-            colour: "#FDE9D9",
-          },
-          {
-            name: "Defence Category 4",
-            value: Defence_4,
-            colour: "#FCD5B4",
-          },
-          {
-            name: "Defence Category 3",
-            value: Defence_3,
-            colour: "#FABF8F",
-          },
-          {
-            name: "Defence Category 2",
-            value: Defence_2,
-            colour: "#F79646",
-          },
-          {
-            name: "Defence Category 1",
-            value: Defence_1,
-            colour: "#E26B0A",
-          },
-        ],
+        value: [Defence_non_detect, Defence_4, Defence_3, Defence_2, Defence_1],
       },
       {
         name: "NEPM 2013",
@@ -187,198 +134,61 @@ export const standardsStructure: AllStandards[] = [
           {
             name: "Table 7 Asbestos",
             value: [
-              {
-                name: "NEPM 2013 Table 7 Res A HSL for Asbestos in Soil",
-                value: NEPM_2013_Table_7_Res_A_HSL_for_Asbestos_in_Soil,
-                colour: "#EBF1DE",
-              },
-              {
-                name: "NEPM 2013 Table 7 Res B HSL for Asbestos in Soil",
-                value: NEPM_2013_Table_7_Res_B_HSL_for_Asbestos_in_Soil,
-                colour: "#FFFFCC",
-              },
-              {
-                name: "NEPM 2013 Table 7 Rec C HSL for Asbestos in Soil",
-                value: NEPM_2013_Table_7_Rec_C_HSL_for_Asbestos_in_Soil,
-                colour: "#F2DCDB",
-              },
-              {
-                name: "NEPM 2013 Table 7 Comm/Ind D HSL for Asbestos in Soil",
-                value: NEPM_2013_Table_7_Comm_Ind_D_HSL_for_Asbestos_in_Soil,
-                colour: "#DCE6F1",
-              },
+              NEPM_2013_Table_7_Res_A_HSL_for_Asbestos_in_Soil,
+              NEPM_2013_Table_7_Res_B_HSL_for_Asbestos_in_Soil,
+              NEPM_2013_Table_7_Rec_C_HSL_for_Asbestos_in_Soil,
+              NEPM_2013_Table_7_Comm_Ind_D_HSL_for_Asbestos_in_Soil,
             ],
           },
           {
             name: "Table 1B(5) Generic EILs",
             value: [
-              {
-                name: "NEPM 2013 Table 1B(5) Generic EIL - Areas of Ecological Significance",
-                value:
-                  NEPM_2013_Table_1B_5_Generic_EIL_Areas_of_Ecological_Significance,
-                colour: "#DDD9C4",
-              },
-              {
-                name: "NEPM 2013 Table 1B(5) Generic EIL - Urban Res & Public Open Space",
-                value:
-                  NEPM_2013_Table_1B_5_Generic_EIL_Urban_Res_Public_Open_Space,
-                colour: "#EBF1DE",
-              },
-              {
-                name: "NEPM 2013 Table 1B(5) Generic EIL - Comm/Ind",
-                value: NEPM_2013_Table_1B_5_Generic_EIL_Comm_Ind,
-                colour: "#DCE6F1",
-              },
+              NEPM_2013_Table_1B_5_Generic_EIL_Areas_of_Ecological_Significance,
+              NEPM_2013_Table_1B_5_Generic_EIL_Urban_Res_Public_Open_Space,
+              NEPM_2013_Table_1B_5_Generic_EIL_Comm_Ind,
             ],
           },
           {
             name: "Table 1B(6) ESLs",
             value: [
-              {
-                name: "NEPM 2013 Table 1B(6) ESLs for Areas of Ecological Significance, Coarse Soil",
-                value:
-                  NEPM_2013_Table_1B_6_ESLs_for_Areas_of_Ecological_Significance_Coarse_Soil,
-                colour: "#DDD9C4",
-              },
-              {
-                name: "NEPM 2013 Table 1B(6) ESLs for Areas of Ecological Significance, Fine Soil",
-                value:
-                  NEPM_2013_Table_1B_6_ESLs_for_Areas_of_Ecological_Significance_Fine_Soil,
-                colour: "#DDD9C4",
-              },
-              {
-                name: "NEPM 2013 Table 1B(6) ESLs for Urban Res, Coarse Soil",
-                value: NEPM_2013_Table_1B_6_ESLs_for_Urban_Res_Coarse_Soil,
-                colour: "#EBF1DE",
-              },
-              {
-                name: "NEPM 2013 Table 1B(6) ESLs for Urban Res, Fine Soil",
-                value: NEPM_2013_Table_1B_6_ESLs_for_Urban_Res_Fine_Soil,
-                colour: "#EBF1DE",
-              },
-              {
-                name: "NEPM 2013 Table 1B(6) ESLs for Comm/Ind, Coarse Soil",
-                value: NEPM_2013_Table_1B_6_ESLs_for_Comm_Ind_Coarse_Soil,
-                colour: "#DCE6F1",
-              },
-              {
-                name: "NEPM 2013 Table 1B(6) ESLs for Comm/Ind, Fine Soil",
-                value: NEPM_2013_Table_1B_6_ESLs_for_Comm_Ind_Fine_Soil,
-                colour: "#DCE6F1",
-              },
+              NEPM_2013_Table_1B_6_ESLs_for_Areas_of_Ecological_Significance_Coarse_Soil,
+              NEPM_2013_Table_1B_6_ESLs_for_Areas_of_Ecological_Significance_Fine_Soil,
+              NEPM_2013_Table_1B_6_ESLs_for_Urban_Res_Coarse_Soil,
+              NEPM_2013_Table_1B_6_ESLs_for_Urban_Res_Fine_Soil,
+              NEPM_2013_Table_1B_6_ESLs_for_Comm_Ind_Coarse_Soil,
+              NEPM_2013_Table_1B_6_ESLs_for_Comm_Ind_Fine_Soil,
             ],
           },
           {
             name: "Table 1A(1) HILs",
             value: [
-              {
-                name: "NEPM 2013 Table 1A(1) HILs Res A Soil",
-                value: NEPM_2013_Table_1A_1_HILs_Res_A_Soil,
-                colour: "#EBF1DE",
-              },
-              {
-                name: "NEPM 2013 Table 1A(1) HILs Res B Soil",
-                value: NEPM_2013_Table_1A_1_HILs_Res_B_Soil,
-                colour: "#FFFFCC",
-              },
-              {
-                name: "NEPM 2013 Table 1A(1) HILs Rec C Soil",
-                value: NEPM_2013_Table_1A_1_HILs_Rec_C_Soil,
-                colour: "#F2DCDB",
-              },
-              {
-                name: "NEPM 2013 Table 1A(1) HILs Comm/Ind D Soil",
-                value: NEPM_2013_Table_1A_1_HILs_Comm_Ind_D_Soil,
-                colour: "#DCE6F1",
-              },
+              NEPM_2013_Table_1A_1_HILs_Res_A_Soil,
+              NEPM_2013_Table_1A_1_HILs_Res_B_Soil,
+              NEPM_2013_Table_1A_1_HILs_Rec_C_Soil,
+              NEPM_2013_Table_1A_1_HILs_Comm_Ind_D_Soil,
             ],
           },
           {
             name: "Table 1A(3) HSLs",
             value: [
-              {
-                name: "NEPM 2013 Table 1A(3) Res A/B Soil HSL for Vapour Intrusion, Sand",
-                value:
-                  NEPM_2013_Table_1A_3_Res_A_B_Soil_HSL_for_Vapour_Intrusion_Sand,
-                colour: "#EBF1DE",
-              },
-              {
-                name: "NEPM 2013 Table 1A(3) Res A/B Soil HSL for Vapour Intrusion, Silt",
-                value:
-                  NEPM_2013_Table_1A_3_Res_A_B_Soil_HSL_for_Vapour_Intrusion_Silt,
-                colour: "#EBF1DE",
-              },
-              {
-                name: "NEPM 2013 Table 1A(3) Res A/B Soil HSL for Vapour Intrusion, Clay",
-                value:
-                  NEPM_2013_Table_1A_3_Res_A_B_Soil_HSL_for_Vapour_Intrusion_Clay,
-                colour: "#EBF1DE",
-              },
-              {
-                name: "NEPM 2013 Table 1A(3) Rec C Soil HSL for Vapour Intrusion, Sand",
-                value:
-                  NEPM_2013_Table_1A_3_Rec_C_Soil_HSL_for_Vapour_Intrusion_Sand,
-                colour: "#F2DCDB",
-              },
-              {
-                name: "NEPM 2013 Table 1A(3) Rec C Soil HSL for Vapour Intrusion, Silt",
-                value:
-                  NEPM_2013_Table_1A_3_Rec_C_Soil_HSL_for_Vapour_Intrusion_Silt,
-                colour: "#F2DCDB",
-              },
-              {
-                name: "NEPM 2013 Table 1A(3) Rec C Soil HSL for Vapour Intrusion, Clay",
-                value:
-                  NEPM_2013_Table_1A_3_Rec_C_Soil_HSL_for_Vapour_Intrusion_Clay,
-                colour: "#F2DCDB",
-              },
-              {
-                name: "NEPM 2013 Table 1A(3) Comm/Ind D Soil HSL for Vapour Intrusion, Sand",
-                value:
-                  NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Sand,
-                colour: "#DCE6F1",
-              },
-              {
-                name: "NEPM 2013 Table 1A(3) Comm/Ind D Soil HSL for Vapour Intrusion, Silt",
-                value:
-                  NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Silt,
-                colour: "#DCE6F1",
-              },
-              {
-                name: "NEPM 2013 Table 1A(3) Comm/Ind D Soil HSL for Vapour Intrusion, Clay",
-                value:
-                  NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Clay,
-                colour: "#DCE6F1",
-              },
+              NEPM_2013_Table_1A_3_Res_A_B_Soil_HSL_for_Vapour_Intrusion_Sand,
+              NEPM_2013_Table_1A_3_Res_A_B_Soil_HSL_for_Vapour_Intrusion_Silt,
+              NEPM_2013_Table_1A_3_Res_A_B_Soil_HSL_for_Vapour_Intrusion_Clay,
+              NEPM_2013_Table_1A_3_Rec_C_Soil_HSL_for_Vapour_Intrusion_Sand,
+              NEPM_2013_Table_1A_3_Rec_C_Soil_HSL_for_Vapour_Intrusion_Silt,
+              NEPM_2013_Table_1A_3_Rec_C_Soil_HSL_for_Vapour_Intrusion_Clay,
+              NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Sand,
+              NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Silt,
+              NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Clay,
             ],
           },
           {
             name: "Table 1B(7) Management Limits for TRH",
             value: [
-              {
-                name: "NEPM 2013 Table 1B(7) Management Limits in Res / Parkland, Coarse Soil",
-                value:
-                  NEPM_2013_Table_1B_7_Management_Limits_in_Res_Parkland_Coarse_Soil,
-                colour: "#EBF1DE",
-              },
-              {
-                name: "NEPM 2013 Table 1B(7) Management Limits in Res / Parkland, Fine Soil",
-                value:
-                  NEPM_2013_Table_1B_7_Management_Limits_in_Res_Parkland_Fine_Soil,
-                colour: "#EBF1DE",
-              },
-              {
-                name: "NEPM 2013 Table 1B(7) Management Limits Comm / Ind, Coarse Soil",
-                value:
-                  NEPM_2013_Table_1B_7_Management_Limits_Comm_Ind_Coarse_Soil,
-                colour: "#DCE6F1",
-              },
-              {
-                name: "NEPM 2013 Table 1B(7) Management Limits Comm / Ind, Fine Soil",
-                value:
-                  NEPM_2013_Table_1B_7_Management_Limits_Comm_Ind_Fine_Soil,
-                colour: "#DCE6F1",
-              },
+              NEPM_2013_Table_1B_7_Management_Limits_in_Res_Parkland_Coarse_Soil,
+              NEPM_2013_Table_1B_7_Management_Limits_in_Res_Parkland_Fine_Soil,
+              NEPM_2013_Table_1B_7_Management_Limits_Comm_Ind_Coarse_Soil,
+              NEPM_2013_Table_1B_7_Management_Limits_Comm_Ind_Fine_Soil,
             ],
           },
         ],
@@ -386,123 +196,33 @@ export const standardsStructure: AllStandards[] = [
       {
         name: "NSW",
         value: [
-          {
-            name: "NSW 2014 Excavated Natural Material (Absolute Max)",
-            value: NSW_2014_Excavated_Natural_Material_Absolute_Max,
-            colour: "#99FF99",
-          },
-          {
-            name: "NSW 2014 Excavated Natural Material (Max Average)",
-            value: NSW_2014_Excavated_Natural_Material_Max_Average,
-            colour: "#CCFFCC",
-          },
-          {
-            name: "NSW 2014 Recovered Aggregate (Absolute Max)",
-            value: NSW_EPA_Recovered_Aggregate_Absolute_Maximum,
-            colour: "#FCD5B4",
-          },
-          {
-            name: "NSW 2014 Recovered Aggregate (Max Average)",
-            value: NSW_EPA_Recovered_Aggregate_Maximum_Average,
-            colour: "#FDE9D9",
-          },
-          {
-            name: "NSW 2014 General Solid Waste CT1 (No Leaching)",
-            value: NSW_2014_General_Solid_Waste_CT1_No_Leaching,
-            colour: "#DAEEF3",
-          },
-          {
-            name: "NSW 2014 General Solid Waste SCC1 (with leached)",
-            value: NSW_2014_General_Solid_Waste_SCC1_with_leached,
-            colour: "#DAEEF3",
-          },
-          {
-            name: "NSW 2014 General Solid Waste TCLP1 (leached)",
-            value: NSW_2014_General_Solid_Waste_TCLP1_leached,
-            colour: "#DAEEF3",
-          },
-          {
-            name: "NSW 2014 Restricted Solid Waste CT2 (No Leaching)",
-            value: NSW_2014_Restricted_Solid_Waste_CT2_No_Leaching,
-            colour: "#E4DFEC",
-          },
-          {
-            name: "NSW 2014 Restricted Solid Waste SCC2 (with leached)",
-            value: NSW_2014_Restricted_Solid_Waste_SCC2_with_leached,
-            colour: "#E4DFEC",
-          },
-          {
-            name: "NSW 2014 Restricted Solid Waste TCLP2 (leached)",
-            value: NSW_2014_Restricted_Solid_Waste_TCLP2_leached,
-            colour: "#E4DFEC",
-          },
+          NSW_2014_Excavated_Natural_Material_Absolute_Max,
+          NSW_2014_Excavated_Natural_Material_Max_Average,
+          NSW_EPA_Recovered_Aggregate_Absolute_Maximum,
+          NSW_EPA_Recovered_Aggregate_Maximum_Average,
+          NSW_2014_General_Solid_Waste_CT1_No_Leaching,
+          NSW_2014_General_Solid_Waste_SCC1_with_leached,
+          NSW_2014_General_Solid_Waste_TCLP1_leached,
+          NSW_2014_Restricted_Solid_Waste_CT2_No_Leaching,
+          NSW_2014_Restricted_Solid_Waste_SCC2_with_leached,
+          NSW_2014_Restricted_Solid_Waste_TCLP2_leached,
         ],
       },
       {
         name: "PFAS",
         value: [
-          {
-            name: "PFAS NEMP 2020 Ecological direct exposure",
-            value: PFAS_NEMP_2020_Ecological_direct_exposure,
-            colour: "#C4BD97",
-          },
-          {
-            name: "PFAS NEMP 2020 Ecological indirect exposure",
-            value: PFAS_NEMP_2020_Ecological_indirect_exposure,
-            colour: "#DDD9C4",
-          },
-          {
-            name: "PFAS NEMP 2020 Residential with garden/accessible soil (HIL A)",
-            value: PFAS_NEMP_2020_Residential_with_garden_accessible_soil_HIL_A,
-            colour: "#EBF1DE",
-          },
-          {
-            name: "PFAS NEMP 2020 Residential with minimal opportunities for soil access (HIL B)",
-            value:
-              PFAS_NEMP_2020_Residential_with_minimal_opportunities_for_soil_access_HIL_B,
-            colour: "#FFFFCC",
-          },
-          {
-            name: "PFAS NEMP 2020 Public open space (HIL C)",
-            value: PFAS_NEMP_2020_Public_open_space_HIL_C,
-            colour: "#F2DCDB",
-          },
-          {
-            name: "PFAS NEMP 2020 Industrial/ commercial (HIL D)",
-            value: PFAS_NEMP_2020_Industrial_commercial_HIL_D,
-            colour: "#DCE6F1",
-          },
-          {
-            name: "PFAS NEMP 2020 Double Composite Landfill Acceptance Criteria",
-            value: PFAS_NEMP_2020_Double_Composite_Landfill_Acceptance_Criteria,
-            colour: "#92CDDC",
-          },
-          {
-            name: "PFAS NEMP 2020 Double Composite Landfill ASLP (Leached)",
-            value: PFAS_NEMP_2020_Double_Composite_Landfill_ASLP,
-            colour: "#92CDDC",
-          },
-          {
-            name: "PFAS NEMP 2020 Clay/Single Composite Lined Landfill Acceptance Criteria",
-            value:
-              PFAS_NEMP_2020_Clay_Single_Composite_Lined_Landfill_Acceptance_Criteria,
-            colour: "#B7DEE8",
-          },
-          {
-            name: "PFAS NEMP 2020 Clay/Single Composite Lined Landfill ASLP (Leached)",
-            value: PFAS_NEMP_2020_Clay_Single_Composite_Lined_Landfill_ASLP,
-            colour: "#B7DEE8",
-          },
-          {
-            name: "PFAS NEMP 2020 Unlined Landfill Acceptance Criteria",
-            value: PFAS_NEMP_2020_Unlined_Landfill_Acceptance_Criteria,
-            colour: "#DAEEF3",
-          },
-          {
-            name: "PFAS NEMP 2020 Unlined Landfill ASLP (Leached)",
-            value: PFAS_NEMP_2020_Unlined_Landfill_ASLP,
-            colour: "#DAEEF3",
-          },
+          PFAS_NEMP_2020_Ecological_direct_exposure,
+          PFAS_NEMP_2020_Ecological_indirect_exposure,
+          PFAS_NEMP_2020_Residential_with_garden_accessible_soil_HIL_A,
+          PFAS_NEMP_2020_Residential_with_minimal_opportunities_for_soil_access_HIL_B,
+          PFAS_NEMP_2020_Public_open_space_HIL_C,
+          PFAS_NEMP_2020_Industrial_commercial_HIL_D,
+          PFAS_NEMP_2020_Double_Composite_Landfill_Acceptance_Criteria,
+          PFAS_NEMP_2020_Double_Composite_Landfill_ASLP,
+          PFAS_NEMP_2020_Clay_Single_Composite_Lined_Landfill_Acceptance_Criteria,
+          PFAS_NEMP_2020_Clay_Single_Composite_Lined_Landfill_ASLP,
+          PFAS_NEMP_2020_Unlined_Landfill_Acceptance_Criteria,
+          PFAS_NEMP_2020_Unlined_Landfill_ASLP,
         ],
       },
     ],
@@ -512,250 +232,68 @@ export const standardsStructure: AllStandards[] = [
     value: [
       {
         name: "ADWG",
-        value: [
-          {
-            name: "ADWG 2022 Aesthetic",
-            value: ADWG_2022_Aesthetic,
-            colour: "#188E89",
-          },
-          {
-            name: "ADWG 2022 Health",
-            value: ADWG_2022_Health,
-            colour: "#147F78",
-          },
-        ],
+        value: [ADWG_2022_Aesthetic, ADWG_2022_Health],
       },
       {
         name: "ANZECC",
         value: [
-          {
-            name: "ANZECC 2000 FW 99%",
-            value: ANZECC_2000_FW_99,
-            colour: "#5DADE2",
-          },
-          {
-            name: "ANZECC 2000 FW 95%",
-            value: ANZECC_2000_FW_95,
-            colour: "#85C1E9",
-          },
-          {
-            name: "ANZECC 2000 FW 90%",
-            value: ANZECC_2000_FW_90,
-            colour: "#AED6F1",
-          },
-          {
-            name: "ANZECC 2000 Irrigation Long Term Trigger Values",
-            value: ANZECC_2000_Irrigation_Long_Term_Trigger_Values,
-            colour: "#FF9B9B",
-          },
-          {
-            name: "ANZECC 2000 Irrigation Short Term Trigger Values",
-            value: ANZECC_2000_Irrigation_Short_Term_Trigger_Values,
-            colour: "#FF9B9B",
-          },
-          {
-            name: "ANZECC 2000 Livestock DW Low Risk Trigger Values",
-            value: ANZECC_2000_Livestock_DW_Low_Risk_Trigger_Values,
-            colour: "#FF9393",
-          },
-          {
-            name: "ANZECC 2000 MW 95%",
-            value: ANZECC_2000_MW_95,
-            colour: "#85C1E9",
-          },
-          {
-            name: "ANZECC 2000 MW 90%",
-            value: ANZECC_2000_MW_90,
-            colour: "#AED6F1",
-          },
-          {
-            name: "ANZECC 2000 Rec Water Quality and Aesthetics: Primary contact",
-            value: ANZECC_2000_Rec_Water_Quality_and_Aesthetics_Primary_contact,
-            colour: "#AEB6BF",
-          },
-          {
-            name: "ANZECC 2000 Recreational water quality and aesthetics",
-            value: ANZECC_2000_Recreational_water_quality_and_aesthetics,
-            colour: "#AEB6BF",
-          },
-          {
-            name: "ANZECC 2000 slightly-moderately disturbed systems",
-            value: ANZECC_2000_slightly_moderately_disturbed_systems,
-            colour: "#AEB6BF",
-          },
+          ANZECC_2000_FW_99,
+          ANZECC_2000_FW_95,
+          ANZECC_2000_FW_90,
+          ANZECC_2000_Irrigation_Long_Term_Trigger_Values,
+          ANZECC_2000_Irrigation_Short_Term_Trigger_Values,
+          ANZECC_2000_Livestock_DW_Low_Risk_Trigger_Values,
+          ANZECC_2000_MW_95,
+          ANZECC_2000_MW_90,
+          ANZECC_2000_Rec_Water_Quality_and_Aesthetics_Primary_contact,
+          ANZECC_2000_Recreational_water_quality_and_aesthetics,
+          ANZECC_2000_slightly_moderately_disturbed_systems,
         ],
       },
       {
         name: "ANZG",
         value: [
-          {
-            name: "ANZG Freshwater Toxicant DGVs LOSP 99% (July 2023)",
-            value: ANZG_Freshwater_Toxicant_DGVs_LOSP_99,
-            colour: "#5DADE2",
-          },
-          {
-            name: "ANZG Freshwater Toxicant DGVs LOSP 95% (July 2023)",
-            value: ANZG_Freshwater_Toxicant_DGVs_LOSP_95,
-            colour: "#85C1E9",
-          },
-          {
-            name: "ANZG Freshwater Toxicant DGVs LOSP 90% (July 2023)",
-            value: ANZG_Freshwater_Toxicant_DGVs_LOSP_90,
-            colour: "#AED6F1",
-          },
-          {
-            name: "ANZG Freshwater Toxicant DGVs LOSP 80% (July 2023)",
-            value: ANZG_Freshwater_Toxicant_DGVs_LOSP_80,
-            colour: "#D6EAF8",
-          },
-          {
-            name: "ANZG Marine Water Toxicant DGVs LOSP 99% (July 2023)",
-            value: ANZG_Marine_Water_Toxicant_DGVs_LOSP_99,
-            colour: "#5DADE2",
-          },
-          {
-            name: "ANZG Marine Water Toxicant DGVs LOSP 95% (July 2023)",
-            value: ANZG_Marine_Water_Toxicant_DGVs_LOSP_95,
-            colour: "#85C1E9",
-          },
-          {
-            name: "ANZG Marine Water Toxicant DGVs LOSP 90% (July 2023)",
-            value: ANZG_Marine_Water_Toxicant_DGVs_LOSP_90,
-            colour: "#AED6F1",
-          },
-          {
-            name: "ANZG Marine Water Toxicant DGVs LOSP 80% (July 2023)",
-            value: ANZG_Marine_Water_Toxicant_DGVs_LOSP_80,
-            colour: "#D6EAF8",
-          },
+          ANZG_Freshwater_Toxicant_DGVs_LOSP_99,
+          ANZG_Freshwater_Toxicant_DGVs_LOSP_95,
+          ANZG_Freshwater_Toxicant_DGVs_LOSP_90,
+          ANZG_Freshwater_Toxicant_DGVs_LOSP_80,
+          ANZG_Marine_Water_Toxicant_DGVs_LOSP_99,
+          ANZG_Marine_Water_Toxicant_DGVs_LOSP_95,
+          ANZG_Marine_Water_Toxicant_DGVs_LOSP_90,
+          ANZG_Marine_Water_Toxicant_DGVs_LOSP_80,
         ],
       },
       {
         name: "NEPM 2013",
         value: [
-          {
-            name: "NEPM 2013 Table 1C GILs, Drinking Water",
-            value: NEPM_2013_Table_1C_GILs_Drinking_Water,
-            colour: "#46a5a1",
-          },
-          {
-            name: "NEPM 2013 Table 1C GILs, Fresh Waters",
-            value: NEPM_2013_Table_1C_GILs_Fresh_Waters,
-            colour: "#D6DBDF",
-          },
-          {
-            name: "NEPM 2013 Table 1C GILs, Marine Waters",
-            value: NEPM_2013_Table_1C_GILs_Marine_Waters,
-            colour: "#D6DBDF",
-          },
-          {
-            name: "NEPM 2013 Table 1A(4) Res HSL A & B GW for Vapour Intrusion, Sand",
-            value: NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Sand,
-            colour: "#EBF1DE",
-          },
-          {
-            name: "NEPM 2013 Table 1A(4) Res HSL A & B GW for Vapour Intrusion, Silt",
-            value: NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Silt,
-            colour: "#EBF1DE",
-          },
-          {
-            name: "NEPM 2013 Table 1A(4) Res HSL A & B GW for Vapour Intrusion, Clay",
-            value: NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Clay,
-            colour: "#EBF1DE",
-          },
-          {
-            name: "NEPM 2013 Table 1A(4) Rec HSL C GW for Vapour Intrusion, Sand",
-            value: NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Sand,
-            colour: "#F2DCDB",
-          },
-          {
-            name: "NEPM 2013 Table 1A(4) Rec HSL C GW for Vapour Intrusion, Silt",
-            value: NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Silt,
-            colour: "#F2DCDB",
-          },
-          {
-            name: "NEPM 2013 Table 1A(4) Rec HSL C GW for Vapour Intrusion, Clay",
-            value: NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Clay,
-            colour: "#F2DCDB",
-          },
-          {
-            name: "NEPM 2013 Table 1A(4) Comm/Ind HSL D GW for Vapour Intrusion, Sand",
-            value:
-              NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Sand,
-            colour: "#DCE6F1",
-          },
-          {
-            name: "NEPM 2013 Table 1A(4) Comm/Ind HSL D GW for Vapour Intrusion, Silt",
-            value:
-              NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Silt,
-            colour: "#DCE6F1",
-          },
-          {
-            name: "NEPM 2013 Table 1A(4) Comm/Ind HSL D GW for Vapour Intrusion, Clay",
-            value:
-              NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay,
-            colour: "#DCE6F1",
-          },
+          NEPM_2013_Table_1C_GILs_Drinking_Water,
+          NEPM_2013_Table_1C_GILs_Fresh_Waters,
+          NEPM_2013_Table_1C_GILs_Marine_Waters,
+          NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Sand,
+          NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Silt,
+          NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Clay,
+          NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Sand,
+          NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Silt,
+          NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Clay,
+          NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Sand,
+          NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Silt,
+          NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay,
         ],
       },
       {
         name: "PFAS",
         value: [
-          {
-            name: "PFAS NEMP 2020 Drinking Water",
-            value: PFAS_NEMP_2020_Drinking_Water,
-            colour: "#46a5a1",
-          },
-          {
-            name: "PFAS NEMP 2020 Recreational Water",
-            value: PFAS_NEMP_2020_Recreational_Water,
-            colour: "#AEB6BF",
-          },
-          {
-            name: "Guidance on Per and Polyfluoroalkyl (PFAS) in Recreational Water",
-            value: Guidance_on_PFAS_in_Recreational_Water,
-            colour: "#AEB6BF",
-          },
-          {
-            name: "PFAS NEMP 2020 Freshwater 99%",
-            value: PFAS_NEMP_2020_Freshwater_99,
-            colour: "#5DADE2",
-          },
-          {
-            name: "PFAS NEMP 2020 Freshwater 95%",
-            value: PFAS_NEMP_2020_Freshwater_95,
-            colour: "#85C1E9",
-          },
-          {
-            name: "PFAS NEMP 2020 Freshwater 90%",
-            value: PFAS_NEMP_2020_Freshwater_90,
-            colour: "#AED6F1",
-          },
-          {
-            name: "PFAS NEMP 2020 Freshwater 80%",
-            value: PFAS_NEMP_2020_Freshwater_80,
-            colour: "#D6EAF8",
-          },
-          {
-            name: "PFAS NEMP 2020 Interim Marine 99%",
-            value: PFAS_NEMP_2020_Interim_Marine_99,
-            colour: "#5DADE2",
-          },
-          {
-            name: "PFAS NEMP 2020 Interim Marine 95%",
-            value: PFAS_NEMP_2020_Interim_Marine_95,
-            colour: "#85C1E9",
-          },
-          {
-            name: "PFAS NEMP 2020 Interim Marine 90%",
-            value: PFAS_NEMP_2020_Interim_Marine_90,
-            colour: "#AED6F1",
-          },
-          {
-            name: "PFAS NEMP 2020 Interim Marine 80%",
-            value: PFAS_NEMP_2020_Interim_Marine_80,
-            colour: "#D6EAF8",
-          },
+          PFAS_NEMP_2020_Drinking_Water,
+          PFAS_NEMP_2020_Recreational_Water,
+          Guidance_on_PFAS_in_Recreational_Water,
+          PFAS_NEMP_2020_Freshwater_99,
+          PFAS_NEMP_2020_Freshwater_95,
+          PFAS_NEMP_2020_Freshwater_90,
+          PFAS_NEMP_2020_Freshwater_80,
+          PFAS_NEMP_2020_Interim_Marine_99,
+          PFAS_NEMP_2020_Interim_Marine_95,
+          PFAS_NEMP_2020_Interim_Marine_90,
+          PFAS_NEMP_2020_Interim_Marine_80,
         ],
       },
     ],

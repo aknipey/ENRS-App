@@ -5,6 +5,10 @@ export const PFAS_NEMP_2020_Ecological_indirect_exposure: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#DDD9C4",
+    name: "PFAS NEMP 2020 Ecological indirect exposure",
+  },
   values: [
     {
       chemCode: "1763-23-1",

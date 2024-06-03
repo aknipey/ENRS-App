@@ -7,6 +7,10 @@ export const NEPM_2013_Table_1B_7_Management_Limits_Comm_Ind_Fine_Soil: Standard
       leached: false,
       fine: true,
     },
+    visual: {
+      colour: "#DCE6F1",
+      name: "NEPM 2013 Table 1B-7 Management Limits Comm-Ind Fine Soil",
+    },
     values: [
       {
         chemCode: "C10-C16",

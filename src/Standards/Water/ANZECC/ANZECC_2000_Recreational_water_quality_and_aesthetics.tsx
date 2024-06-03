@@ -5,6 +5,10 @@ export const ANZECC_2000_Recreational_water_quality_and_aesthetics: Standard = {
     matrix: "Water",
     leached: false,
   },
+  visual: {
+    colour: "#AEB6BF",
+    name: "ANZECC 2000 Recreational water quality and aesthetics",
+  },
   values: [
     {
       chemCode: "101-27-9",

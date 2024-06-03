@@ -6,6 +6,10 @@ export const PFAS_NEMP_2020_Residential_with_minimal_opportunities_for_soil_acce
       matrix: "Soil",
       leached: false,
     },
+    visual: {
+      colour: "#FFFFCC",
+      name: "PFAS NEMP 2020 Residential with minimal opportunities for soil access HIL-B",
+    },
     values: [
       {
         chemCode: "1763-23-1",

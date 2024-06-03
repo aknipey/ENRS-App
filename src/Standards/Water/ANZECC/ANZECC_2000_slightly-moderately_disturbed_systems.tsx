@@ -5,6 +5,10 @@ export const ANZECC_2000_slightly_moderately_disturbed_systems: Standard = {
     matrix: "Water",
     leached: false,
   },
+  visual: {
+    colour: "#AEB6BF",
+    name: "ANZECC 2000 Slightly to Moderately Disturbed Systems",
+  },
   values: [
     {
       chemCode: "106-42-3",

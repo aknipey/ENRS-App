@@ -6,6 +6,10 @@ export const NEPM_2013_Table_1B_6_ESLs_for_Comm_Ind_Fine_Soil: Standard = {
     leached: false,
     fine: true,
   },
+  visual: {
+    colour: "#DCE6F1",
+    name: "NEPM 2013 Table 1B-6 ESLs for Comm-Ind Fine Soil",
+  },
   values: [
     {
       chemCode: "100-41-4",

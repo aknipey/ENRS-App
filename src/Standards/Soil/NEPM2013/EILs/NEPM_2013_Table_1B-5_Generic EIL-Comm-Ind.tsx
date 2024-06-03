@@ -5,6 +5,10 @@ export const NEPM_2013_Table_1B_5_Generic_EIL_Comm_Ind: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#DCE6F1",
+    name: "NEPM 2013 Table 1B-5 Generic EIL - Comm-Ind",
+  },
   values: [
     {
       chemCode: "50-29-3",

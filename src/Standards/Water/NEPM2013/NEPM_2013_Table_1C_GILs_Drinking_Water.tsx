@@ -5,6 +5,10 @@ export const NEPM_2013_Table_1C_GILs_Drinking_Water: Standard = {
     matrix: "Water",
     leached: false,
   },
+  visual: {
+    colour: "#46a5a1",
+    name: "NEPM 2013 Table 1C GILs Drinking Water",
+  },
   values: [
     {
       chemCode: "100-41-4",

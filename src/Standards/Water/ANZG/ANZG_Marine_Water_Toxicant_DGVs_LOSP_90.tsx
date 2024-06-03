@@ -6,6 +6,10 @@ export const ANZG_Marine_Water_Toxicant_DGVs_LOSP_90: Standard = {
     leached: false,
     marine: true,
   },
+  visual: {
+    colour: "#AED6F1",
+    name: "ANZG Marine Water Toxicant DGVs LOSP 90%",
+  },
   values: [
     {
       chemCode: "100-41-4",

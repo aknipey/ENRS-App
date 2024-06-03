@@ -5,6 +5,10 @@ export const Defence_3: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#FABF8F",
+    name: "Defence Category 3",
+  },
   values: [
     {
       chemCode: "355-46-4/1763-23-1",

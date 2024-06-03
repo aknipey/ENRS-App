@@ -5,6 +5,10 @@ export const CRC_Care_HSL_D_Commercial_Industrial: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#DCE6F1",
+    name: "CRC Care HSL-D Commercial Industrial",
+  },
   values: [
     {
       chemCode: "100-41-4",

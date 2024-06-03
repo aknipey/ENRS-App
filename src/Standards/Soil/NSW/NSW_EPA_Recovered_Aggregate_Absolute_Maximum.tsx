@@ -5,6 +5,10 @@ export const NSW_EPA_Recovered_Aggregate_Absolute_Maximum: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#FCD5B4",
+    name: "NSW EPA Recovered Aggregate Absolute Maximum",
+  },
   values: [
     {
       chemCode: "7439-97-6",

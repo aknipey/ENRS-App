@@ -7,6 +7,10 @@ export const NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Clay: Stand
       leached: false,
       clay: true,
     },
+    visual: {
+      colour: "#EBF1DE",
+      name: "NEPM 2013 Table 1A4 Res HSL A-B GW for Vapour Intrusion Clay",
+    },
     values: [
       {
         chemCode: "100-41-4",

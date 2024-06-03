@@ -6,6 +6,10 @@ export const NSW_2014_Excavated_Natural_Material_Max_Average: Standard = {
     leached: false,
     max_average: true,
   },
+  visual: {
+    colour: "#CCFFCC",
+    name: "NSW 2014 Excavated Natural Material Max Average",
+  },
   values: [
     {
       chemCode: "50-32-8",
@@ -94,14 +98,14 @@ export const NSW_2014_Excavated_Natural_Material_Max_Average: Standard = {
     {
       chemCode: "pH_Field",
       chemName: "pH Field",
-      value: {min: 5, max: 9},
+      value: { min: 5, max: 9 },
       units: "-",
       comments: "",
     },
     {
       chemCode: "pH_Lab",
       chemName: "pH Lab",
-      value: {min: 5, max: 9},
+      value: { min: 5, max: 9 },
       units: "-",
       comments: "",
     },

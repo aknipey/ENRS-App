@@ -6,6 +6,10 @@ export const ANZG_Freshwater_Toxicant_DGVs_LOSP_95: Standard = {
     leached: false,
     freshwater: true,
   },
+  visual: {
+    colour: "#85C1E9",
+    name: "ANZG Freshwater Toxicant DGVs LOSP 95%",
+  },
   values: [
     {
       chemCode: "100-41-4",

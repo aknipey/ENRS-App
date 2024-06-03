@@ -5,6 +5,10 @@ export const PFAS_NEMP_2020_Unlined_Landfill_Acceptance_Criteria: Standard = {
     matrix: "Soil",
     leached: false,
   },
+  visual: {
+    colour: "#DAEEF3",
+    name: "PFAS NEMP 2020 Unlined Landfill Acceptance Criteria",
+  },
   values: [
     {
       chemCode: "1763-23-1",

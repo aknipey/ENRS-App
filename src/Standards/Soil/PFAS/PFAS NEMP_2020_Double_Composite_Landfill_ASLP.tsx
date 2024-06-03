@@ -5,6 +5,10 @@ export const PFAS_NEMP_2020_Double_Composite_Landfill_ASLP: Standard = {
     matrix: "Water",
     leached: true,
   },
+  visual: {
+    colour: "#92CDDC",
+    name: "PFAS NEMP 2020 Double Composite Landfill ASLP (Leached)",
+  },
   values: [
     {
       chemCode: "1763-23-1",

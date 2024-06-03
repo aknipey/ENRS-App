@@ -6,6 +6,10 @@ export const NSW_EPA_Recovered_Aggregate_Maximum_Average: Standard = {
     leached: false,
     max_average: true,
   },
+  visual: {
+    colour: "#FDE9D9",
+    name: "NSW EPA Recovered Aggregate Maximum Average",
+  },
   values: [
     {
       chemCode: "7439-97-6",
@@ -90,6 +94,6 @@ export const NSW_EPA_Recovered_Aggregate_Maximum_Average: Standard = {
       value: 0,
       units: "%",
       comments: "",
-    }
+    },
   ],
 };

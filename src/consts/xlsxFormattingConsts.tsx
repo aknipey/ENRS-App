@@ -14,10 +14,6 @@ export const HEADER_FORMATTING = {
 
 export const EXCEEDED_ROW_FORMATTING = { font: { color: { rgb: "FF0000" } } };
 
-// export const StandardToRows : Map<number[], RowObj> = new Map([
-//   {[]}
-// ]);
-
 export const FULL_BORDER: Partial<Borders> = {
   top: { style: "thin" },
   left: { style: "thin" },

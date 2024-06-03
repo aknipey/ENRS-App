@@ -7,6 +7,10 @@ export const NEPM_2013_Table_1B_7_Management_Limits_in_Res_Parkland_Coarse_Soil:
       leached: false,
       coarse: true,
     },
+    visual: {
+      colour: "#EBF1DE",
+      name: "NEPM 2013 Table 1B-7 Management Limits in Res-Parkland-Coarse Soil",
+    },
     values: [
       {
         chemCode: "C10-C16",

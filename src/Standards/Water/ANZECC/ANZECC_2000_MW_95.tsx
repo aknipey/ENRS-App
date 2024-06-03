@@ -6,6 +6,10 @@ export const ANZECC_2000_MW_95: Standard = {
     leached: false,
     marine: true,
   },
+  visual: {
+    colour: "#85C1E9",
+    name: "ANZECC 2000 Marine Water 95%",
+  },
   values: [
     {
       chemCode: "108-95-2",

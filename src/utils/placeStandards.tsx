@@ -21,7 +21,7 @@ export const writeDepthDependentStandard = (
 ): number => {
   groupStandards.delete(standard);
 
-  return rowNum + (standard.standardInfo.depthDependent ?? 1);
+  return rowNum + (standard.standardInfo.depthDependent?.length ?? 1);
 };
 
 export const writeStandardsE = (
@@ -74,7 +74,7 @@ export const writeStandardsC = (
   cStandards.forEach((s) => bStandards.delete(s));
 
   const cHeight = Array.from(cStandards).reduce((acc, s) => {
-    return acc + (s.standardInfo.depthDependent ?? 1);
+    return acc + (s.standardInfo.depthDependent?.length ?? 1);
   }, 0);
 
   const cell = worksheet.getCell(rowNum, 3);
@@ -130,7 +130,7 @@ export const writeStandardsB = (
   bStandards.forEach((s) => underWhiteStandards.delete(s));
 
   const bHeight = Array.from(bStandards).reduce((acc, s) => {
-    return acc + (s.standardInfo.depthDependent ?? 1);
+    return acc + (s.standardInfo.depthDependent?.length ?? 1);
   }, 0);
 
   const example = bStandards.values().next().value as Standard;

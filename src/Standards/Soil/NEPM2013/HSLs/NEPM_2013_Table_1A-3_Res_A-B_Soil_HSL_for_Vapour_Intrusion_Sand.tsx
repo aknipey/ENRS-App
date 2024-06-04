@@ -6,7 +6,7 @@ export const NEPM_2013_Table_1A_3_Res_A_B_Soil_HSL_for_Vapour_Intrusion_Sand: St
       matrix: "Soil",
       leached: false,
       sand: true,
-      depthDependent: 4,
+      depthDependent: ["0-1m", "1-2m", "2-4m", ">4m"],
     },
     visual: {
       colour: "#EBF1DE",

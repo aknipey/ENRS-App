@@ -6,7 +6,7 @@ export const NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Silt: Stand
       matrix: "Water",
       leached: false,
       silt: true,
-      depthDependent: 3,
+      depthDependent: ["2-4m", "4-8m", ">8m"],
     },
     visual: {
       colour: "#EBF1DE",

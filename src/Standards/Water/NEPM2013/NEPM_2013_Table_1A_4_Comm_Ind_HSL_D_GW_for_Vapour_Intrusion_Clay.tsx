@@ -6,7 +6,7 @@ export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Clay: S
       matrix: "Water",
       leached: false,
       clay: true,
-      depthDependent: true,
+      depthDependent: 3,
     },
     visual: {
       colour: "#DCE6F1",

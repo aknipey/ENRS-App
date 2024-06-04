@@ -6,7 +6,7 @@ export const NEPM_2013_Table_1A_3_Res_A_B_Soil_HSL_for_Vapour_Intrusion_Silt: St
       matrix: "Soil",
       leached: false,
       silt: true,
-      depthDependent: true,
+      depthDependent: 4,
     },
     visual: {
       colour: "#EBF1DE",

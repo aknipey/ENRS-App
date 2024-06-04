@@ -1,13 +1,17 @@
 import ExcelJS from "exceljs";
 import { JSONObject } from "../types/fileStorage";
 import { writeHeaders } from "./headingCreation";
+import { writeStandards } from "./placeStandards";
+import { Standard } from "../Standards/standardsTypes";
 
 export const createTable = (
   worksheet: ExcelJS.Worksheet,
-  table: JSONObject
+  table: JSONObject,
+  standards: Standard[]
 ) => {
   writeHeaders(worksheet, table);
-  //writeStandards(worksheet, table);
+  let rowNum = writeStandards(worksheet, standards);
   //writeResults(worksheet, table);
+  //formatSheet(worksheet);
 
 };

@@ -26,7 +26,7 @@ export type StandardInfo = {
   max_average?: boolean;
   marine?: boolean;
   freshwater?: boolean;
-  depthDependent?: boolean;
+  depthDependent?: number;
 };
 
 export type Standard = {

@@ -48,7 +48,7 @@ const beginHeaders = (worksheet: ExcelJS.Worksheet, width: number) => {
 const makeAnalyteSet = (table: JSONObject): Set<string> => {
   const sampleAnalytesCC = new Set<string>();
 
-  // Does not deal with when there are no standards for a result.
+  // Does not deal with when there are no standards for a result. Future toggle?
   table.data.forEach((result: JSONObject) => {
     if (result.hasStandard) {
       sampleAnalytesCC.add(result.ChemCode);
@@ -85,6 +85,8 @@ const writeDefaultAnalytes = (
           wrapText: true,
         };
         nameCell.border = ANALYTE_BORDER;
+
+        worksheet.getColumn(column).key = chemCode;
 
         worksheet.mergeCells(4, column, 5, column);
 

@@ -6,7 +6,7 @@ export const NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Sand: Standar
       matrix: "Water",
       leached: false,
       sand: true,
-      depthDependent: true,
+      depthDependent: 3,
     },
     visual: {
       colour: "#F2DCDB",

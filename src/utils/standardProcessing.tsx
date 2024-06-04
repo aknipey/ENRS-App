@@ -22,7 +22,7 @@ import {
 import { screenedOut } from "./selections";
 
 // Returns an array of standards and their names that have been selected.
-const selectStandards = (
+export const selectStandards = (
   standardsIds: SelectedStandardsIds
 ): Standard[] => {
   const selectedStandards = standardsIds.map((path: SelectedStandardsId) => {

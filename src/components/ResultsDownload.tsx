@@ -10,9 +10,14 @@ import {
   useSelectedStandardsIdsAtom,
 } from "../atoms/standardsAtoms";
 import ExcelJS from "exceljs";
-import { findAllExceedances } from "../utils/standardProcessing";
+import {
+  findAllExceedances,
+  selectStandards,
+} from "../utils/standardProcessing";
 import { createTable } from "../utils/tableCreation";
 import { memo, useCallback } from "react";
+import { Standard } from "../Standards/standardsTypes";
+import { screenedOut } from "../utils/selections";
 
 export const ResultsDownload = memo(function ResultsDownloadComp() {
   const [currentChemFileName] = useChemFileNameAtom();
@@ -52,12 +57,24 @@ export const ResultsDownload = memo(function ResultsDownloadComp() {
             : "FF00FFFF";
 
         const worksheet = workbook.addWorksheet(name, {
-          properties: { tabColor: { argb: colour } },
+          properties: { tabColor: { argb: colour }, defaultRowHeight: 16.5 },
           pageSetup: { paperSize: 9, orientation: "landscape" },
           views: [{ zoomScale: 85 }],
         });
 
-        createTable(worksheet, table);
+        let standards: Standard[] = [];
+
+        if (i === tableExceedances.length - 1) {
+          standards = selectStandards(selectedStandardsIdsAtom);
+        } else {
+          quickSelectedTables[i].standards.forEach((standard) => {
+            if (!screenedOut(standard, screeningCriteriaQS)) {
+              standards.push(standard);
+            }
+          });
+        }
+
+        createTable(worksheet, table, standards);
       });
 
       const buffer = await workbook.xlsx.writeBuffer();

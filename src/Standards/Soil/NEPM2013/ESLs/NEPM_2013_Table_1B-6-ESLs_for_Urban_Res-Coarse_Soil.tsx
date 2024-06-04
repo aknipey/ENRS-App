@@ -9,6 +9,9 @@ export const NEPM_2013_Table_1B_6_ESLs_for_Urban_Res_Coarse_Soil: Standard = {
   visual: {
     colour: "#EBF1DE",
     name: "NEPM 2013 Table 1B-6 ESLs for Urban Residential - Coarse Soil",
+    whiteBar: "NEPM (2013) Soil Investigation Levels",
+    rowB: "ESLs for Urban Residential A/B/C",
+    rowE: "Coarse",
   },
   values: [
     {

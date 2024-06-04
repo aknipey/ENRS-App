@@ -8,6 +8,8 @@ export const ADWG_2022_Aesthetic: Standard = {
   visual: {
     colour: "#188E89",
     name: "Australian Drinking Water Guidelines 2022 Aesthetic",
+    whiteBar: "Australian Drinking Water Guidelines (ADWG) (2022)",
+    rowB: "Aesthetic",
   },
   values: [
     {

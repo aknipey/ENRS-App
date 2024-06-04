@@ -9,6 +9,8 @@ export const ANZECC_2000_Rec_Water_Quality_and_Aesthetics_Primary_contact: Stand
     visual: {
       colour: "#AEB6BF",
       name: "ANZECC 2000 Rec Water Quality and Aesthetics - Primary contact",
+      whiteBar: "ANZECC 2000 Water Quality Guidelines",
+      rowB: "Rec Water Quality and Aesthetics - Primary Contact",
     },
     values: [
       {

@@ -8,6 +8,8 @@ export const ANZECC_2000_Recreational_water_quality_and_aesthetics: Standard = {
   visual: {
     colour: "#AEB6BF",
     name: "ANZECC 2000 Recreational water quality and aesthetics",
+    whiteBar: "ANZECC 2000 Water Quality Guidelines",
+    rowB: "Recreational water quality and aesthetics",
   },
   values: [
     {

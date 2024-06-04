@@ -8,6 +8,8 @@ export const NEPM_2013_Table_1C_GILs_Drinking_Water: Standard = {
   visual: {
     colour: "#46a5a1",
     name: "NEPM 2013 Table 1C GILs Drinking Water",
+    whiteBar: "NEPM 2013 Water",
+    rowB: "NEPM 2013 GILs Drinking Water",
   },
   values: [
     {

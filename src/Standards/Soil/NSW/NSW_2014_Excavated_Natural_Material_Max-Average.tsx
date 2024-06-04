@@ -9,6 +9,8 @@ export const NSW_2014_Excavated_Natural_Material_Max_Average: Standard = {
   visual: {
     colour: "#CCFFCC",
     name: "NSW 2014 Excavated Natural Material Max Average",
+    whiteBar: "NSW EPA - Excavated Natural Material Guidelines (2014)",
+    rowB: "ENM - Max Average concentration",
   },
   values: [
     {

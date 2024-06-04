@@ -9,6 +9,10 @@ export const PFAS_NEMP_2020_Clay_Single_Composite_Lined_Landfill_ASLP: Standard 
     visual: {
       colour: "#B7DEE8",
       name: "PFAS NEMP 2020 Clay Single Composite Lined Landfill ASLP (Leached)",
+      whiteBar:
+        "HEPA - PFAS National Environmental Management Plan 2.0 (NEMP) (2020)",
+      rowB: "Clay/Single Composite Lined Landfill",
+      rowE: "ASLP mg/L"
     },
     values: [
       {

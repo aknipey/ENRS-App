@@ -8,6 +8,8 @@ export const NEPM_2013_Table_7_Res_A_HSL_for_Asbestos_in_Soil: Standard = {
   visual: {
     colour: "#EBF1DE",
     name: "NEPM 2013 Table 7 Res A HSL for Asbestos in Soil",
+    whiteBar: "NEPM (2013) Soil Investigation Levels",
+    rowB: "Res A HSL for Asbestos",
   },
   values: [
     {

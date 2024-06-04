@@ -8,6 +8,9 @@ export const ANZECC_2000_Sediment_ISGC_Low: Standard = {
   visual: {
     colour: "#D6DBDF",
     name: "ANZECC 2000 Sediment ISGC-Low",
+    whiteBar: "ANZECC 2000",
+    rowB: "ANZECC 2000 Sediment ISQG",
+    rowC: "Low",
   },
   values: [
     {

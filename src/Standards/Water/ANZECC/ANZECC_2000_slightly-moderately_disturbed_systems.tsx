@@ -8,6 +8,8 @@ export const ANZECC_2000_slightly_moderately_disturbed_systems: Standard = {
   visual: {
     colour: "#AEB6BF",
     name: "ANZECC 2000 Slightly to Moderately Disturbed Systems",
+    whiteBar: "ANZECC 2000 Water Quality Guidelines",
+    rowB: "Slightly to Moderately Disturbed Systems",
   },
   values: [
     {

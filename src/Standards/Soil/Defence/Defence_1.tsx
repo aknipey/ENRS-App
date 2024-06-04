@@ -8,6 +8,8 @@ export const Defence_1: Standard = {
   visual: {
     colour: "#E26B0A",
     name: "Defence Category 1",
+    whiteBar: "Defence  PFAS Construction & Maintanance Framework (2021)",
+    rowB: "Category 1",
   },
   values: [
     {

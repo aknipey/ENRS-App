@@ -8,6 +8,8 @@ export const CRC_Care_HSL_C_Recreational_Open_Space: Standard = {
   visual: {
     colour: "#F2DCDB",
     name: "CRC Care HSL-C Recreational Open Space",
+    whiteBar: "CRC Care (2011)",
+    rowB: "CRC Care HSL-C Recreational/Open Space",
   },
   values: [
     {

@@ -8,6 +8,9 @@ export const PFAS_NEMP_2020_Public_open_space_HIL_C: Standard = {
   visual: {
     colour: "#F2DCDB",
     name: "PFAS NEMP 2020 Public open space HIL-C",
+    whiteBar:
+        "HEPA - PFAS National Environmental Management Plan 2.0 (NEMP) (2020)",
+      rowB: "HIL 'C' PFAS",
   },
   values: [
     {

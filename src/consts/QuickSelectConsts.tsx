@@ -260,7 +260,7 @@ export const WATER_99_QS: QuickSelectTable = {
 
 export const ENM_QS: QuickSelectTable = {
   name: "ENM",
-  colour: "#99FF99",
+  colour: "#CCFFCC",
   standards: [
     NSW_2014_Excavated_Natural_Material_Absolute_Max,
     NSW_2014_Excavated_Natural_Material_Max_Average,
@@ -277,8 +277,8 @@ export const RA_QS: QuickSelectTable = {
 };
 
 export const GSW_RSW_QS: QuickSelectTable = {
-  name: "GSW (No Leach)",
-  colour: "#DAEEF3",
+  name: "GSW + RSW",
+  colour: "#E4DFEC",
   standards: [
     NSW_2014_General_Solid_Waste_CT1_No_Leaching,
     NSW_2014_General_Solid_Waste_SCC1_with_leached,

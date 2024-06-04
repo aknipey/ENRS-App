@@ -8,6 +8,8 @@ export const Defence_non_detect: Standard = {
   visual: {
     colour: "#FDE9D9",
     name: "Defence Non Detect at LOR",
+    whiteBar: "Defence  PFAS Construction & Maintanance Framework (2021)",
+    rowB: "Non Detect at LOR",
   },
   values: [
     {

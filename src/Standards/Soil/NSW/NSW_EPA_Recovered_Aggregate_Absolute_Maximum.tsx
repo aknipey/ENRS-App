@@ -8,6 +8,8 @@ export const NSW_EPA_Recovered_Aggregate_Absolute_Maximum: Standard = {
   visual: {
     colour: "#FCD5B4",
     name: "NSW EPA Recovered Aggregate Absolute Maximum",
+    whiteBar: "NSW EPA - Recovered Aggregate  Order Guidelines (2014)",
+    rowB: "RA - Absolute Max Concentration",
   },
   values: [
     {

@@ -8,6 +8,10 @@ export const PFAS_NEMP_2020_Double_Composite_Landfill_ASLP: Standard = {
   visual: {
     colour: "#92CDDC",
     name: "PFAS NEMP 2020 Double Composite Landfill ASLP (Leached)",
+    whiteBar:
+        "HEPA - PFAS National Environmental Management Plan 2.0 (NEMP) (2020)",
+      rowB: "Double Composite Lined Landfill",
+      rowE: "ASLP mg/L"
   },
   values: [
     {

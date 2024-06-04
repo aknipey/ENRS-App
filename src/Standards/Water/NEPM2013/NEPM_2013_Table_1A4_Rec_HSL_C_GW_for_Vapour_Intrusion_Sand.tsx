@@ -6,10 +6,13 @@ export const NEPM_2013_Table_1A4_Rec_HSL_C_GW_for_Vapour_Intrusion_Sand: Standar
       matrix: "Water",
       leached: false,
       sand: true,
+      depthDependent: true,
     },
     visual: {
       colour: "#F2DCDB",
       name: "NEPM 2013 Table 1A4 Rec HSL C GW for Vapour Intrusion Sand",
+      whiteBar: "NEPM 2013 Water",
+      rowB: "NEPM 2013 Table 1A4 Rec HSL C GW for Vapour Intrusion Sand",
     },
     values: [
       {

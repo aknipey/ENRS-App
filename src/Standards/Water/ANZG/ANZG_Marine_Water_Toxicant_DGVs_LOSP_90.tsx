@@ -9,6 +9,9 @@ export const ANZG_Marine_Water_Toxicant_DGVs_LOSP_90: Standard = {
   visual: {
     colour: "#AED6F1",
     name: "ANZG Marine Water Toxicant DGVs LOSP 90%",
+    whiteBar: "ANZG Toxicant DGVs",
+    rowB: "90%",
+    rowE: "Marine"
   },
   values: [
     {

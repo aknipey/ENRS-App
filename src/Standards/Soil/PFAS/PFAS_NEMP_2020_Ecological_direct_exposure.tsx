@@ -8,6 +8,9 @@ export const PFAS_NEMP_2020_Ecological_direct_exposure: Standard = {
   visual: {
     colour: "#C4BD97",
     name: "PFAS NEMP 2020 Ecological direct exposure",
+    whiteBar:
+        "HEPA - PFAS National Environmental Management Plan 2.0 (NEMP) (2020)",
+      rowB: "Ecological direct exposure",
   },
   values: [
     {

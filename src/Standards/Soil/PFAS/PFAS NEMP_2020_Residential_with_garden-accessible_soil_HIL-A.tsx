@@ -9,6 +9,9 @@ export const PFAS_NEMP_2020_Residential_with_garden_accessible_soil_HIL_A: Stand
     visual: {
       colour: "#EBF1DE",
       name: "PFAS NEMP 2020 Residential with garden accessible soil HIL-A",
+      whiteBar:
+        "HEPA - PFAS National Environmental Management Plan 2.0 (NEMP) (2020)",
+      rowB: "HIL 'A' PFAS",
     },
     values: [
       {

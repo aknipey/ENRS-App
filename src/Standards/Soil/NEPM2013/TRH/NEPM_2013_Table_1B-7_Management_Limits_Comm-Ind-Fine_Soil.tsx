@@ -10,6 +10,9 @@ export const NEPM_2013_Table_1B_7_Management_Limits_Comm_Ind_Fine_Soil: Standard
     visual: {
       colour: "#DCE6F1",
       name: "NEPM 2013 Table 1B-7 Management Limits Comm-Ind Fine Soil",
+      whiteBar: "NEPM (2013) Soil Investigation Levels",
+      rowB: "Management Limits 'D' (Comm-Ind)",
+      rowE: "Fine",
     },
     values: [
       {

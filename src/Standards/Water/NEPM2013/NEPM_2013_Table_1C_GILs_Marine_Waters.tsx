@@ -8,6 +8,8 @@ export const NEPM_2013_Table_1C_GILs_Marine_Waters: Standard = {
   visual: {
     colour: "#D6DBDF",
     name: "NEPM 2013 Table 1C GILs Marine Waters",
+    whiteBar: "NEPM 2013 Water",
+    rowB: "NEPM 2013 GILs Marine Waters",
   },
   values: [
     {

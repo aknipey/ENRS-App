@@ -9,6 +9,9 @@ export const PFAS_NEMP_2020_Freshwater_95: Standard = {
   visual: {
     colour: "#85C1E9",
     name: "PFAS NEMP 2020 Freshwater 95%",
+    whiteBar: "PFAS NEMP 2020 Water",
+    rowB: "95%",
+    rowE: "Fresh",
   },
   values: [
     {

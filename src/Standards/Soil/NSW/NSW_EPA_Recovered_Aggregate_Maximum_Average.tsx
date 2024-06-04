@@ -9,6 +9,8 @@ export const NSW_EPA_Recovered_Aggregate_Maximum_Average: Standard = {
   visual: {
     colour: "#FDE9D9",
     name: "NSW EPA Recovered Aggregate Maximum Average",
+    whiteBar: "NSW EPA - Recovered Aggregate  Order Guidelines (2014)",
+    rowB: "RA - Max Average Concentration",
   },
   values: [
     {

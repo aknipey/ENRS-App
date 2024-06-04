@@ -8,6 +8,10 @@ export const NSW_2014_General_Solid_Waste_TCLP1_leached: Standard = {
   visual: {
     colour: "#DAEEF3",
     name: "NSW 2014 General Solid Waste TCLP1 leached",
+    whiteBar: "NSW EPA - Waste Classification Guidelines (2014)",
+    rowB: "General Solid Waste (GSW)",
+    colourB: "FF0000FF",
+    rowE: "TCLP1"
   },
   values: [
     {

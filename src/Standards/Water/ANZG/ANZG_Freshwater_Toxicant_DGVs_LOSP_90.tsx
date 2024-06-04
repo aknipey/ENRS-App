@@ -9,6 +9,9 @@ export const ANZG_Freshwater_Toxicant_DGVs_LOSP_90: Standard = {
   visual: {
     colour: "#AED6F1",
     name: "ANZG Freshwater Toxicant DGVs LOSP 90%",
+    whiteBar: "ANZG Toxicant DGVs",
+    rowB: "90%",
+    rowE: "Fresh"
   },
   values: [
     {

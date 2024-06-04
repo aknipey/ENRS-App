@@ -8,6 +8,8 @@ export const Guidance_on_PFAS_in_Recreational_Water: Standard = {
   visual: {
     colour: "#AEB6BF",
     name: "Guidance on PFAS in Recreational Water",
+    whiteBar: "PFAS NEMP 2020 Water",
+    rowB: "Guidance on PFAS in Recreational Water",
   },
   values: [
     {

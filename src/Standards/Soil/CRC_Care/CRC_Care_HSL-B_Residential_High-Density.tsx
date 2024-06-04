@@ -8,6 +8,8 @@ export const CRC_Care_HSL_B_Residential_High_Density: Standard = {
   visual: {
     colour: "#FFFFCC",
     name: "CRC Care HSL-B Residential High Density",
+    whiteBar: "CRC Care (2011)",
+    rowB: "CRC Care HSL-B Residential/High Density",
   },
   values: [
     {

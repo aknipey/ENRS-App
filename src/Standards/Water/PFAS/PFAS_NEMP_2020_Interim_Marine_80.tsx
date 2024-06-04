@@ -9,6 +9,9 @@ export const PFAS_NEMP_2020_Interim_Marine_80: Standard = {
   visual: {
     colour: "#D6EAF8",
     name: "PFAS NEMP 2020 Interim Marine 80%",
+    whiteBar: "PFAS NEMP 2020 Water",
+    rowB: "80%",
+    rowE: "Marine",
   },
   values: [
     {

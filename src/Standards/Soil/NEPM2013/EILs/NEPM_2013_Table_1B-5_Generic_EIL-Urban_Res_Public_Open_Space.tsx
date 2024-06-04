@@ -9,6 +9,8 @@ export const NEPM_2013_Table_1B_5_Generic_EIL_Urban_Res_Public_Open_Space: Stand
     visual: {
       colour: "#EBF1DE",
       name: "NEPM 2013 Table 1B-5 Generic EIL - Urban Residential and Public Open Space",
+      whiteBar: "NEPM (2013) Soil Investigation Levels",
+      rowB: "Generic EIL - Urban Residential/Public Open Space A/B/C",
     },
     values: [
       {

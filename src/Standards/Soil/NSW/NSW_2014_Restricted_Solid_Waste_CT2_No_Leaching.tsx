@@ -8,6 +8,10 @@ export const NSW_2014_Restricted_Solid_Waste_CT2_No_Leaching: Standard = {
   visual: {
     colour: "#E4DFEC",
     name: "NSW 2014 Restricted Solid Waste CT2 No Leaching",
+    whiteBar: "NSW EPA - Waste Classification Guidelines (2014)",
+    rowB: "Restricted Solid Waste (RSW)",
+    colourB: "FFFF0000",
+    rowE: "CT2",
   },
   values: [
     {

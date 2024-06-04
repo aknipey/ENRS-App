@@ -8,6 +8,10 @@ export const NSW_2014_Restricted_Solid_Waste_SCC2_with_leached: Standard = {
   visual: {
     colour: "#E4DFEC",
     name: "NSW 2014 Restricted Solid Waste SCC2 with leached",
+    whiteBar: "NSW EPA - Waste Classification Guidelines (2014)",
+    rowB: "Restricted Solid Waste (RSW)",
+    colourB: "FFFF0000",
+    rowE: "SCC2",
   },
   values: [
     {

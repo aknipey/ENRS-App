@@ -8,6 +8,8 @@ export const ANZECC_2000_Livestock_DW_Low_Risk_Trigger_Values: Standard = {
   visual: {
     colour: "#FF9393",
     name: "ANZECC 2000 Livestock Drinking Water Low Risk Trigger Values",
+    whiteBar: "ANZECC 2000 Water Quality Guidelines",
+    rowB: "Livestock Drinking Water Low Risk Trigger Values",
   },
   values: [
     {

@@ -9,6 +9,9 @@ export const ANZECC_2000_FW_99: Standard = {
   visual: {
     colour: "#5DADE2",
     name: "ANZECC 2000 Freshwater 99%",
+    whiteBar: "ANZECC 2000 Water Quality Guidelines",
+    rowE: "Fresh",
+    rowB: "99%",
   },
   values: [
     {

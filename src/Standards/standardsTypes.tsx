@@ -26,6 +26,7 @@ export type StandardInfo = {
   max_average?: boolean;
   marine?: boolean;
   freshwater?: boolean;
+  depthDependent?: boolean;
 };
 
 export type Standard = {
@@ -34,6 +35,11 @@ export type Standard = {
   visual: {
     colour: string;
     name: string;
+    whiteBar: string;
+    rowB: string;
+    rowC?: string;
+    rowE?: string;
+    colourB?: string;
   };
 };
 

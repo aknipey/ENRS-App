@@ -8,6 +8,8 @@ export const NEPM_2013_Table_1B_5_Generic_EIL_Comm_Ind: Standard = {
   visual: {
     colour: "#DCE6F1",
     name: "NEPM 2013 Table 1B-5 Generic EIL - Comm-Ind",
+    whiteBar: "NEPM (2013) Soil Investigation Levels",
+    rowB: "Generic EIL - Comm-Ind D",
   },
   values: [
     {

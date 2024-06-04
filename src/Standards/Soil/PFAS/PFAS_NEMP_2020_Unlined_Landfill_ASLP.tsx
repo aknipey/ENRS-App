@@ -8,6 +8,10 @@ export const PFAS_NEMP_2020_Unlined_Landfill_ASLP: Standard = {
   visual: {
     colour: "#DAEEF3",
     name: "PFAS NEMP 2020 Unlined Landfill ASLP (Leached)",
+    whiteBar:
+        "HEPA - PFAS National Environmental Management Plan 2.0 (NEMP) (2020)",
+      rowB: "Unlined Landfill",
+      rowE: "ASLP mg/L"
   },
   values: [
     {

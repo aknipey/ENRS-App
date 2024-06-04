@@ -8,6 +8,10 @@ export const NSW_2014_General_Solid_Waste_SCC1_with_leached: Standard = {
   visual: {
     colour: "#DAEEF3",
     name: "NSW 2014 General Solid Waste SCC1 with leached",
+    whiteBar: "NSW EPA - Waste Classification Guidelines (2014)",
+    rowB: "General Solid Waste (GSW)",
+    colourB: "FF0000FF",
+    rowE: "SCC1"
   },
   values: [
     {

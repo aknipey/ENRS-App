@@ -8,6 +8,8 @@ export const ANZECC_2000_Irrigation_Short_Term_Trigger_Values: Standard = {
   visual: {
     colour: "#FF9B9B",
     name: "ANZECC 2000 Irrigation Short Term Trigger Values",
+    whiteBar: "ANZECC 2000 Water Quality Guidelines",
+    rowB: "Irrigation Short Term Trigger Values",
   },
   values: [
     {

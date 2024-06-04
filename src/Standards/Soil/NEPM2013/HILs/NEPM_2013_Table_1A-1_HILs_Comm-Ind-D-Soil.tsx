@@ -7,7 +7,9 @@ export const NEPM_2013_Table_1A_1_HILs_Comm_Ind_D_Soil: Standard = {
   },
   visual: {
     colour: "#DCE6F1",
-    name: "NEPM 2013 Table 1A-1 HILs Comm-Ind D Soil",
+    name: "NEPM 2013 Table 1A-1 HILs Comm/Ind D Soil",
+    whiteBar: "NEPM (2013) Soil Investigation Levels",
+    rowB: "HIL 'D' (Industrial / Commercial)",
   },
   values: [
     {

@@ -8,6 +8,8 @@ export const NEPM_2013_Table_1A_1_HILs_Rec_C_Soil: Standard = {
   visual: {
     colour: "#F2DCDB",
     name: "NEPM 2013 Table 1A-1 HILs Rec C Soil",
+    whiteBar: "NEPM (2013) Soil Investigation Levels",
+    rowB: "HIL 'C' (Rec. Open Space, Sec. Sch.)",
   },
   values: [
     {

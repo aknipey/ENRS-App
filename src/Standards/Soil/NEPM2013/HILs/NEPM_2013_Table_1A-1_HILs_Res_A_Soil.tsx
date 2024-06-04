@@ -8,6 +8,8 @@ export const NEPM_2013_Table_1A_1_HILs_Res_A_Soil: Standard = {
   visual: {
     colour: "#EBF1DE",
     name: "NEPM 2013 Table 1A-1 HILs Res A Soil",
+    whiteBar: "NEPM (2013) Soil Investigation Levels",
+    rowB: "HIL'A' (Resi.,Prim. Sch. & Accessible Soil)",
   },
   values: [
     {

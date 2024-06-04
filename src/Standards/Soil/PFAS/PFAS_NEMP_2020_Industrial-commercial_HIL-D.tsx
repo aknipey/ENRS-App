@@ -8,6 +8,9 @@ export const PFAS_NEMP_2020_Industrial_commercial_HIL_D: Standard = {
   visual: {
     colour: "#DCE6F1",
     name: "PFAS NEMP 2020 Industrial-commercial HIL-D",
+    whiteBar:
+        "HEPA - PFAS National Environmental Management Plan 2.0 (NEMP) (2020)",
+      rowB: "HIL 'D' PFAS",
   },
   values: [
     {

@@ -8,6 +8,8 @@ export const CRC_Care_HSL_D_Commercial_Industrial: Standard = {
   visual: {
     colour: "#DCE6F1",
     name: "CRC Care HSL-D Commercial Industrial",
+    whiteBar: "CRC Care (2011)",
+    rowB: "CRC Care HSL-D Commercial/Industrial",
   },
   values: [
     {

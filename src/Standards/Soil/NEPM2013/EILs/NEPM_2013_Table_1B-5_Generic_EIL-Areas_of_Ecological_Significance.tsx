@@ -9,6 +9,8 @@ export const NEPM_2013_Table_1B_5_Generic_EIL_Areas_of_Ecological_Significance: 
     visual: {
       colour: "#DDD9C4",
       name: "NEPM 2013 Table 1B-5 Generic EIL - Areas of Ecological Significance",
+      whiteBar: "NEPM (2013) Soil Investigation Levels",
+      rowB: "Generic EIL - Areas of Ecological Significance",
     },
     values: [
       {

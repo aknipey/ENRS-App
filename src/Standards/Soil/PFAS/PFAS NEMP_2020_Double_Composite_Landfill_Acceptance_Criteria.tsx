@@ -9,6 +9,10 @@ export const PFAS_NEMP_2020_Double_Composite_Landfill_Acceptance_Criteria: Stand
     visual: {
       colour: "#92CDDC",
       name: "PFAS NEMP 2020 Double Composite Landfill Acceptance Criteria",
+      whiteBar:
+        "HEPA - PFAS National Environmental Management Plan 2.0 (NEMP) (2020)",
+      rowB: "Double Composite Lined Landfill",
+      rowE: "Total mg/kg"
     },
     values: [
       {

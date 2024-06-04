@@ -9,6 +9,9 @@ export const PFAS_NEMP_2020_Residential_with_minimal_opportunities_for_soil_acce
     visual: {
       colour: "#FFFFCC",
       name: "PFAS NEMP 2020 Residential with minimal opportunities for soil access HIL-B",
+      whiteBar:
+        "HEPA - PFAS National Environmental Management Plan 2.0 (NEMP) (2020)",
+      rowB: "HIL 'B' PFAS",
     },
     values: [
       {

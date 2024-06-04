@@ -13,7 +13,7 @@ export const NEPM_2013_Table_1A_3_Res_A_B_Soil_HSL_for_Vapour_Intrusion_Clay: St
       name: "NEPM 2013 Table 1A-3 Res A & B Soil HSL for Vapour Intrusion - Clay",
       whiteBar: "NEPM (2013) Soil Investigation Levels",
       rowB: "HSL 'A' & 'B'",
-      rowC: "Clay",
+      rowC: "CLAY",
     },
     values: [
       {

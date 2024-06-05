@@ -121,6 +121,8 @@ const writeDefaultAnalytes = (
       };
       nameCell.border = ANALYTE_BORDER;
 
+      worksheet.getColumn(column).key = chemCode;
+
       const r6 = worksheet.getCell(6, column);
       r6.border = R6_BORDER;
       column++;
@@ -152,6 +154,8 @@ const writeSpecialAnalytes = (
       wrapText: true,
     };
     nameCell.border = ANALYTE_BORDER;
+
+    worksheet.getColumn(width).key = chemCode;
 
     worksheet.mergeCells(4, width, 5, width);
 

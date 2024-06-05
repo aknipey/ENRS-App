@@ -1,6 +1,7 @@
 import { Standard } from "../Standards/standardsTypes";
 import ExcelJS from "exceljs";
 import { FULL_BORDER } from "../consts/xlsxFormattingConsts";
+import { processConditions } from "./standardProcessing";
 
 export const writeStandard = (
   worksheet: ExcelJS.Worksheet,
@@ -10,7 +11,64 @@ export const writeStandard = (
 ): number => {
   groupStandards.delete(standard);
 
+  const width = worksheet.columnCount;
+
+  for (let column = 6; column < width + 1; column++) {
+    const cell = worksheet.getCell(rowNum, column);
+    const columnKey = worksheet.getColumn(column).key;
+    const analyte = standard.values.find((a) => a.chemCode === columnKey);
+
+    let value;
+    if (!analyte) {
+      value = "-";
+    } else if (analyte.value instanceof Object && "min" in analyte.value) {
+      value = `${analyte.value.min} - ${analyte.value.max}`;
+    } else if (analyte.value === -999) {
+      value = "NL";
+    } else {
+      value = analyte.value;
+
+      let units = analyte.units;
+      if (units.charCodeAt(0) > 127) {
+        if (units.includes("g/L")) {
+          units = "ug/L";
+        } else if (units.includes("g/kg")) {
+          units = "ug/kg";
+        } else {
+          console.log("Units are being weird: ", units);
+        }
+      }
+
+      if (units === "ug/L" || units === "ug/kg") {
+        value = value * 1000;
+      }
+    }
+
+    cell.value = value;
+    cell.font = { name: "Arial", size: 10 };
+    cell.alignment = { vertical: "middle", horizontal: "center" };
+    cell.border = FULL_BORDER;
+    cell.fill = {
+      type: "pattern",
+      pattern: "solid",
+      fgColor: {
+        argb: standard.visual.colour?.replace("#", "") ?? "FFFFFF",
+      },
+    };
+  }
+
   return rowNum + 1;
+};
+
+const processDepth = (depth: string) => {
+  if (depth[0] === ">") {
+    return { upper: Number(depth[1]), lower: undefined };
+  } else if (depth[1] === "-") {
+    return { upper: Number(depth[0]), lower: Number(depth[2]) };
+  } else {
+    console.log("Depth is not in the right format: ", depth);
+    return { upper: undefined, lower: undefined };
+  }
 };
 
 export const writeDepthDependentStandard = (
@@ -20,6 +78,80 @@ export const writeDepthDependentStandard = (
   rowNum: number
 ): number => {
   groupStandards.delete(standard);
+  const width = worksheet.columnCount;
+
+  for (let i = 0; i < standard.standardInfo.depthDependent!.length; i++) {
+    const cellE = worksheet.getCell(i + rowNum, 5);
+    cellE.value = standard.standardInfo.depthDependent![i];
+    cellE.font = { name: "Arial", size: 10, bold: true };
+    cellE.alignment = { vertical: "middle" };
+    cellE.border = FULL_BORDER;
+    cellE.fill = {
+      type: "pattern",
+      pattern: "solid",
+      fgColor: {
+        argb: standard.visual.colour?.replace("#", "") ?? "FFFFFF",
+      },
+    };
+
+    for (let column = 6; column < width + 1; column++) {
+      const cell = worksheet.getCell(i + rowNum, column);
+      const columnKey = worksheet.getColumn(column).key;
+      const analyte = standard.values.find((a, j) => {
+        const sDepth = standard.standardInfo.depthDependent![i];
+        const depth = processDepth(sDepth);
+
+        const aDepth = a.conditions!;
+        const conds = processConditions(aDepth);
+        const ret =
+          a.chemCode === columnKey &&
+          conds?.upper === depth.upper &&
+          ("lower" in depth ? conds?.lower === depth.lower : true);
+
+        //console.log(ret, "Depth at ", j, ": ", depth, conds);
+
+        return ret;
+      });
+
+      let value;
+      if (!analyte) {
+        value = "-";
+      } else if (analyte.value instanceof Object && "min" in analyte.value) {
+        value = `${analyte.value.min} - ${analyte.value.max}`;
+      } else if (analyte.value === -999) {
+        value = "NL";
+      } else {
+        value = analyte.value;
+
+        let units = analyte.units;
+        if (units.charCodeAt(0) > 127) {
+          if (units.includes("g/L")) {
+            units = "ug/L";
+          } else if (units.includes("g/kg")) {
+            units = "ug/kg";
+          } else {
+            console.log("Units are being weird: ", units);
+          }
+        }
+
+        if (units === "ug/L" || units === "ug/kg") {
+          value = value * 1000;
+        }
+      }
+
+      cell.value = value;
+      cell.font = { name: "Arial", size: 10 };
+      cell.alignment = { vertical: "middle", horizontal: "center" };
+      cell.border = FULL_BORDER;
+      cell.fill = {
+        type: "pattern",
+        pattern: "solid",
+        fgColor: {
+          argb: standard.visual.colour?.replace("#", "") ?? "FFFFFF",
+        },
+      };
+    }
+  }
 
   return rowNum + (standard.standardInfo.depthDependent?.length ?? 1);
 };

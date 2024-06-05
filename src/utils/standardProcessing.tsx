@@ -29,7 +29,7 @@ export const selectStandards = (
     let standard: AllStandards = standardsStructure[path[0]];
 
     let i = 1;
-    while (i < path.length) {
+    while (i < path.length - 1) {
       standard = (standard.value as AllStandards[])[path[i]];
       i++;
     }
@@ -129,9 +129,7 @@ export const findTableExceedances = (
       standards.forEach((standard: Standard) => {
         // Check matrices match
         if (
-          
-            standard
-          .standardInfo.matrix.toLocaleLowerCase() !==
+          standard.standardInfo.matrix.toLocaleLowerCase() !==
           sampleMatrix.toLocaleLowerCase()
         ) {
           return;

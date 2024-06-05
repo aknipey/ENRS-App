@@ -82,6 +82,8 @@ import { QuickSelectTable } from "../types/selectedStandardTypes";
 import { NEPM_2013_Table_1B_5_Generic_EIL_Comm_Ind } from "../Standards/Soil/NEPM2013/EILs/NEPM_2013_Table_1B-5_Generic EIL-Comm-Ind";
 import { PFAS_NEMP_2020_Residential_with_garden_accessible_soil_HIL_A } from "../Standards/Soil/PFAS/PFAS NEMP_2020_Residential_with_garden-accessible_soil_HIL-A";
 import { PFAS_NEMP_2020_Recreational_Water } from "../Standards/Water/PFAS/PFAS_NEMP_2020_Recreational_Water";
+import { NEPM_2013_Table_1B_7_Management_Limits_Comm_Ind_Coarse_Soil } from "../Standards/Soil/NEPM2013/TRH/NEPM_2013_Table_1B-7_Management_Limits_Comm-Ind-Coarse_Soil";
+import { NEPM_2013_Table_1B_7_Management_Limits_Comm_Ind_Fine_Soil } from "./../Standards/Soil/NEPM2013/TRH/NEPM_2013_Table_1B-7_Management_Limits_Comm-Ind-Fine_Soil";
 
 export const DEFENCE_QS: QuickSelectTable = {
   name: "Defence",
@@ -159,8 +161,8 @@ export const D_SOIL_QS: QuickSelectTable = {
     NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Clay,
     NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Sand,
     NEPM_2013_Table_1A_3_Comm_Ind_D_Soil_HSL_for_Vapour_Intrusion_Silt,
-    NEPM_2013_Table_1B_7_Management_Limits_in_Res_Parkland_Coarse_Soil,
-    NEPM_2013_Table_1B_7_Management_Limits_in_Res_Parkland_Fine_Soil,
+    NEPM_2013_Table_1B_7_Management_Limits_Comm_Ind_Coarse_Soil,
+    NEPM_2013_Table_1B_7_Management_Limits_Comm_Ind_Fine_Soil,
     PFAS_NEMP_2020_Industrial_commercial_HIL_D,
   ],
 };

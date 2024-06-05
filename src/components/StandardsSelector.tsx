@@ -114,7 +114,7 @@ export const StandardsSelector: React.FC = () => {
                 {quickSelectedTables.map((table) => {
                   return table.standards.some((s) => s === standard) &&
                     !screenedOut(standard, screeningCriteriaQS) ? (
-                    <BlackBackedCheckbox table={table} />
+                    <BlackBackedCheckbox key={newPath.join("-")} table={table} />
                   ) : null;
                 })}
                 <Typography

@@ -40,8 +40,6 @@ export const ResultsDownload = memo(function ResultsDownloadComp() {
       screeningCriteriaQS
     );
 
-    console.log("Table Exceedances: ", tableExceedances);
-
     try {
       const workbook = new ExcelJS.Workbook();
       workbook.creator = "ENRS App";

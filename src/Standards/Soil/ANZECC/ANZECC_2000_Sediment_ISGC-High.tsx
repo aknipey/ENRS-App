@@ -10,7 +10,7 @@ export const ANZECC_2000_Sediment_ISGC_High: Standard = {
     name: "ANZECC 2000 Sediment ISQG-High",
     whiteBar: "ANZECC 2000",
     rowB: "ANZECC 2000 Sediment ISQG",
-    rowC: "High",
+    rowE: "High",
   },
   values: [
     {

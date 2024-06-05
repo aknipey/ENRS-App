@@ -11,7 +11,7 @@ export const NEPM_2013_Table_1B_7_Management_Limits_in_Res_Parkland_Coarse_Soil:
       colour: "#EBF1DE",
       name: "NEPM 2013 Table 1B-7 Management Limits in Res-Parkland-Coarse Soil",
       whiteBar: "NEPM (2013) Soil Investigation Levels",
-      rowB: "Management Limits 'C' (Res/Parkland)",
+      rowB: "Management Limits (Res/Parkland)",
       rowE: "Coarse",
     },
     values: [

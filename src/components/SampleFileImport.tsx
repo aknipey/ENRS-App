@@ -69,11 +69,17 @@ export function SampleFileImport() {
         variant="contained"
         component="span"
         style={{ marginTop: "10px" }}
+        color={!sampleFileName.includes("Sample") ? "error" : "primary"}
       >
         Select File
       </Button>
       {sampleFileName && (
         <Typography>Selected file: {sampleFileName}</Typography>
+      )}
+      {!sampleFileName.includes("Sample") && (
+        <Typography color="error">
+          WARNING: SELECTED FILE MAY NOT BE A SAMPLE FILE
+        </Typography>
       )}
     </Paper>
   );

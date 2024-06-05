@@ -66,10 +66,16 @@ export function ChemFileImport() {
         variant="contained"
         component="span"
         style={{ marginTop: "10px" }}
+        color={!chemFileName.includes("Chemistry") ? "error" : "primary"}
       >
         Select File
       </Button>
       {chemFileName && <Typography>Selected file: {chemFileName}</Typography>}
+      {!chemFileName.includes("Chemistry") && (
+        <Typography color="error">
+          WARNING: SELECTED FILE MAY NOT BE A CHEMISTRY FILE
+        </Typography>
+      )}
     </Paper>
   );
 }

@@ -15,7 +15,7 @@ import { chemistryMap } from "../consts/chemistryMap";
 const beginHeaders = (worksheet: ExcelJS.Worksheet, width: number) => {
   worksheet.getColumn(2).width = 16;
   worksheet.getColumn(3).width = 16;
-  worksheet.getColumn(4).width = 9;
+  worksheet.getColumn(4).width = 10;
   worksheet.getColumn(5).width = 11;
 
   worksheet.getRow(2).height = 21;
@@ -60,7 +60,6 @@ const makeAnalyteSet = (table: JSONObject): Set<string> => {
 
 const writeDefaultAnalytes = (
   worksheet: ExcelJS.Worksheet,
-  table: JSONObject,
   analytesCC: Set<string>
 ): number => {
   let column = 6;
@@ -137,7 +136,6 @@ const writeDefaultAnalytes = (
 
 const writeSpecialAnalytes = (
   worksheet: ExcelJS.Worksheet,
-  table: JSONObject,
   analytesCC: Set<string>,
   width: number
 ): number => {
@@ -178,8 +176,8 @@ const writeAnalytes = (
   // Go through the rest and add them to the left (with exceptions)
 
   const analytesCC = makeAnalyteSet(table);
-  let width = writeDefaultAnalytes(worksheet, table, analytesCC);
-  width = writeSpecialAnalytes(worksheet, table, analytesCC, width);
+  let width = writeDefaultAnalytes(worksheet, analytesCC);
+  width = writeSpecialAnalytes(worksheet, analytesCC, width);
 
   return width;
 };

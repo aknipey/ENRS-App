@@ -3,6 +3,7 @@ import { JSONObject } from "../types/fileStorage";
 import { writeHeaders } from "./headingCreation";
 import { writeStandards } from "./placeStandards";
 import { Standard } from "../Standards/standardsTypes";
+import { writeResults } from "./placeResults";
 
 export const createTable = (
   worksheet: ExcelJS.Worksheet,
@@ -11,7 +12,7 @@ export const createTable = (
 ) => {
   writeHeaders(worksheet, table);
   let rowNum = writeStandards(worksheet, standards);
-  //writeResults(worksheet, table);
+  writeResults(worksheet, table);
   //formatSheet(worksheet);
 
 };

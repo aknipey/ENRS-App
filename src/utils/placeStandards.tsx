@@ -341,6 +341,7 @@ export const writeStandards = (
     const cell = worksheet.getCell(rowNum, 2);
     cell.value = standard.visual.whiteBar;
     cell.font = { bold: true, name: "Arial", size: 12 };
+    cell.border = { left: { style: "thin" } };
     rowNum++;
 
     rowNum = writeGroupedStandards(worksheet, standard, standardsSet, rowNum);

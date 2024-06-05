@@ -169,7 +169,7 @@ export const findTableExceedances = (
 
           // Note: This will replace all non-ascii starting characters with 'u'
           if (resultUnit.charCodeAt(0) > 127) {
-            if (resultUnit.includes("g/L")) {
+            if (resultUnit.includes("g/L") || resultUnit.includes("g/l")) {
               resultUnit = "ug/L";
             }
             if (resultUnit.includes("g/kg")) {

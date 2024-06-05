@@ -12,7 +12,8 @@ export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Sand: S
       colour: "#DCE6F1",
       name: "NEPM 2013 Table 1A4 Rec HSL C GW for Vapour Intrusion Sand",
       whiteBar: "NEPM 2013 Water",
-      rowB: "NEPM 2013 Table 1A4 Rec HSL C GW for Vapour Intrusion Sand",
+      rowB: "GW HSL 'D'",
+      rowC: "SAND",
     },
     values: [
       {

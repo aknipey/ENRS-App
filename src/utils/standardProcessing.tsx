@@ -142,7 +142,7 @@ export const findTableExceedances = (
             if (profile?.conditions) {
               const depthConds = processConditions(profile.conditions);
               if (!depthConds) {
-                console.log("Profile conditions but not matched numbers");
+                // console.log("Profile conditions but not matched numbers");
                 return profile.chemCode === chem.ChemCode;
               }
               if (chemDepth < depthConds.upper) return false;

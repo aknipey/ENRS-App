@@ -111,8 +111,6 @@ export const writeDepthDependentStandard = (
           conds?.upper === depth.upper &&
           ("lower" in depth ? conds?.lower === depth.lower : true);
 
-        //console.log(ret, "Depth at ", j, ": ", depth, conds);
-
         return ret;
       });
 

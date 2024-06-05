@@ -12,7 +12,8 @@ export const NEPM_2013_Table_1A4_Res_HSL_A_B_GW_for_Vapour_Intrusion_Sand: Stand
       colour: "#EBF1DE",
       name: "NEPM 2013 Table 1A4 Res HSL A-B GW for Vapour Intrusion Sand",
       whiteBar: "NEPM 2013 Water",
-      rowB: "NEPM 2013 Table 1A4 Res HSL A-B GW for Vapour Intrusion Sand",
+      rowB: "GW HSL 'A' & 'B'",
+      rowC: "SAND",
     },
     values: [
       {

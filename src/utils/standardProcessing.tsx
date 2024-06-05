@@ -191,11 +191,6 @@ export const findTableExceedances = (
                 (profile.value as RangeValue).max
               } with a result of ${result}. -`;
             }
-          } else if (chem.ChemCode.includes("DO%Sat")) {
-            if (result < (profile.value as number) && resultUnit !== "%") {
-              exceeded_standards += `${standard.visual.name}, `;
-              exceeded_notes += `- Exceeded ${profile.chemName} ${standard.visual.name} standard of ${profile.value} ${profile.units} with a result of ${result} ${profile.units} -`;
-            }
           } else if (chem.Prefix !== "<") {
             if (
               profile.units.toLocaleLowerCase() !==

@@ -197,7 +197,7 @@ export const ADWG_2022_Aesthetic: Standard = {
     {
       chemCode: "DO%Sat",
       chemName: "Dissolved oxygen",
-      value: 85,
+      value: {min: 85, max: 1000},
       units: "%",
       comments: "",
     },

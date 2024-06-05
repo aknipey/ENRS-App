@@ -7,7 +7,7 @@ export const ANZECC_2000_SE_AUS_FW_Lakes_Reservoirs: Standard = {
   },
   visual: {
     colour: "#B8CCE4",
-    name: "Upland River Default Trigger Values",
+    name: "Freshwater Lakes & Reservoirs Table 3.3.2-3",
     whiteBar: "ANZECC 2000 Water Quality Guidelines",
     rowB: "South-east Australia ANZECC 2000",
     rowE: "FW Lakes/Reservoirs",

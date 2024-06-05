@@ -72,8 +72,8 @@ export const NSW_EPA_Recovered_Aggregate_Maximum_Average: Standard = {
     {
       chemCode: "EC_Field",
       chemName: "Electrical Conductivity (field)",
-      value: 1.5,
-      units: "dS/m",
+      value: 1500,
+      units: "uS/cm",
       comments: "",
     },
     {

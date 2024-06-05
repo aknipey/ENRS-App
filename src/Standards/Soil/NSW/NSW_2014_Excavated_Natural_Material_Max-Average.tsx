@@ -86,15 +86,15 @@ export const NSW_2014_Excavated_Natural_Material_Max_Average: Standard = {
     {
       chemCode: "EC_Field",
       chemName: "Electrical Conductivity (field)",
-      value: 1.5,
-      units: "dS/m",
+      value: 1500,
+      units: "uS/cm",
       comments: "",
     },
     {
       chemCode: "EC_Lab",
       chemName: "Electrical Conductivity (lab)",
-      value: 1.5,
-      units: "dS/m",
+      value: 1500,
+      units: "uS/cm",
       comments: "",
     },
     {

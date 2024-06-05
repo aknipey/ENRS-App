@@ -71,8 +71,8 @@ export const NSW_EPA_Recovered_Aggregate_Absolute_Maximum: Standard = {
     {
       chemCode: "EC_Field",
       chemName: "Electrical Conductivity (field)",
-      value: 3,
-      units: "dS/m",
+      value: 3000,
+      units: "uS/cm",
       comments: "",
     },
     {

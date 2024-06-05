@@ -39,8 +39,11 @@ export const writeStandard = (
         }
       }
 
-      if (units === "ug/L" || units === "ug/kg") {
-        value = value * 1000;
+      if (
+        units.toLocaleLowerCase() === "ug/l" ||
+        units.toLocaleLowerCase() === "ug/kg"
+      ) {
+        value = value / 1000;
       }
     }
 
@@ -135,7 +138,7 @@ export const writeDepthDependentStandard = (
         }
 
         if (units === "ug/L" || units === "ug/kg") {
-          value = value * 1000;
+          value = value / 1000;
         }
       }
 

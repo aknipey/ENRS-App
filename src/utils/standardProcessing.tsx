@@ -197,7 +197,10 @@ export const findTableExceedances = (
               exceeded_notes += `- Exceeded ${profile.chemName} ${standard.visual.name} standard of ${profile.value} ${profile.units} with a result of ${result} ${profile.units} -`;
             }
           } else if (chem.Prefix !== "<") {
-            if (profile.units !== resultUnit) {
+            if (
+              profile.units.toLocaleLowerCase() !==
+              resultUnit.toLocaleLowerCase()
+            ) {
               if (resultUnit.includes("ug") && profile.units.includes("mg")) {
                 result = result / 1000;
               } else if (

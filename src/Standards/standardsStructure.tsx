@@ -106,6 +106,11 @@ import { NSW_EPA_Recovered_Aggregate_Maximum_Average } from "./Soil/NSW/NSW_EPA_
 import { PFAS_NEMP_2020_Clay_Single_Composite_Lined_Landfill_ASLP } from "./Soil/PFAS/PFAS_NEMP_2020_Clay-Single_Composite_Lined_Landfill_ASLP";
 import { PFAS_NEMP_2020_Double_Composite_Landfill_ASLP } from "./Soil/PFAS/PFAS NEMP_2020_Double_Composite_Landfill_ASLP";
 import { PFAS_NEMP_2020_Unlined_Landfill_ASLP } from "./Soil/PFAS/PFAS_NEMP_2020_Unlined_Landfill_ASLP";
+import { ANZECC_2000_SE_AUS_Upland_River } from "./Water/ANZECC/ANZECC_2000_SE-AUS_Upland_River";
+import { ANZECC_2000_SE_AUS_Lowland_River } from "./Water/ANZECC/ANZECC_2000_SE-AUS_Lowland_River";
+import { ANZECC_2000_SE_AUS_FW_Lakes_Reservoirs } from "./Water/ANZECC/ANZECC_2000_SE-AUS_FW_Lakes_Reservoirs";
+import { ANZECC_2000_SE_AUS_Estuaries } from "./Water/ANZECC/ANZECC_2000_SE-AUS_Estuaries";
+import { ANZECC_2000_SE_AUS_Marine } from "./Water/ANZECC/ANZECC_2000_SE-AUS_Marine";
 
 export const standardsStructure: AllStandards[] = [
   {
@@ -248,6 +253,11 @@ export const standardsStructure: AllStandards[] = [
           ANZECC_2000_Rec_Water_Quality_and_Aesthetics_Primary_contact,
           ANZECC_2000_Recreational_water_quality_and_aesthetics,
           ANZECC_2000_slightly_moderately_disturbed_systems,
+          ANZECC_2000_SE_AUS_Upland_River,
+          ANZECC_2000_SE_AUS_Lowland_River,
+          ANZECC_2000_SE_AUS_FW_Lakes_Reservoirs,
+          ANZECC_2000_SE_AUS_Estuaries,
+          ANZECC_2000_SE_AUS_Marine,
         ],
       },
       {

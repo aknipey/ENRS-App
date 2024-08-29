@@ -1,4 +1,4 @@
-import Grid from "@mui/material/Unstable_Grid2";
+import Grid from "@mui/material/Grid2";
 import { ChemFileImport } from "./ChemFileImport";
 import { SampleFileImport } from "./SampleFileImport";
 import { StandardsSelector } from "./StandardsSelector";
@@ -6,16 +6,16 @@ import { StandardsSelector } from "./StandardsSelector";
 export function FileImports() {
   return (
     <Grid container spacing={2}>
-      <Grid xs={6}>
+      <Grid size={6}>
         <StandardsSelector />
       </Grid>
-      <Grid xs={6}>
+      <Grid size={6}>
         <div>
           <Grid container spacing={2}>
-            <Grid xs={12}>
+            <Grid size={12}>
               <SampleFileImport />
             </Grid>
-            <Grid xs={12}>
+            <Grid size={12}>
               <ChemFileImport />
             </Grid>
           </Grid>

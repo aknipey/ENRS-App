@@ -12,7 +12,7 @@ import {
   WATER_SETS,
 } from "../consts/screeningCriteriaQSConsts";
 import { useCallback } from "react";
-import Grid from "@mui/material/Unstable_Grid2";
+import Grid from '@mui/material/Grid2';
 
 export const ScreeningCriteriaQS = () => {
   const [screeningCriteriaQS, setScreeningCriteriaQS] =
@@ -57,7 +57,7 @@ export const ScreeningCriteriaQS = () => {
   return (
     <>
       <Grid container justifyContent={"space-around"}>
-        <Grid xs={3.8}>
+        <Grid size={3.8}>
           <FormControl fullWidth>
             <InputLabel id="sediment-type">Sediment</InputLabel>
             <Select
@@ -76,7 +76,7 @@ export const ScreeningCriteriaQS = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid xs={3.8}>
+        <Grid size={3.8}>
           <FormControl fullWidth>
             <InputLabel id="texture">Texture</InputLabel>
             <Select
@@ -94,7 +94,7 @@ export const ScreeningCriteriaQS = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid xs={3.8}>
+        <Grid size={3.8}>
           <FormControl fullWidth>
             <InputLabel id="water-type">Salinity</InputLabel>
             <Select

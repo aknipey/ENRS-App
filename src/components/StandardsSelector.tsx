@@ -9,7 +9,7 @@ import {
   Button,
   Divider,
 } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2";
+import Grid from "@mui/material/Grid2";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { standardsStructure } from "../Standards/standardsStructure";
 import { AllStandards, Standard } from "../Standards/standardsTypes";
@@ -114,7 +114,10 @@ export const StandardsSelector: React.FC = () => {
                 {quickSelectedTables.map((table) => {
                   return table.standards.some((s) => s === standard) &&
                     !screenedOut(standard, screeningCriteriaQS) ? (
-                    <BlackBackedCheckbox key={newPath.join("-")} table={table} />
+                    <BlackBackedCheckbox
+                      key={newPath.join("-")}
+                      table={table}
+                    />
                   ) : null;
                 })}
                 <Typography
@@ -178,34 +181,34 @@ export const StandardsSelector: React.FC = () => {
   return (
     <Card sx={{ height: "100%" }} elevation={2}>
       <Grid container spacing={1} padding={2}>
-        <Grid xs={3}>
+        <Grid size={3}>
           <Typography variant="h6" fontWeight={"bold"}>
             Quick-Select Tables
           </Typography>
         </Grid>
-        <Grid xs={9}>
+        <Grid size={9}>
           <ScreeningCriteriaQS />
         </Grid>
-        <Grid xs={12}>
+        <Grid size={12}>
           <QuickSelect />
         </Grid>
-        <Grid xs={12}>
+        <Grid size={12}>
           <Divider sx={{ bgcolor: "black", height: 2 }} />
         </Grid>
-        <Grid xs={10}>
+        <Grid size={10}>
           <Typography variant="h6" fontWeight={"bold"}>
             Select Standards Below for a Custom Table
           </Typography>
         </Grid>
-        <Grid xs={2} container justifyContent={"flex-end"}>
+        <Grid size={2} container justifyContent={"flex-end"}>
           <Button variant="contained" onClick={handleExpandAll} size="small">
             {expandAll ? "Collapse" : "Expand All"}
           </Button>
         </Grid>
-        <Grid xs={12}>
+        <Grid size={12}>
           <Divider sx={{ bgcolor: "black", height: 2 }} />
         </Grid>
-        <Grid xs={12}>
+        <Grid size={12}>
           <FormGroup>{renderStandards(standardsStructure)}</FormGroup>
         </Grid>
       </Grid>

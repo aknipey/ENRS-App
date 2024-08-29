@@ -1,5 +1,5 @@
 import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2";
+import Grid from '@mui/material/Grid2';
 import { QUICK_SELECTS } from "../consts/quickSelectConsts";
 import { useQuickSelectedTablesAtom } from "../atoms/standardsAtoms";
 import { useCallback } from "react";
@@ -26,7 +26,7 @@ export const QuickSelect = () => {
       <Grid container rowSpacing={0.6}>
         {QUICK_SELECTS.map((quickSelect, i) => {
           return (
-            <Grid xs={3} key={i}>
+            <Grid size={3} key={i}>
               <FormGroup>
                 <FormControlLabel
                   sx={{ backgroundColor: quickSelect.colour }}

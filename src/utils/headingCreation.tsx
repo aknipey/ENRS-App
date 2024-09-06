@@ -143,6 +143,10 @@ const writeSpecialAnalytes = (
 
   while (analytesCC.size > 0) {
     const chemCode = analytesCC.values().next().value;
+    if (!chemCode) {
+      console.log("No chemCode found in analytesCC", analytesCC);
+      break;
+    }
     const nameCell = worksheet.getCell(4, width);
     nameCell.value = chemistryMap[chemCode].ChemName;
     nameCell.font = { name: "Arial", size: 10, bold: true };

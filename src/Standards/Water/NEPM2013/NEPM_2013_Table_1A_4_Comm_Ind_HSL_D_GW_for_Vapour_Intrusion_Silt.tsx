@@ -10,7 +10,7 @@ export const NEPM_2013_Table_1A_4_Comm_Ind_HSL_D_GW_for_Vapour_Intrusion_Silt: S
     },
     visual: {
       colour: "#DCE6F1",
-      name: "NEPM 2013 Table 1A4 Res HSL A-B GW for Vapour Intrusion Silt",
+      name: "NEPM 2013 Table 1A4 Comm/Ind HSL D GW for Vapour Intrusion Silt",
       whiteBar: "NEPM 2013 Water",
       rowB: "GW HSL 'D'",
       rowC: "SILT",

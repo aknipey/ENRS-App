@@ -118,6 +118,10 @@ const writeUnits = (worksheet: ExcelJS.Worksheet, table: JSONObject) => {
 };
 
 const writeData = (worksheet: ExcelJS.Worksheet, table: JSONObject) => {
+  const width = worksheet.columnCount;
+  for (let i = 0; i < width; i++) {
+    
+  }
 }
 
 export const writeResults = (

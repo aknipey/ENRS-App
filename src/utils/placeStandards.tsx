@@ -173,6 +173,10 @@ export const writeStandardsE = (
 
   while (eStandards1.size > 0) {
     const standard1 = eStandards1.values().next().value;
+    if (!standard1) {
+      console.log("Standard is not in the right place: ", standard1);
+      break;
+    }
     const cell = worksheet.getCell(rowNum, 5);
     cell.value = standard.visual.rowE;
     cell.font = { bold: true, name: "Arial", size: 10 };
@@ -231,6 +235,10 @@ export const writeStandardsC = (
 
   while (cStandards.size > 0) {
     const standard1 = cStandards.values().next().value;
+    if (!standard1) {
+      console.log("Standard is not in the right place: ", standard1);
+      break;
+    }
     if (standard1.visual.rowE) {
       rowNum = writeStandardsE(worksheet, standard1, cStandards, rowNum);
     } else if (standard1.standardInfo.depthDependent) {
@@ -296,6 +304,10 @@ export const writeStandardsB = (
 
   while (bStandards.size > 0) {
     let standard1 = bStandards.values().next().value;
+    if (!standard1) {
+      console.log("Standard is not in the right place: ", standard1);
+      break;
+    }
     if (standard1.visual.rowC) {
       rowNum = writeStandardsC(worksheet, standard1, bStandards, rowNum);
     } else if (standard1.visual.rowE) {
@@ -323,6 +335,10 @@ export const writeGroupedStandards = (
 
   while (underWhiteStandards.size > 0) {
     const standard1 = underWhiteStandards.values().next().value;
+    if (!standard1) {
+      console.log("Standard is not in the right place: ", standard1);
+      break;
+    }
     rowNum = writeStandardsB(worksheet, standard1, underWhiteStandards, rowNum);
   }
 
@@ -337,7 +353,10 @@ export const writeStandards = (
   const standardsSet = new Set(standards);
   while (standardsSet.size > 0) {
     const standard = standardsSet.values().next().value;
-
+    if (!standard) {
+      console.log("Standard is not in the right place: ", standard);
+      break;
+    }
     const cell = worksheet.getCell(rowNum, 2);
     cell.value = standard.visual.whiteBar;
     cell.font = { bold: true, name: "Arial", size: 12 };

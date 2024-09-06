@@ -4,15 +4,10 @@ export const SPECIAL_ANALYTES_2 = [
   "1336-36-3",
   "TotalOPP",
   "108-95-2",
-  "64743-03-9"
+  "64743-03-9",
 ];
 
-export const SPECIAL_ANALYTES_6 = [
-  "pH_Field",
-  "pH_Lab",
-  "EC_Field",
-  "EC_Lab",
-]
+export const SPECIAL_ANALYTES_6 = ["pH_Field", "pH_Lab", "EC_Field", "EC_Lab"];
 
 export const ANALYTE_GROUPS: AnalyteGroup[] = [
   {
@@ -31,8 +26,36 @@ export const ANALYTE_GROUPS: AnalyteGroup[] = [
     ],
   },
   {
+    name: "Phenols",
+    analyteChemCodes: [
+      "108-95-2",
+      "95-57-8",
+      "95-48-7",
+      "108-39-4&106-44-5",
+      "108-39-4",
+      "106-44-5",
+      "88-75-5",
+      "105-67-9",
+      "120-83-2",
+      "87-65-0",
+      "59-50-7",
+      "88-06-2",
+      "95-95-4",
+      "87-86-5",
+    ],
+  },
+  {
     name: "BTEX",
-    analyteChemCodes: ["71-43-2", "108-88-3", "100-41-4", "1330-20-7"],
+    analyteChemCodes: [
+      "71-43-2",
+      "108-88-3",
+      "100-41-4",
+      "1330-20-7",
+      "108-38-3 / 106-42-3",
+      "106-42-3",
+      "108-38-3",
+      "95-47-6",
+    ],
   },
   {
     name: "Total Recoverable Hydrocarbons",
@@ -47,7 +70,13 @@ export const ANALYTE_GROUPS: AnalyteGroup[] = [
   },
   {
     name: "Polycyclic Aromatic Hydrocarbons (PAHs)",
-    analyteChemCodes: ["91-20-3", "50-32-8", "BaP_WHOTEQ", "TOTALPAH"],
+    analyteChemCodes: [
+      "91-20-3",
+      "50-32-8",
+      "BaP_WHOTEQ",
+      "TOTALPAH",
+      "91-20-3_VOC",
+    ],
   },
   {
     name: "Metals",
